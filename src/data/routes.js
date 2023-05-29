@@ -3,7 +3,7 @@ import Home from '../pages/Home';
 // import Properties from '../pages/Properties/Properties';
 // import Property from '../pages/Properties/Property';
 import ToSell from '../pages/Owner/ToSell';
-// import ToLease from '../pages/Owner/ToLease';
+import ToLease from '../pages/Owner/ToLease';
 // import AuctionUnits from '../pages/Investor/AuctionUnits';
 // import NewUnits from '../pages/Investor/NewUnits';
 // import LeaseAdmin from '../pages/Investor/LeaseAdmin';
@@ -43,12 +43,12 @@ export const navigationRoutes = [
     path: '/soy-propietario/quiero-vender',
     element: <ToSell />,
   },
-  // {
-  //   id: 6,
-  //   name: 'Quiero Arrendar',
-  //   path: '/soy-propietario/quiero-arrendar',
-  //   element: <ToLease />,
-  // },
+  {
+    id: 6,
+    name: 'Quiero Arrendar',
+    path: '/soy-propietario/quiero-arrendar',
+    element: <ToLease />,
+  },
   // {
   //   id: 7,
   //   name: 'Unidades en Remate',
