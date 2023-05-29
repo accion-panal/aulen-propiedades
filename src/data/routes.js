@@ -4,9 +4,9 @@ import Home from '../pages/Home';
 // import Property from '../pages/Properties/Property';
 import ToSell from '../pages/Owner/ToSell';
 import ToLease from '../pages/Owner/ToLease';
-// import AuctionUnits from '../pages/Investor/AuctionUnits';
-// import NewUnits from '../pages/Investor/NewUnits';
-import LeaseAdmin from '../pages/Investor';
+import AuctionUnits from '../pages/Investor/AuctionUnits';
+import NewUnits from '../pages/Investor/NewUnits';
+import LeaseAdmin from '../pages/AdminLease';
 // import ToPartner from '../pages/Broker/ToPartner';
 // import LegalServices from '../pages/Broker/LegalServices';
 // import UnneAcademy from '../pages/Broker/UnneAcademy';
@@ -49,18 +49,18 @@ export const navigationRoutes = [
     path: '/soy-propietario/quiero-arrendar',
     element: <ToLease />,
   },
-  // {
-  //   id: 7,
-  //   name: 'Unidades en Remate',
-  //   path: '/soy-inversionista/unidades-en-remate',
-  //   element: <AuctionUnits />,
-  // },
-  // {
-  //   id: 8,
-  //   name: 'Unidades Nuevas',
-  //   path: '/soy-inversionista/unidades-nuevas',
-  //   element: <NewUnits />,
-  // },
+  {
+    id: 7,
+    name: 'Unidades en Remate',
+    path: '/soy-inversionista/unidades-en-remate',
+    element: <AuctionUnits />,
+  },
+  {
+    id: 8,
+    name: 'Unidades Nuevas',
+    path: '/soy-inversionista/unidades-nuevas',
+    element: <NewUnits />,
+  },
   {
     id: 9,
     name: 'Administracion de Arriendo',

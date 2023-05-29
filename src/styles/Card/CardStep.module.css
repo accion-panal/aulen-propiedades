@@ -32,31 +32,32 @@
 
 .card {
   margin: 1.5rem 0;
+  background-color: white !important;
 }
 
 .card,
 .cardBody {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 15rem;
-  border: none;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  height: 15rem !important;
+  border: none !important;
 }
 
 .cardIconContainer {
   background: var(--color-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   width: 9rem !important;
   height: 9rem !important;
   border-radius: 50% !important;
-  text-align: center;
-  margin: 0px auto;
-  padding: 3%;
-  cursor: pointer;
-  margin-bottom: 1rem;
+  text-align: center !important;
+  margin: 0px auto !important;
+  padding: 3% !important;
+  cursor: pointer !important;
+  margin-bottom: 1rem !important;
 }
 
 .icon {

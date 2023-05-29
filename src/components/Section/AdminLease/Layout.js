@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       'scroll',
       () => {
         const isTop = window.scrollY > 50;
-        const isTop2 = window.scrollY > 50 && window.scrollY > 1850;
+        const isTop2 = window.scrollY > 50 && window.scrollY > 1350;
 
         if (isTop !== isScrolledPast) {
           setScrolledPast(isTop);

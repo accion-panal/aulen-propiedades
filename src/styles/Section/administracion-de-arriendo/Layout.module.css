@@ -1,8 +1,7 @@
 .row {
-  position: relative;
-  position: relative;
-  margin: 3rem auto;
-  width: 100%;
+  position: relative !important;
+  margin: 3rem auto !important;
+  width: 100% !important;
 }
 
 .rightCol {
@@ -28,7 +27,7 @@
 @media screen and (min-width: 1220px) {
   .row {
     width: 100%;
-    margin: 3rem auto;
+    margin: 10rem auto !important;
   }
 
   .rightCol {
