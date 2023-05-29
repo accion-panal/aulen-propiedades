@@ -1,0 +1,22 @@
+.informationOnTheAreaContainer {
+  width: 100% !important;
+  padding: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.informationOnTheAreaContainer .headTitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+}
+
+.informationOnTheAreaContainer h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-weight: var(--font-weight-medium);
+}
+
+.informationOnTheAreaContainer .tabs {
+  background-color: transparent !important;
+}

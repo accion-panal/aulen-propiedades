@@ -1,0 +1,65 @@
+.executiveContainer {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  border-radius: var(--border-radius-3xl);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.row {
+  width: 100% !important;
+}
+
+.colDown {
+  width: 100% !important;
+}
+
+.colDown h4 {
+  font-size: var(--font-size-md) !important;
+  padding: 0.9rem 0 !important;
+  margin: 0 !important;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100% !important;
+}
+
+.colDown .realtor {
+  font-size: var(--font-size-sm) !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.colDown .realtor span {
+  font-weight: normal;
+  color: rgb(156 163 175);
+}
+
+.realtor .icon {
+  margin-right: 0.3rem;
+  margin-bottom: 0.1rem;
+}
+
+.realtorContact {
+  margin: 1rem 0.5rem;
+  text-align: center;
+  border-radius: var(--border-radius-sm);
+}
+
+.realtorContact a {
+  display: block;
+  width: 100% !important;
+  background-color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+  padding: 0.8rem;
+  color: var(--color-white);
+  transition: 0.3s all ease;
+}
+
+.realtorContact a:hover {
+  background-color: var(--color-primary-dark);
+}

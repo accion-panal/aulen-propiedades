@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.offcanvasBody {
+}
+
+.navbarToggle {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbarToggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbarOffcanvas {
+  width: 85% !important;
+}
+
+@media screen and (min-width: 768px) {
+  .navbarOffcanvas {
+    width: 40% !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbarOffcanvas {
+    width: 25% !important;
+  }
+}

@@ -1,0 +1,10 @@
+.row {
+  margin: 3rem 0;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.titleSection {
+  font-size: var(--font-size-sm);
+  color: rgba(0, 0, 0, 0.4);
+}
