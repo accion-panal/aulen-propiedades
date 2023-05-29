@@ -13,7 +13,7 @@
   background-color: var(--bg-white);
   width: 80%;
   margin: 3rem auto;
-  border-radius: var(--border-radius-5xl);
+  border-radius: var(--border-radius-5xl) !important;
   padding: 1.5rem;
   border: none;
   transition: 0.3s all ease-in-out;

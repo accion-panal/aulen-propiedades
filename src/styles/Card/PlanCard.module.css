@@ -6,8 +6,8 @@
 }
 
 .card {
-  background-color: var(--color-primary);
-  border-radius: var(--border-radius-5xl);
+  background-color: var(--color-primary) !important;
+  border-radius: var(--border-radius-5xl) !important;
   cursor: pointer;
   border: none;
   padding: 1rem 0.5rem !important;
