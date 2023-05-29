@@ -6,7 +6,7 @@ import ToSell from '../pages/Owner/ToSell';
 import ToLease from '../pages/Owner/ToLease';
 // import AuctionUnits from '../pages/Investor/AuctionUnits';
 // import NewUnits from '../pages/Investor/NewUnits';
-// import LeaseAdmin from '../pages/Investor/LeaseAdmin';
+import LeaseAdmin from '../pages/Investor';
 // import ToPartner from '../pages/Broker/ToPartner';
 // import LegalServices from '../pages/Broker/LegalServices';
 // import UnneAcademy from '../pages/Broker/UnneAcademy';
@@ -61,12 +61,12 @@ export const navigationRoutes = [
   //   path: '/soy-inversionista/unidades-nuevas',
   //   element: <NewUnits />,
   // },
-  // {
-  //   id: 9,
-  //   name: 'Administracion de Arriendo',
-  //   path: '/soy-inversionista/administracion-de-arriendo',
-  //   element: <LeaseAdmin />,
-  // },
+  {
+    id: 9,
+    name: 'Administracion de Arriendo',
+    path: '/administracion-de-arriendo',
+    element: <LeaseAdmin />,
+  },
   // {
   //   id: 10,
   //   name: 'Asociate',
