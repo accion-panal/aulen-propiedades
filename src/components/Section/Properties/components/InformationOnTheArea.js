@@ -11,8 +11,6 @@ const InformationOnTheArea = ({ propertyData }) => {
   const lng = Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
-  console.log('desde information on the area', propertyData);
-
   return (
     <div className={styles.informationOnTheAreaContainer}>
       <Row>

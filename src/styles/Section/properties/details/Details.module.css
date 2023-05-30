@@ -70,6 +70,12 @@
   background-color: whitesmoke;
 }
 
+.propertyCharacteristics {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
 .propertyTypeInfo li {
   list-style: none;
   font-size: var(--font-size-md);

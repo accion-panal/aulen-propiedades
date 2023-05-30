@@ -31,6 +31,9 @@
   padding: 0.5rem !important;
   margin: 0 !important;
   font-weight: bold;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
 }
 
 .colDown .realtor span {

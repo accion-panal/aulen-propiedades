@@ -57,14 +57,15 @@ const Details = ({ propertyData }) => {
             </div>
 
             <div className={styles.deptoPropsContainer}>
-              <span>
+              <span className={styles.propertyCharacteristics}>
                 <strong>
                   <BiBuildingHouse />
                 </strong>{' '}
                 {propertyData?.surface_m2 ? propertyData?.surface_m2 : '0'} m
                 <sup>2</sup> útiles
               </span>
-              <span>
+
+              <span className={styles.propertyCharacteristics}>
                 <strong>
                   <IoBedOutline />
                 </strong>{' '}
@@ -73,7 +74,8 @@ const Details = ({ propertyData }) => {
                   : 'Sin dormitorios'}{' '}
                 dormitorios
               </span>
-              <span>
+
+              <span className={styles.propertyCharacteristics}>
                 <strong>
                   <FaBath />
                 </strong>{' '}

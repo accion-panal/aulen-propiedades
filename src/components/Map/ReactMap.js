@@ -14,8 +14,6 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
   const [showPopup, setShowPopup] = useState(false);
   const { FaMapMarkerAlt } = icons;
 
-  console.log('CardMap', propertyData);
-
   const [viewport, setViewport] = useState({
     width: '100%',
     height: '100%',

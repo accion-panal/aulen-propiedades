@@ -5,33 +5,39 @@ export const simpleCardData = [
     img: (
       <img
         className={`${styles.card__img}`}
-        src={require('../../assets/img/SoyPropietario/apartment.jpg')}
+        src={require('../assets/img/SoyPropietario/apartment.jpg')}
         alt="card-imagen-departamentos"
       />
     ),
     title: 'departamento',
-    href: '#departmentos',
+    href: '#departamento',
+    operationType: 'venta',
+    typeOfProperty: 'departamento',
   },
   {
     img: (
       <img
         className={`${styles.card__img}`}
-        src={require('../../assets/img/SoyPropietario/house.jpg')}
+        src={require('../assets/img/SoyPropietario/house.jpg')}
         alt="card-imagen-estacionamientos"
       />
     ),
-    title: 'estacionamientos',
+    title: 'estacionamiento',
     href: '#estacionamientos',
+    operationType: 'venta',
+    typeOfProperty: 'estacionamiento',
   },
   {
     img: (
       <img
         className={`${styles.card__img}`}
-        src={require('../../assets/img/SoyPropietario/storageroom.jpg')}
+        src={require('../assets/img/SoyPropietario/storageroom.jpg')}
         alt="card-imagen-bodega"
       />
     ),
     title: 'bodega',
-    href: '#bodegas',
+    href: '#bodega',
+    operationType: 'venta',
+    typeOfProperty: 'bodega',
   },
 ];
