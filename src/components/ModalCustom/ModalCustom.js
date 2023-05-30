@@ -75,7 +75,7 @@ const ModalCustom = ({
               leaveTo="opacity-0 scale-95"
             >
               <div
-                className={`inline-block w-full my-5 overflow-hidden text-left align-middle transition-all transform bg-white border border-slate-900 border-opacity-5 shadow-xl rounded-2xl sm:my-8 dark:bg-slate-800 dark:border-slate-700 text-slate-900 dark:text-slate-300 ${contentExtraClass}`}
+                className={`inline-block w-full my-5 overflow-hidden text-left align-middle transition-all transform bg-white border border-slate-900 z-[1000px] border-opacity-5 shadow-xl rounded-2xl sm:my-8 dark:bg-slate-800 dark:border-slate-700 text-slate-900 dark:text-slate-300 ${contentExtraClass}`}
               >
                 <div className="py-4 px-6 text-center relative border-b bg-white border-slate-100 md:py-5">
                   <ButtonClose

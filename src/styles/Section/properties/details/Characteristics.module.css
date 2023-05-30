@@ -59,17 +59,17 @@
 }
 
 .buttonCollapse {
-  margin: 2rem 0;
-  display: block;
-  background-color: var(--color-primary);
-  width: 100%;
+  margin: 2rem 0 !important;
+  display: block !important;
+  background-color: var(--color-primary) !important;
+  width: 100% !important;
   border: none !important;
   outline: none !important;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
 }
 
 .buttonCollapse:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark) !important;
 }
 
 @media screen and (min-width: 992px) {

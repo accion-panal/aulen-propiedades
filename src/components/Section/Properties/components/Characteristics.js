@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 
 const Characteristics = ({ propertyData }) => {
   const { description } = propertyData;
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapse = () => setIsOpen(!isOpen);
@@ -22,7 +21,9 @@ const Characteristics = ({ propertyData }) => {
           <h6>Descripción</h6>
           <div className={styles.containerDescription}>
             <p className={styles.description}>
-              {isOpen ? description : `${propertyData?.description?.slice(0, 450)}...`}
+              {isOpen
+                ? description
+                : `${propertyData?.description?.slice(0, 450)}...`}
             </p>
             <Button onClick={toggleCollapse} className={styles.buttonCollapse}>
               {isOpen ? 'Cerrar' : 'Leer más'}

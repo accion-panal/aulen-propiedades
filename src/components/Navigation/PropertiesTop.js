@@ -61,7 +61,7 @@ const PropertiesTop = ({
                 isGrid
                   ? 'bg-orange-500 text-white'
                   : 'bg-gray-100 text-gray-500'
-              } mx-1 p-2.5 cursor-pointer `}
+              } mx-1 p-2.5 cursor-pointer list-none`}
             >
               <BsFillGridFill />
             </li>
@@ -74,11 +74,11 @@ const PropertiesTop = ({
                 isList
                   ? 'bg-orange-500 text-white'
                   : 'bg-gray-100 cursor-pointer text-gray-500'
-              } mx-1 p-2.5 cursor-pointer`}
+              } mx-1 p-2.5 cursor-pointer list-none`}
             >
               <FaThList />
             </li>
-            <li className="mx-1 p-2.5 bg-gray-100 cursor-pointer text-gray-500">
+            <li className="mx-1 p-2.5 bg-gray-100 cursor-pointer text-gray-500 list-none">
               <Link to="/propiedades/propiedades-en-mapa">
                 <FaMapMarkerAlt />
               </Link>

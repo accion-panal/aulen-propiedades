@@ -10,7 +10,7 @@ import LeaseAdmin from '../pages/AdminLease';
 // import ToPartner from '../pages/Broker/ToPartner';
 // import LegalServices from '../pages/Broker/LegalServices';
 // import UnneAcademy from '../pages/Broker/UnneAcademy';
-// import PropertiesInMap from '../pages/PropertiesInMap';
+import PropertiesInMap from '../pages/PropertiesInMap';
 
 export const navigationRoutes = [
   {
@@ -85,10 +85,10 @@ export const navigationRoutes = [
   //   path: '/eres-corredor/academia-unne',
   //   element: <UnneAcademy />,
   // },
-  // {
-  //   id: 14,
-  //   name: 'Propiedades en mapa',
-  //   path: '/propiedades/propiedades-en-mapa',
-  //   element: <PropertiesInMap />,
-  // },
+  {
+    id: 14,
+    name: 'Propiedades en mapa',
+    path: '/propiedades/propiedades-en-mapa',
+    element: <PropertiesInMap />,
+  },
 ];

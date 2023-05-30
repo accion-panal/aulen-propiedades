@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   logoImg: {
-    height: '60px',
+    height: '25px',
     width: 'auto',
     objectFit: 'cover',
   },
@@ -189,7 +189,7 @@ const PDFView = ({ property }) => {
         <View style={styles.section}>
           <View style={styles.header}>
             <Image
-              src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681665215/unne-media/logo/logo-unne_orpjju.png"
+              src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683298180/aulen/LOGO-AULEN-PROPIEDADES_mscv6o.png"
               alt="img-pdf"
               style={styles.logoImg}
             />

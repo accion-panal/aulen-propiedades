@@ -14,7 +14,7 @@ const ButtonPrimary = ({
   loading,
   onClick = () => {},
 }) => {
-  const CLASSES = `relative h-auto inline-flex items-center justify-center rounded-full transition-colors ${fontSize} ${sizeClass} ${translate} ${className} `;
+  const CLASSES = `relative border-2 border-transparent outline-none focus:outline-none h-auto inline-flex items-center justify-center rounded-full transition-colors ${fontSize} ${sizeClass} ${translate} ${className} `;
 
   const _renderLoading = () => {
     return (

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Button = ({ href, type, children, className, onClick = () => {} }) => {
   const btnStyles = {
     primary:
-      'text-center rounded-full text-white uppercase font-semibold transition ease-in-out',
+      'text-center rounded-full text-white border-2 border-transparent uppercase font-semibold transition ease-in-out outline-none focus:outline-none',
   };
 
   if (!!href) {

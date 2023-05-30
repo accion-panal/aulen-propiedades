@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../../../Section/Section';
 import { PDFViewer } from '@react-pdf/renderer';
-import TopInfoAddress from './TopInfoAddress';
 import GalleryCarousel from '../../../GalleryCarousel/GalleryCarousel';
 import Details from './Details';
 import Characteristics from './Characteristics';
-import ReactMap from '../../../Map/ReactMap';
 import PDFView from './PDFView';
 import ClipboardProperty from './ClipboardProperty';
-import Modal from '../../../ModalCustom/ModalCustom';
 import Spinner from '../../../Spinner/Spinner';
 import { icons } from '../../../Icons';
-//importar los componentes aca
-
-// aca
 import { Link } from 'react-router-dom';
 import styles from '../../../../styles/Section/properties/details/Details.module.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import ModalPdf from './ModalPdf';
 import InformationOnTheArea from './InformationOnTheArea';
+import MeetingSchedule from '../../../Forms/MeetingSchedule';
+import ModalCustom from '../../../ModalCustom/ModalCustom';
 
 const PropertyComponent = ({ property }) => {
   const [loadingOnStart, setLoadingOnStart] = useState(true);
@@ -57,8 +52,6 @@ const PropertyComponent = ({ property }) => {
     }
   }, [property]);
 
-  console.log('Detalle de Propiedad', property);
-
   return (
     <Section>
       {loadingOnStart && <Spinner />}
@@ -82,32 +75,19 @@ const PropertyComponent = ({ property }) => {
 
             <Col xs={12} xl={3} className={styles.col}>
               <div className={styles.deptoDetailsShare}>
-                {/* <span>
-                <CopyToClipboard
-                  text={`aulenpropiedades.cl/propiedades/393/?statusId=1&companyId=1`}
-                  onCopy={() => setCopied(true)}
-                >
-                  {!copied ? (
-                    <span className={styles.spanClipboard}>
-                      Compartir
-                      <HiClipboard />
-                    </span>
-                  ) : (
-                    <span className={styles.spanClipboardCopied}>
-                      Copiado
-                      <HiOutlineClipboardCheck />
-                    </span>
-                  )}
-                </CopyToClipboard>
-              </span>{' '} */}
-
-                {/* aca */}
                 <Button
                   className={styles.printLink}
-                  onClick={() => {
-                    setModalShow(true);
-                  }}
+                  onClick={() => setShowModalShare(true)}
                 >
+                  <FaShare className="mr-1" />
+                  Compartir
+                </Button>
+
+                <Button
+                  className={styles.printLink}
+                  onClick={() => setShowModalDetail(true)}
+                >
+                  <MdSimCardDownload className="mr-1" />
                   Imprimir PDF
                 </Button>
               </div>
@@ -116,15 +96,38 @@ const PropertyComponent = ({ property }) => {
             </Col>
           </Row>
 
-          {/* <ModalPdf
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              propertyData={property}
-            /> */}
-
           <InformationOnTheArea propertyData={property} />
+
+          {property?.installment_type === 'En blanco' ||
+          property?.installment_type === 'En verde' ? (
+            <div id="cotizar-contacto">
+              <MeetingSchedule />
+            </div>
+          ) : null}
         </div>
       )}
+
+      <ModalCustom
+        renderTrigger={() => null}
+        isOpenProp={showModalShare}
+        renderContent={renderContent}
+        contentExtraClass="max-w-2xl"
+        modalTitle="Compartir Propiedad"
+        onCloseModal={() => {
+          setShowModalShare(false);
+        }}
+      />
+
+      <ModalCustom
+        renderTrigger={() => null}
+        isOpenProp={showModalDetail}
+        renderContent={renderContentPdf}
+        contentExtraClass="max-w-[85%]"
+        modalTitle="Descargar PDF"
+        onCloseModal={() => {
+          setShowModalDetail(false);
+        }}
+      />
 
       {/* {Object.keys(property).length > 0 && (
         <div className="my-10 px-4 xl:px-32 mt-[400px]">

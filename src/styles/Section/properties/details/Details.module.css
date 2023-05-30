@@ -110,19 +110,20 @@
 
 .deptoDetailsShare .spanClipboard,
 .printLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  cursor: pointer;
-  background-color: whitesmoke;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  background-color: whitesmoke !important;
   padding: 0.5rem 1rem !important;
-  border-radius: 3px;
-  font-size: var(--font-size-md);
-  white-space: nowrap;
-  transition: 0.2s all ease-in-out;
-  border: none;
+  border-radius: 3px !important;
+  font-size: var(--font-size-md) !important;
+  white-space: nowrap !important;
+  transition: 0.2s all ease-in-out !important;
+  border: none !important;
+  color: #4b5563 !important;
 }
 
 .printLink:active {

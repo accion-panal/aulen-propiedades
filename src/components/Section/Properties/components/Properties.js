@@ -71,6 +71,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           <div className="w-full md:w-4/5 bg-white mb-48">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
+
             {notFoundMsg && <NotFound message={notFoundMsg} />}
             <ul
               className={`${
@@ -100,7 +101,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           <div className="w-full md:w-1/5 bg-white border ml-0 xl:ml-2">
             <AdvancedSearch {...{ setProperties }} />
             <div className="p-5">
-              <h3 className="bg-gray-50 p-2">Proyectos destacados</h3>
+              <h3 className="bg-gray-50 p-2 text-xl">Proyectos destacados</h3>
 
               <ul className="flex w-[100%] flex-wrap relative">
                 {outstandingProperties?.map((propiedad) => (
@@ -136,14 +137,20 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
 
               <div className="flex items-center bg-white">
                 <div className="flex-1 border-b bg-white border-gray-200"></div>
-                <button onClick={showMoreProperties} className="relative">
+                <button
+                  onClick={showMoreProperties}
+                  className="relative border-none focus:outline-none"
+                >
                   {showMore && (
                     <div className="h-11 w-11 rounded-full bg-white border border-gray-200 text-gray-400 hover:text-white hover:bg-orange-500 cursor-pointer flex items-center justify-center">
                       <RiArrowDownSLine className="text-2xl" />
                     </div>
                   )}
                 </button>
-                <button onClick={seeLessProperties} className="relative">
+                <button
+                  onClick={seeLessProperties}
+                  className="relative border-none focus:outline-none"
+                >
                   {!showMore && propertiesToShow.length >= 10 && (
                     <div className="h-11 w-11 rounded-full bg-bg-transparent border border-gray-200 text-gray-400 hover:text-white hover:bg-orange-500 cursor-pointer flex items-center justify-center">
                       <RiArrowDownSLine className="text-2xl rotate-180" />

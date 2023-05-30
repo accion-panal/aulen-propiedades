@@ -62,4 +62,5 @@
 
 .realtorContact a:hover {
   background-color: var(--color-primary-dark);
+  color: white !important;
 }
