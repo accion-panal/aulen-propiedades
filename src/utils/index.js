@@ -20,3 +20,16 @@ export const clpToUf = (clpValue, ufValue) => {
 
 // Replace white spaces to string
 export const replaceSpaces = (str) => str.replace(/\s/g, '%20');
+
+export const parseRealtorDate = (currentTime) => {
+  const date = new Date(currentTime);
+
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString();
+  const hours = date.getHours().toString().padStart(2, '0');
+  const mins = date.getMinutes().toString().padStart(2, '0');
+
+  const parsedDate = `${day}/${month}/${year} ${hours}:${mins}`;
+  return parsedDate;
+};

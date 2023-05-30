@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { icons } from '../../Icons';
 import styles from '../../../styles/Section/Inicio/Form.module.css';
 import stylesModal from '../../../styles/Modal/Modal.module.css';
+import { realtorData } from '../../../constants/consts/realtor';
 
 /** Bootstrap components */
 import Row from 'react-bootstrap/Row';
@@ -15,10 +16,6 @@ import Button from 'react-bootstrap/Button';
 import ContactFormServices from '../../../services/ContactFormServices';
 
 const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
-  const form = useRef();
-  const { haveAction1, haveAction2 } = { ...props };
-  const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline, GrClose } = icons;
-  const [serverErrorMsg, setServerErrorMsg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,6 +27,14 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
     lastName: '',
     meetingDate: new Date(),
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState({
+    allFieldRequierd: '',
+    serverEmailError: '',
+  });
+
+  const { haveAction1, haveAction2 } = { ...props };
+  const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline, GrClose } = icons;
 
   const handleName = (ev) => {
     setFormData({ ...formData, name: ev.target.value });
@@ -117,39 +122,49 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
     });
   };
 
-  const sendEmail = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if ([formData.name, formData.email, formData.phone].includes('')) {
-      showToastErrorMsg('Todos los campos son obligatorios');
-      return;
-    }
+
     try {
-      resetForm();
+      if (
+        [
+          formData.name,
+          formData.email,
+          formData.phone,
+          formData.action,
+        ].includes('') ||
+        formData.termsAndConditions === false
+      ) {
+        showToastErrorMsg('Todos los campos son obligatorios');
+        return;
+      }
+
+      setIsLoading(true);
+      const response = await ContactFormServices.sendContactForm(
+        formData?.name,
+        formData?.email,
+        formData?.phone,
+        formData?.action,
+        realtorData?.email
+      );
+
+      if ((await response.success) === 'true') {
+        setIsLoading(false);
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError: '',
+        });
+        resetForm();
+        showToastSuccessMsg(
+          `Solicitud enviada exitosamente, dentro de poco de contactaremos`
+        );
+      }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
     }
   };
 
-  /** On form submit */
-  // const onFormSubmit = async (ev) => {
-  //   ev.preventDefault();
-  //   try {
-  //     const response = await ContactFormServices.addContactForm(formData);
-  //     if (
-  //       formData.name === '' ||
-  //       formData.email === '' ||
-  //       formData.phone === ''
-  //     ) {
-  //       showToastErrorMsg('Todos los campos son obligatorios');
-  //     } else {
-  //       showToastSuccessMsg(response.message);
-  //       resetForm();
-  //     }
-  //   } catch (error) {
-  //     setServerErrorMsg(error.response);
-  //     showToastWarningMsg('Ocurrio un error al enviar el formulario');
-  //   }
-  // };
+  console.log(formData);
 
   return (
     <Fragment>
@@ -167,12 +182,11 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
           ''
         )}
 
-        {/* <Form className={styles.form} onSubmit={onFormSubmit} id="planForm"> */}
         <form
           className={styles.form}
-          ref={form}
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           id="planForm"
+          name="FormSubmit"
         >
           <h3
             style={{
@@ -191,8 +205,8 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
               className={styles.formControl}
               placeholder="Nombre"
               type="text"
-              name="from_name"
-              id="from_name"
+              name="name"
+              id="name"
               value={formData.name}
               onChange={handleName}
             />
@@ -265,10 +279,32 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
                     name="action"
                     id="button"
                     onClick={() => {
-                      setFormData({ ...formData, action: 'vender' });
+                      setFormData({ ...formData, action: 'quiero vender' });
                     }}
                   >
-                    {haveAction1?.text || ''}
+                    {isLoading ? (
+                      <div role="status">
+                        <svg
+                          aria-hidden="true"
+                          className="inline w-4 h-4 text-gray-100 animate-spin fill-white"
+                          viewBox="0 0 100 101"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill"
+                          />
+                        </svg>
+                        <span className="sr-only">Cargando...</span>
+                      </div>
+                    ) : (
+                      haveAction1?.text
+                    )}
                   </Button>
                 </Form.Group>
               </Col>
@@ -280,14 +316,37 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
                   <Button
                     type="submit"
                     onClick={() =>
-                      setFormData({ ...formData, action: 'arrendar' })
+                      setFormData({ ...formData, action: 'quiero arrendar' })
                     }
                     className={styles.btnSubmit}
                     name="action"
                     id="button"
                     value={formData.action}
                   >
-                    {haveAction2?.text || ''}
+                    {isLoading ? (
+                      <div role="status">
+                        <svg
+                          aria-hidden="true"
+                          className="inline w-4 h-4 text-gray-100 animate-spin fill-white"
+                          viewBox="0 0 100 101"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill"
+                          />
+                        </svg>
+                        <span className="sr-only">Cargando...</span>
+                      </div>
+                    ) : (
+                      haveAction2?.text
+                    )}
+                    {/* {haveAction2?.text || ''} */}
                   </Button>
                 </Form.Group>
               </Col>
