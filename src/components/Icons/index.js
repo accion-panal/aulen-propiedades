@@ -9,6 +9,8 @@ import {
   BsInstagram,
   BsPlusLg,
   BsCalendarCheck,
+  BsFillCalendarCheckFill,
+  BsCheckCircle,
 } from 'react-icons/bs';
 import {
   FaUserAlt,
@@ -22,6 +24,9 @@ import {
   FaRegHandshake,
   FaPercent,
   FaTabletAlt,
+  FaMapMarkerAlt,
+  FaShare,
+  FaBed,
 } from 'react-icons/fa';
 import {
   MdOutlineMailOutline,
@@ -31,6 +36,7 @@ import {
   MdEngineering,
   MdOutlineManageAccounts,
   MdHomeWork,
+  MdSimCardDownload,
 } from 'react-icons/md';
 import {
   RiMoneyDollarCircleLine,
@@ -38,9 +44,11 @@ import {
   RiTimerFlashLine,
   RiArrowRightSLine,
   RiArrowLeftSLine,
+  RiArrowDownSLine,
+  RiPencilRulerLine,
 } from 'react-icons/ri';
 import { TbChecklist, TbHandClick, TbTarget } from 'react-icons/tb';
-import { BiTimer, BiMap, BiBuildingHouse } from 'react-icons/bi';
+import { BiTimer, BiMap, BiBuildingHouse, BiErrorCircle } from 'react-icons/bi';
 import { CgSearchFound } from 'react-icons/cg';
 import { VscPerson } from 'react-icons/vsc';
 import { AiOutlineWhatsApp, AiFillYoutube } from 'react-icons/ai';
@@ -49,8 +57,12 @@ import { ImArrowRight } from 'react-icons/im';
 import { IoBedOutline, IoTrashOutline } from 'react-icons/io5';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 import { TfiFacebook } from 'react-icons/tfi';
-import { GiReceiveMoney } from 'react-icons/gi';
-import { HiClipboard, HiOutlineClipboardCheck } from 'react-icons/hi';
+import { GiReceiveMoney, GiHomeGarage } from 'react-icons/gi';
+import {
+  HiClipboard,
+  HiClipboardCheck,
+  HiOutlineClipboardCheck,
+} from 'react-icons/hi';
 import { GoSearch } from 'react-icons/go';
 
 export const icons = {
@@ -110,4 +122,15 @@ export const icons = {
   GoSearch,
   IoTrashOutline,
   MdHomeWork,
+  BiErrorCircle,
+  FaMapMarkerAlt,
+  RiArrowDownSLine,
+  FaShare,
+  MdSimCardDownload,
+  RiPencilRulerLine,
+  FaBed,
+  BsFillCalendarCheckFill,
+  GiHomeGarage,
+  BsCheckCircle,
+  HiClipboardCheck,
 };

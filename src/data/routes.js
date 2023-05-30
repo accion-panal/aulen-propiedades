@@ -1,7 +1,7 @@
 import Home from '../pages/Home';
 // import About from '../pages/About';
-// import Properties from '../pages/Properties/Properties';
-// import Property from '../pages/Properties/Property';
+import Properties from '../pages/Properties/Properties';
+import Property from '../pages/Properties/Property';
 import ToSell from '../pages/Owner/ToSell';
 import ToLease from '../pages/Owner/ToLease';
 import AuctionUnits from '../pages/Investor/AuctionUnits';
@@ -25,18 +25,18 @@ export const navigationRoutes = [
   //   path: '/quienes-somos',
   //   element: <About />,
   // },
-  // {
-  //   id: 3,
-  //   name: 'Propiedades',
-  //   path: '/propiedades',
-  //   element: <Properties />,
-  // },
-  // {
-  //   id: 4,
-  //   name: 'Propiedad',
-  //   path: '/propiedades/:id',
-  //   element: <Property />,
-  // },
+  {
+    id: 3,
+    name: 'Propiedades',
+    path: '/propiedades',
+    element: <Properties />,
+  },
+  {
+    id: 4,
+    name: 'Propiedad',
+    path: '/propiedades/:id',
+    element: <Property />,
+  },
   {
     id: 5,
     name: 'Quiero Vender',

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './styles/globals.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PropertiesProvider from './context/properties/PropertiesProvider';
+import SelectsProvider from './context/selects/SelectsProvider';
 import ClientsProvider from './context/clients/ClientsProvider';
 import LayoutPage from './components/LayoutPage/LayoutPage';
 import { BrowserRouter } from 'react-router-dom';
@@ -21,7 +23,11 @@ root.render(
     <BrowserRouter>
       <LayoutPage>
         <ClientsProvider>
-          <App />
+          <SelectsProvider>
+            <PropertiesProvider>
+              <App />
+            </PropertiesProvider>
+          </SelectsProvider>
         </ClientsProvider>
       </LayoutPage>
     </BrowserRouter>
