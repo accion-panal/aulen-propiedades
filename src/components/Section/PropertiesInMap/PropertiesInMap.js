@@ -11,6 +11,7 @@ import { PropertiesContext } from '../../../context/properties/PropertiesContext
 import Section from '../../Section/Section';
 import MarkerIcon from '../../../assets/img/Map/marker.png';
 import { parseToCLPCurrency } from '../../../utils';
+import { company } from '../../../constants/consts/company';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
@@ -120,9 +121,7 @@ const PropertiesInMapComponent = () => {
                           }}
                         >
                           <Link
-                            to={`/propiedades/${
-                              property?.id
-                            }?statusId=${1}&companyId=${15}`}
+                            to={`/propiedades/${property?.id}?statusId=${company.statusId}&companyId=${company.companyId}`}
                           >
                             <div className="max-w-sm bg-white">
                               <img
