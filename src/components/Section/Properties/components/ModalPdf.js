@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../../styles/../../../styles/Modal/ModalPdf.module.css';
-import LogoUnne from '../../assets/../../../assets/img/LogoSite/LOGO-AULEN-PROPIEDADES.png';
+import LogoAluen from '../../assets/../../../assets/img/LogoSite/LOGO-AULEN-PROPIEDADES.png';
 // import Pdf from 'react-to-pdf';
 
 const ModalPdf = ({ propertyData, ...props }) => {
@@ -24,7 +24,12 @@ const ModalPdf = ({ propertyData, ...props }) => {
           <header className={styles.header}>
             <div className={styles.headerSection}>
               <div className={styles.logoAndName}>
-                <img src={LogoUnne} alt="logo-unne" width={200} height="auto" />
+                <img
+                  src={LogoAluen}
+                  alt="logo-aulen"
+                  width={200}
+                  height="auto"
+                />
               </div>
               <div>
                 <h2>{company?.name}</h2>

@@ -30,17 +30,6 @@ RewriteRule ^soy-inversionista/unidades-nuevas /index.html [L]
 # Ruta /soy-inversionist/administracion-de-arriendo
 RewriteRule ^soy-inversionista/administracion-de-arriendo /index.html [L]
 
-# Ruta /eres-corredor/asociate
-RewriteRule ^eres-corredor/asociate /index.html [L]
-
-# Ruta /eres-corredor/servicios-legales
-RewriteRule ^eres-corredor/servicios-legales /index.html [L]
-
-# Ruta /eres-corredor/academia-unne
-RewriteRule ^eres-corredor/academia-unne /index.html [L]
-
-# Ruta /propiedades/maps-propiedades
-RewriteRule ^eres-corredor/academia-unne /index.html [L]
 
 # Ruta /propiedades/propiedades-en-mapa
 RewriteRule ^propiedades/propiedades-en-mapa /index.html [L]

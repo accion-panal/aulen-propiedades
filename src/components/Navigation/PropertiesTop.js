@@ -24,7 +24,7 @@ const PropertiesTop = ({
       case '/soy-inversionista/unidades-nuevas':
         return 'Unidades nuevas';
       default:
-        return 'Unne';
+        return 'Aulen';
     }
   };
 

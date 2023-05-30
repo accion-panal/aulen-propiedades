@@ -1,6 +1,6 @@
 export const company = {
   statusId: 1,
-  companyId: 15,
+  companyId: 1,
 };
 
 export const paginationTopLimit = {
