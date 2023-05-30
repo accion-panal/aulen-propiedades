@@ -33,7 +33,7 @@ const PropertiesTop = ({
   }, [pathname]);
 
   return (
-    <div className=" py-5 px-3 border mb-4 bg-white w-full">
+    <div className="py-5 px-3 mb-4 bg-white w-full">
       <div className="flex justify-between items-center my-4">
         <div className="flex flex-col justify-start">
           <h1 className="text-2xl font-ligth">{getTitle(pathname)}</h1>

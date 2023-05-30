@@ -55,7 +55,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
 
   return (
     <Section>
-      <div className="flex relative flex-col w-[100%]">
+      <div className="flex relative flex-col w-[100%] mt-[50px]">
         <PropertiesTop
           {...{
             totalItems,
