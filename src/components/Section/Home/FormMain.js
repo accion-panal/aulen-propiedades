@@ -164,8 +164,6 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
     }
   };
 
-  console.log(formData);
-
   return (
     <Fragment>
       <div>
