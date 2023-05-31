@@ -98,12 +98,16 @@ const PropertyComponent = ({ property }) => {
 
           <InformationOnTheArea propertyData={property} />
 
-          {property?.installment_type === 'En blanco' ||
+          <div id="cotizar-contacto">
+            <MeetingSchedule />
+          </div>
+
+          {/* {property?.installment_type === 'En blanco' ||
           property?.installment_type === 'En verde' ? (
             <div id="cotizar-contacto">
               <MeetingSchedule />
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       )}
 

@@ -55,7 +55,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
 
   return (
     <Section>
-      <div className="flex relative flex-col w-[100%] mt-[50px]">
+      <div className="flex relative flex-col w-[100%] lg:w-[90%] xl:w-[80%] mt-[50px] mx-auto">
         <PropertiesTop
           {...{
             totalItems,
@@ -100,8 +100,8 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           {/* ADVANCED SEARCH FORM */}
           <div className="w-full md:w-1/5 bg-white border ml-0 xl:ml-2">
             <AdvancedSearch {...{ setProperties }} />
-            <div className="p-5">
-              <h3 className="bg-gray-50 p-2 text-xl">Proyectos destacados</h3>
+            <div className="p-3">
+              <h3 className="bg-gray-50 text-sm">Proyectos destacados</h3>
 
               <ul className="flex w-[100%] flex-wrap relative">
                 {outstandingProperties?.map((propiedad) => (

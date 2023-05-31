@@ -121,15 +121,14 @@
 }
 
 .btnSubmit[type='submit'] {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
   color: var(--color-white) !important;
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-md) !important;
+  font-size: var(--font-size-sm) !important;
   border: none;
   border-radius: var(--border-radius-2xl);
   cursor: pointer;
   transition: 0.3s all ease-in-out;
-  width: 100% !important;
 }
 
 .btnSubmit[type='submit']:hover {
