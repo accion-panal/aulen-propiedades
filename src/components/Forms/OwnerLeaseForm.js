@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 import ContactFormServices from '../../services/ContactFormServices';
 import { realtorData } from '../../constants/consts/realtor';
 
-const PublishingForm = () => {
+const OwnerLeaseForm = () => {
   const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline } = icons;
   const [formData, setFormData] = useState({
     name: '',
@@ -48,7 +48,7 @@ const PublishingForm = () => {
   };
 
 
-    /** Update Email */
+    /** Update phone */
   const handlePhone = (phone) => {
     setFormData({
       ...formData,
@@ -60,12 +60,12 @@ const PublishingForm = () => {
     // console.log(data);
   };
   /** Update CHECKBOX */
-  const handleTermsAndConditions = (ev) => {
+  const handleVerification = (ev) => {
     setFormData({
-      ...formData,
-      terms: ev.target.checked,
+        ...formData,
+        terms: ev.target.checked,
     });
-  };
+};
 
   /** TOAST */
   const showToastSuccessMsg = (msg) => {
@@ -122,9 +122,10 @@ const PublishingForm = () => {
         );
         return;
     }
+
     try {
         setLoading(true);
-        const response = await ContactFormServices.sendOwnerSell(
+        const response = await ContactFormServices.sendOwnerLease(
             formData?.name,
             formData?.phone,
             formData?.email, 
@@ -205,12 +206,14 @@ const PublishingForm = () => {
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check
-              type="checkbox"
+               type="checkbox"
+               id="terms"
+               name="terms"
               label="Al continuar estás aceptando los términos y condiciones y la
             política de privacidad."
               className={styles.formCheck}
               checked={formData.terms}
-              onChange={handleTermsAndConditions}
+              onChange={handleVerification}
             />
           </Form.Group>
 
@@ -239,18 +242,20 @@ const PublishingForm = () => {
                 value="Send"
                 className={styles.btnSubmit}
               >
-                Quiero vender
+                Quiero arrendar
               </Button>
             </Form.Group>
           </Col>
-        </Form>
-
-        <div className={stylesToast.toastContainer}>
+          <div className={stylesToast.toastContainer}>
           <ToastComponent />
         </div>
+        </Form>
+
+       
+      
       </Fade>
     </Fragment>
   );
 };
 
-export default PublishingForm;
+export default OwnerLeaseForm;

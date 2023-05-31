@@ -37,19 +37,19 @@
   text-align: center;
 }
 
-.form__header > h2,
-.form__header > h3 {
+.form__header>h2,
+.form__header>h3 {
   font-weight: var(--font-weight-bold, 700);
 }
 
-.form__header > h2 {
+.form__header>h2 {
   /* font-weight: var(--font-weight-extra-bold, 800); */
   font-size: var(--font-size-xl, 1.4rem);
   text-align: start;
   width: 100%;
 }
 
-.form__header > h3 {
+.form__header>h3 {
   font-size: var(--font-size-sm, 0.8rem);
   text-align: start;
   width: 100%;
@@ -95,7 +95,7 @@
   width: 90%;
 }
 
-.form__inputs > div > input {
+.form__inputs>div>input {
   all: unset;
 
   background-color: var(--color-white, white);
@@ -106,7 +106,7 @@
   width: 100%;
 }
 
-.form__inputs > div > input::placeholder {
+.form__inputs>div>input::placeholder {
   font-weight: var(--font-weight-bold, 700);
   color: var(--color-dark, #252525);
 }
@@ -114,19 +114,20 @@
 /* END MAIN */
 
 /* LABEL */
-.form__inputs > label {
+.form__inputs>label {
   margin-top: 1rem;
   font-size: var(--font-size-sm, 0.8rem);
   font-weight: var(--font-weight-bold, 700);
   max-width: 315px;
 }
 
-.form__inputs > label > input {
+.form__inputs>label>input {
   align-self: flex-start;
   margin-top: 0.85%;
   border: none;
   width: 36px;
 }
+
 /* END LABEL */
 
 /* ICON */
