@@ -3,9 +3,11 @@ import { Fade } from 'react-awesome-reveal';
 import FeaturesCard from './FeaturesCard';
 import Steps from './Steps';
 import PublishingForm from '../../../Forms/PublishingForm';
+import OwnerLeaseForm from '../../../Forms/OwnerLeaseForm';
 import { FeaturesData } from '../../../../data/featuresCard';
 import { StepsData } from '../../../../data/stepsLease';
 import { publishingFormData } from '../../../../data/publishingForm';
+
 import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/WhyLease/WhyLease.module.css';
 
 export const WhyLease = () => {
@@ -30,7 +32,7 @@ export const WhyLease = () => {
           </Fade>
         </div>
       </div>
-      <PublishingForm formData={publishingFormData[0]} />
+      <OwnerLeaseForm formData={publishingFormData[0]} />
     </main>
   );
 };

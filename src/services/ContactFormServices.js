@@ -67,6 +67,7 @@ const ContactFormServices = {
         Nombre: name,
         Correo: userEmail,
         Telefono: phone,
+        
       },
       {
         headers: {
@@ -77,6 +78,111 @@ const ContactFormServices = {
     );
     return response.data;
   },
+
+  //Formulario soy propietario quiero vender
+  sendOwnerSell: async (name, userEmail, phone, realtorEmail) => {
+    const response = await axios.post(
+      `https://formsubmit.co/ajax/${realtorEmail}`,
+      {
+        Nombre: name,
+        Correo: userEmail,
+        Telefono: phone,
+        Mensaje: 'Es propietario y quiere vender',
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+    );
+    return response.data;
+  },
+
+
+    //Formulario soy propietario quiero vender
+    sendOwnerSell: async (name, userEmail, phone, realtorEmail) => {
+      const response = await axios.post(
+        `https://formsubmit.co/ajax/${realtorEmail}`,
+        {
+          Nombre: name,
+          Correo: userEmail,
+          Telefono: phone,
+          Mensaje: 'Es propietario y quiere vender',
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        }
+      );
+      return response.data;
+    },
+
+    //Formulario soy propietario quiero arrendar
+    sendOwnerLease: async (name, userEmail, phone, realtorEmail) => {
+      const response = await axios.post(
+          `https://formsubmit.co/ajax/${realtorEmail}`,
+          {
+            Nombre: name,
+            Correo: userEmail,
+            Telefono: phone,
+            Mensaje: 'Es propietario y quiere arrendar',
+          },
+          {
+            headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        }
+      );
+      return response.data;
+    },
+
+
+    //Formulario Administracion de arriendo
+    sendOwnerInfo: async (name, phone, userEmail, realtorEmail) => {
+      const response = await axios.post(
+          `https://formsubmit.co/ajax/${realtorEmail}`,
+          {
+            Nombre: name,
+            Correo: userEmail,
+            Telefono: phone,
+            Mensaje: 'Es propietario y quiere obtener información',
+          },
+          {
+            headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        }
+      );
+      return response.data;
+    },  
+
+
+
+
+    //Formulario Unidades de remate
+    sendUnitAuctionForm: async (name, phone, userEmail, realtorEmail) => {
+      const response = await axios.post(
+          `https://formsubmit.co/ajax/${realtorEmail}`,
+          {
+            Nombre: name,
+            Correo: userEmail,
+            Telefono: phone,
+            Mensaje: 'Es inversionista y quiere más información en las unidades de remate',
+          },
+          {
+            headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        }
+      );
+      return response.data;
+    }, 
 
   // Formulario Unidades nuevas
   sendContactUnidad: async (

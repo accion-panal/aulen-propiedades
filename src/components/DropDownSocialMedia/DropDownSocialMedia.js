@@ -20,7 +20,15 @@ const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
           <li className={`${styles.msLi} ${styles.msLi2} `}>
             <a href="https://www.whatsapp.com/?lang=es" target="_blank">
               <span className="fa fa-flask">
-                <AiOutlineWhatsApp />
+                <AiOutlineWhatsApp 
+                  style={{
+                    fontSize: '1.8rem',
+                    position: 'relative',
+                    top: '.25rem',
+                    left: '.10rem',
+                    right: '.80rem',
+                  }}
+                />
               </span>
             </a>
           </li>
@@ -35,7 +43,15 @@ const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
               }}
             >
               <span className="fa fa-fort-awesome">
-                <BsTelephoneFill />
+                <BsTelephoneFill
+                   style={{
+                    fontSize: '1.9rem',
+                    position: 'center',
+                    top: '.15rem',
+                    left: '.10rem',
+                    right: '.10rem',
+                  }}
+                 />
               </span>
             </a>
           </li>
@@ -44,10 +60,11 @@ const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
               <label className="ms-menu-toggle-lbl" htmlFor="ms-menu">
                 <BsPlusLg
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: '1.9rem',
                     color: '#fff',
                     position: 'relative',
-                    top: '.45rem',
+                    top: '.90rem',
+                    left: '.90rem',
                   }}
                 />
               </label>

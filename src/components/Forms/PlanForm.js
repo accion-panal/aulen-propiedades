@@ -13,63 +13,64 @@ import Col from 'react-bootstrap/Col';
 
 /** API services */
 import ContactFormServices from '../../services/ContactFormServices';
+import { realtorData } from '../../constants/consts/realtor';
 
 const PlanFrom = ({ props }) => {
-  const [serverErrorMsg, setServerErrorMsg] = useState('');
+ const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline, GrClose } = icons;
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    action: '',
-    termsAndConditions: false,
-    message: '',
-    subject: '',
-    lastName: '',
-    meetingDate: new Date(),
+    email: '',
+    terms: false,
   });
-  const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline, GrClose } = icons;
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState({
+    allFieldRequierd: '',
+    serverEmailError: '',
+  });
 
-  const handleName = (ev) =>
-    setFormData({ ...formData, name: ev.target.value });
 
-  const handleEmail = (ev) =>
-    setFormData({ ...formData, email: ev.target.value });
+  
+  /** Update Name */
+    const handleName = (name) => {
+    setFormData({ 
+      ...formData,
+      name: name,
+     });
+    };
 
-  const handlePhone = (ev) =>
-    setFormData({ ...formData, phone: ev.target.value });
 
-  const handleAction = (ev) =>
-    setFormData({ ...formData, action: ev.target.value });
-
-  const handleMessage = (ev) => {
-    setFormData({ ...formData, message: ev.target.value });
-  };
-
-  const handleSubject = (ev) => {
-    setFormData({ ...formData, subject: ev.target.value });
-  };
-
-  const handleTermsAndConditions = (ev) =>
+   /** Update Email */
+    const handlePhone = (phone) => {
     setFormData({
       ...formData,
-      termsAndConditions: !formData.termsAndConditions,
-      message: ev.target.value === '' ? '' : 'Solicitud de información',
-      subject: ev.target.value === '' ? '' : 'Solicitud de información',
-    });
+      phone: phone,
+      });
+    };
 
-  const resetForm = () => {
+
+
+    /** Update Email */
+    const handleEmail = (email) => {
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      action: '',
-      termsAndConditions: false,
-      message: '',
-      subject: '',
-      lastName: '',
-      meetingDate: new Date(),
-    });
+      ...formData,
+      email: email,
+      });
+    };
+  
+
+
+  const onSubmit = (data) => {
+    // console.log(data);
   };
+  /** Update CHECKBOX */
+  const handleVerification = (ev) => {
+    setFormData({
+        ...formData,
+        terms: ev.target.checked,
+      });
+    };
+
 
   const showToastSuccessMsg = (msg) => {
     toast.success(msg, {
@@ -108,27 +109,53 @@ const PlanFrom = ({ props }) => {
       progress: undefined,
       theme: 'light',
     });
-  };
+  };  
+
 
   /** On form submit */
-  const onFormSubmit = async (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    try {
-      const response = await ContactFormServices.addContactForm(formData);
-      if (
-        formData.name === '' ||
-        formData.email === '' ||
-        formData.phone === ''
-      ) {
-        showToastErrorMsg('Todos los campos son obligatorios');
-      } else {
-        showToastSuccessMsg(response.message);
-        resetForm();
-      }
-    } catch (error) {
-      setServerErrorMsg(error.response);
-      showToastWarningMsg('Ocurrio un error al enviar el formulario');
+    if(
+      [
+        formData?.name,
+        formData?.phone,
+        formData?.email,
+      ].includes('') ||
+      formData.terms === false
+    ) {
+      showToastErrorMsg(
+        'Todos los campos son obligatorios, y debes aceptar los terminos y condiciones'
+      );
+      return;
     }
+    
+    try{
+      setLoading(true);
+      const response = await ContactFormServices.sendOwnerInfo(
+        formData?.name,
+        formData?.phone,
+        formData?.email, 
+        realtorData?.email
+      );
+      
+      if ((await response.success) === 'true') {
+          setLoading(false);
+          setErrorMsg({
+            allFieldRequierd: '',
+            serverEmailError: '',
+          });
+          showToastSuccessMsg(
+            `Solicitud enviada exitosamente, dentro de poco de contactaremos`
+          );
+          setTimeout(() => {
+            window.location.reload();
+          }, 4000);
+        }
+    } catch (error){
+      showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
+      console.log('error', error);
+    }
+
   };
 
   return (
@@ -147,7 +174,7 @@ const PlanFrom = ({ props }) => {
           ''
         )}
 
-        <Form className={styles.form} onSubmit={onFormSubmit} id="planForm">
+        <Form className={styles.form} onSubmit={handleSubmit} id="planForm">
           <h3>¡Despreocúpate por tú propiedad de inversión!</h3>
           <p>Completa el formulacio y entérate como</p>
           <Form.Group className={styles.formGroup} controlId="formBasicName">
@@ -159,8 +186,8 @@ const PlanFrom = ({ props }) => {
               className={styles.formControl}
               placeholder="Nombre"
               name="name"
-              value={formData.name}
-              onChange={handleName}
+              value={formData?.name}
+              onChange={(ev) => handleName(ev.target.value)}
             />
           </Form.Group>
 
@@ -173,8 +200,10 @@ const PlanFrom = ({ props }) => {
               className={styles.formControl}
               placeholder="Teléfono celular"
               name="phone"
-              value={formData.phone}
-              onChange={handlePhone}
+              pattern="[0-9]{9}"
+              maxLength="9"
+              value={formData?.phone}
+              onChange={(ev) => handlePhone(ev.target.value)}
             />
           </Form.Group>
 
@@ -187,8 +216,8 @@ const PlanFrom = ({ props }) => {
               className={styles.formControl}
               placeholder="Correo electrónico"
               name="email"
-              value={formData.email}
-              onChange={handleEmail}
+              value={formData?.email}
+              onChange={(ev) => handleEmail(ev.target.value)}
             />
           </Form.Group>
 
@@ -202,8 +231,8 @@ const PlanFrom = ({ props }) => {
             política de privacidad."
               className={styles.formCheck}
               name="termsAndConditions"
-              checked={formData.termsAndConditions}
-              onChange={handleTermsAndConditions}
+              checked={formData.terms}
+              onChange={handleVerification}
             />
           </Form.Group>
 
@@ -211,19 +240,17 @@ const PlanFrom = ({ props }) => {
             <Form.Group className={styles.formGroup}>
               <Button
                 type="submit"
-                onClick={() => {
-                  setFormData({ ...formData, action: 'vender' });
-                }}
+                value="Send"
                 className={styles.btnSubmit}
               >
-                {/* EN DESARROLLO ❌  */}
                 Quiero que me contacten
               </Button>
             </Form.Group>
           </Col>
+          <ToastComponent />
         </Form>
 
-        <ToastComponent />
+        
       </div>
     </Fragment>
   );

@@ -7,6 +7,7 @@ import styles from '../../styles/Forms/InvestmentForm.module.css';
 
 /** API services */
 import ContactFormServices from '../../services/ContactFormServices';
+import { realtorData } from '../../constants/consts/realtor';
 
 const InvestmentForm = ({ formData, isForm }) => {
   const [serverErrorMsg, setServerErrorMsg] = useState('');
@@ -14,16 +15,19 @@ const InvestmentForm = ({ formData, isForm }) => {
     name: '',
     email: '',
     phone: '',
-    action: '',
-    termsAndConditions: false,
-    message: '',
-    subject: '',
-    lastName: '',
-    meetingDate: new Date(),
   });
 
   const { h2, h3, btn } = formData;
   const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline } = icons;
+
+
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState({
+    allFieldRequierd: '',
+    serverEmailError: '',
+  });
+ 
+
 
   const handleName = (ev) => {
     setData({ ...data, name: ev.target.value });
@@ -37,40 +41,8 @@ const InvestmentForm = ({ formData, isForm }) => {
     setData({ ...data, phone: ev.target.value });
   };
 
-  const handleAction = (ev) => {
-    setData({ ...data, action: ev.target.value });
-  };
 
-  const handleMessage = (ev) => {
-    setData({ ...formData, message: ev.target.value });
-  };
 
-  const handleSubject = (ev) => {
-    setData({ ...formData, subject: ev.target.value });
-  };
-
-  const handleTermsAndConditions = (ev) => {
-    setData({
-      ...data,
-      termsAndConditions: !data.termsAndConditions,
-      message: ev.target.value === '' ? '' : 'Solicitud de información',
-      subject: ev.target.value === '' ? '' : 'Solicitud de información',
-    });
-  };
-
-  const resetForm = () => {
-    setData({
-      name: '',
-      email: '',
-      phone: '',
-      action: '',
-      termsAndConditions: false,
-      message: '',
-      subject: '',
-      lastName: '',
-      meetingDate: new Date(),
-    });
-  };
 
   const showToastSuccessMsg = (msg) => {
     toast.success(msg, {
@@ -111,22 +83,50 @@ const InvestmentForm = ({ formData, isForm }) => {
     });
   };
 
-  /** On form submit */
+
   const onFormSubmit = async (ev) => {
     ev.preventDefault();
-    try {
-      // const response = await ContactFormServices.addContactForm(data);
-      // if (data.name === '' || data.email === '' || data.phone === '') {
-      //   showToastErrorMsg('Todos los campos son obligatorios');
-      // } else {
-      //   showToastSuccessMsg(response.message);
-      //   resetForm();
-      // }
-    } catch (error) {
-      setServerErrorMsg(error.response);
-      showToastWarningMsg('Ocurrio un error al enviar el formulario');
+    if (
+        [
+          data?.name,
+          data?.phone,
+          data?.email,
+        ].includes('') ||
+        formData.terms === false
+    ) {
+        showToastErrorMsg(
+            'Todos los campos son obligatorios, y debes aceptar los terminos y condiciones'
+        );
+        return;
     }
-  };
+
+    try {
+        setLoading(true);
+        const response = await ContactFormServices.sendUnitAuctionForm(
+            data?.name,
+            data?.phone,
+            data?.email, 
+            realtorData?.email
+        );
+
+        if ((await response.success) === 'true') {
+            setLoading(false);
+            setErrorMsg({
+                allFieldRequierd: '',
+                serverEmailError: '',
+            });
+            showToastSuccessMsg(
+                `Solicitud enviada exitosamente, dentro de poco de contactaremos`
+            );
+            setTimeout(() => {
+                window.location.reload();
+            }, 4000);
+        }
+    } catch (error) {
+        showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
+        console.log('error', error);
+    }
+};
 
   return (
     <Fragment>
@@ -165,6 +165,8 @@ const InvestmentForm = ({ formData, isForm }) => {
                     className={styles.formControl}
                     placeholder="Teléfono celular"
                     name="phone"
+                    pattern="[0-9]{9}"
+                    maxLength="9"
                     value={data.phone}
                     onChange={handlePhone}
                   />

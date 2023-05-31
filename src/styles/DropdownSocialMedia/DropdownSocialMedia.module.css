@@ -30,6 +30,7 @@
   color: var(--color-dark) !important;
   cursor: pointer;
   z-index: 999;
+
 }
 
 @keyframes slideIn {
