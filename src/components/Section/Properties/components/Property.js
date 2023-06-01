@@ -101,13 +101,6 @@ const PropertyComponent = ({ property }) => {
           <div id="cotizar-contacto">
             <MeetingSchedule />
           </div>
-
-          {/* {property?.installment_type === 'En blanco' ||
-          property?.installment_type === 'En verde' ? (
-            <div id="cotizar-contacto">
-              <MeetingSchedule />
-            </div>
-          ) : null} */}
         </div>
       )}
 

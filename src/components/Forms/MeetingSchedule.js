@@ -23,7 +23,6 @@ const MeetingSchedule = () => {
   const [formData, setFormData] = useState({
     name: '',
     lastName: '',
-    meetingDate: new Date(),
     email: '',
     phone: '',
     action: '',
