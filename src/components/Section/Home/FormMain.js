@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from 'react';
+import React, { Fragment, useState } from 'react';
 import ToastComponent from '../../Toastify/ToastComponent';
 import { toast } from 'react-toastify';
 import { icons } from '../../Icons';
@@ -14,6 +14,7 @@ import Button from 'react-bootstrap/Button';
 
 /** API services */
 import ContactFormServices from '../../../services/ContactFormServices';
+import ContactApiFormServices from '../../../services/ContactApiFormServices';
 
 const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
   const [formData, setFormData] = useState({
@@ -141,6 +142,7 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
 
       setIsLoading(true);
       const response = await ContactFormServices.sendContactForm(
+        'Aulen Propiedades',
         formData?.name,
         formData?.email,
         formData?.phone,
@@ -148,7 +150,25 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
         realtorData?.email
       );
 
-      if ((await response.success) === 'true') {
+      // Main Form
+      const formDataFormatted = {
+        companyId: 1,
+        name: formData?.name,
+        email: formData?.email,
+        phone: formData?.phone,
+        action: formData?.action,
+        message: 'No definido',
+        subject: 'No definido',
+        termsAndConditions: formData.termsAndConditions,
+        lastName: 'No definido',
+        meetingDate: 'No definido',
+      };
+
+      const apiResponse = await ContactApiFormServices.addContactForm(
+        formDataFormatted
+      );
+
+      if (response.success === 'true' && apiResponse.status === 'ok') {
         setIsLoading(false);
         setErrorMsg({
           allFieldRequierd: '',
@@ -158,6 +178,9 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
         showToastSuccessMsg(
           `Solicitud enviada exitosamente, dentro de poco de contactaremos`
         );
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
