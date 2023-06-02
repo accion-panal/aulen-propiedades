@@ -117,30 +117,11 @@ const ContactFormServices = {
   },
 
   //Formulario soy propietario quiero vender
-  sendOwnerSell: async (name, userEmail, phone, realtorEmail) => {
+  sendOwnerSell: async (from, name, userEmail, phone, realtorEmail) => {
     const response = await axios.post(
       `https://formsubmit.co/ajax/${realtorEmail}`,
       {
-        Nombre: name,
-        Correo: userEmail,
-        Telefono: phone,
-        Mensaje: 'Es propietario y quiere vender',
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      }
-    );
-    return response.data;
-  },
-
-  //Formulario soy propietario quiero vender
-  sendOwnerSell: async (name, userEmail, phone, realtorEmail) => {
-    const response = await axios.post(
-      `https://formsubmit.co/ajax/${realtorEmail}`,
-      {
+        Desde: from,
         Nombre: name,
         Correo: userEmail,
         Telefono: phone,

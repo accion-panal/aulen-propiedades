@@ -367,7 +367,6 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
                     ) : (
                       haveAction2?.text
                     )}
-                    {/* {haveAction2?.text || ''} */}
                   </Button>
                 </Form.Group>
               </Col>
