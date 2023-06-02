@@ -212,7 +212,7 @@ const AdvancedSearch = ({ setProperties }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-b p-5">
+    <form onSubmit={handleSubmit} className="border-b p-4">
       <div className="flex flex-col mb-3">
         <label className="mb-1 text-gray-500">Tipo de Operación</label>
         <select

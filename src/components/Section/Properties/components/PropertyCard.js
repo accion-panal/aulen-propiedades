@@ -20,24 +20,26 @@ const PropertyCard = ({ data, isList }) => {
             ? 'h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover'
             : 'rounded-t-lg'
         }
-        src={image}
+        src={
+          image ??
+          'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg'
+        }
         alt={`top-img-${title}`}
+        width="full"
       />
 
-      <div className="p-5">
+      <div className="p-3">
+        {/* <div className="absolute top-0 z-50 bg-red-500">Arriendo</div> */}
         <span className="uppercase text-orange-500">Cod: {id}</span>
         <h5 className="mb-2 h-20 text-lg xl:text-lg font-bold text-gray-800">
           {truncateString(title || 'Titulo de propiedad no registrado', 60)}
         </h5>
-
         <p className="mb-3 font-normal text-sm text-gray-400">
           {address}, {commune}, {city}
         </p>
-
         <p className="mb-3 font-normal text-orange-500 text-end">
           {types?.[0]}: {parseToCLPCurrency(price)}
         </p>
-
         <Link
           to={`/propiedades/${id}?statusId=${company.statusId}&companyId=${company.companyId}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"

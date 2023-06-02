@@ -48,7 +48,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
         <h3>
           <Link
             to={`/propiedades/propiedades-en-mapa`}
-            className="flex w-1/6 uppercase items-center justify-center rounded-lg py-2 text-lg font-medium text-center text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300"
+            className="flex  uppercase items-center justify-center rounded-lg py-2 text-lg font-medium text-center text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300"
           >
             <FaMapMarkerAlt className="mr-2" /> Ver mapa
           </Link>

@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styles from '../../styles/Forms/MeetingSchedule.module.css';
 import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 import { realtorData } from '../../constants/consts/realtor';
+import { company } from '../../constants/consts/company';
 
 /** Bootstrap components */
 import Row from 'react-bootstrap/Row';
@@ -15,6 +16,7 @@ import Form from 'react-bootstrap/Form';
 
 /** API services */
 import ContactFormServices from '../../services/ContactFormServices';
+import ContactApiFormServices from '../../services/ContactApiFormServices';
 
 const MeetingSchedule = () => {
   const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline, BsCalendarCheck } =
@@ -134,10 +136,6 @@ const MeetingSchedule = () => {
         showToastErrorMsg('Todos los campos son obligatorios');
         return;
       }
-      if (!formData.meetingDate) {
-        showToastErrorMsg('Debes definir una fecha y hora de encuentro');
-        return;
-      }
 
       setIsLoading(true);
       const response = await ContactFormServices.sendContactMeetingForm(
@@ -150,7 +148,24 @@ const MeetingSchedule = () => {
         realtorData?.email // tu correo de prueba
       );
 
-      if ((await response.success) === 'true') {
+      const formDataFormatted = {
+        companyId: company.companyId,
+        name: formData?.name,
+        email: formData?.email,
+        phone: formData?.phone,
+        action: 'Agenda de reunión',
+        message: '...',
+        subject: '...',
+        termsAndConditions: true,
+        lastName: formData?.lastName,
+        meetingDate: 'No definida',
+      };
+
+      const apiResponse = await ContactApiFormServices.addContactForm(
+        formDataFormatted
+      );
+
+      if (response.success === 'true' && apiResponse.status === 'ok') {
         setIsLoading(false);
         setErrorMsg({
           allFieldRequierd: '',
@@ -160,6 +175,9 @@ const MeetingSchedule = () => {
         showToastSuccessMsg(
           `Solicitud enviada exitosamente, dentro de poco de contactaremos`
         );
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       }
     } catch (error) {
       setServerErrorMsg(error.response);
@@ -284,7 +302,7 @@ const MeetingSchedule = () => {
                       <span className="sr-only">Cargando...</span>
                     </div>
                   ) : (
-                    'Agenda una reunion'
+                    'Agenda una reunión'
                   )}
                 </button>
               </Form.Group>

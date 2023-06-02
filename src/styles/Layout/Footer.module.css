@@ -83,16 +83,16 @@
 }
 
 .navLinkFooter {
-  text-decoration: none;
-  color: var(--color-white);
+  text-decoration: none !important;
+  color: var(--color-white) !important;
 }
 
 .navLinkFooter:hover {
-  color: var(--color-light);
+  color: var(--color-light) !important;
 }
 
 .socialMediaTopInfo {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem !important;
 }
 
 .socialMediaTopInfo h3 {
@@ -112,24 +112,4 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.socialMediaNavLink {
-  margin: 2rem;
-  background-color: var(--color-white);
-  border-radius: 50%;
-  padding: 0.2rem 0.65rem;
-  text-align: center;
-  font-size: var(--font-size-2xl);
-  color: var(--color-pale-gray-dark);
-}
-
-.socialMediaNavLink .icon {
-  padding-bottom: 0.25rem;
-  font-size: var(--font-size-2xl);
-}
-
-.socialMediaNavLink:hover {
-  background-color: var(--color-light);
-  color: var(--color-dark-light);
 }
