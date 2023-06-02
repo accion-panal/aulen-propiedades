@@ -148,9 +148,6 @@ const OwnerLeaseForm = () => {
 
       const apiResponse = await ContactApiFormServices.addContactForm(formData);
 
-      console.log(response);
-      console.log(apiResponse);
-
       if (response.success === 'true' && apiResponse.status === 'ok') {
         setLoading(false);
         setErrorMsg({
@@ -170,15 +167,21 @@ const OwnerLeaseForm = () => {
       console.log('error', error);
     }
   };
+
   return (
     <Fragment>
       <Fade delay={200} direction="right" cascade>
-        <Form className={styles.form} onSubmit={handleSubmit} id="planForm">
+        <Form
+          name="FormSubmit"
+          className={styles.form}
+          onSubmit={handleSubmit}
+          id="planForm"
+        >
           <h2 className={styles.pusblishingFormH2}>
             ¡Despreocúpate por tu propiedad de inversión!
           </h2>
           <h3 className={styles.pusblishingFormH3}>
-            Completa el formulario y enterate como
+            COMPLETA EL FORMULARIO Y ENTÉRATE COMO
           </h3>
           <Form.Group className={styles.formGroup} controlId="formBasicName">
             <Form.Label className={styles.label}>
