@@ -7,7 +7,7 @@
 .investingCol {
   background-color: var(--color-light);
   border-radius: var(--border-radius-5xl);
-  height: 25rem;
+  height: 28rem;
 }
 
 .investingColContent {
@@ -60,19 +60,19 @@
 
 .consultationContainer {
   margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .consultationContainer .consultation {
   color: var(--color-white);
   background-color: var(--color-primary);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  text-decoration: none;
+  font-size: var(--font-size-lg);
+  padding: 0.3rem 1rem;
   text-transform: uppercase;
-  padding: 0.3rem 2rem;
   border-radius: var(--border-radius-3xl);
-  text-align: center;
-  white-space: nowrap;
 }
 
 .consultationContainer .consultation:hover {
@@ -103,6 +103,19 @@
 }
 
 @media screen and (min-width: 1920px) {
+  .consultationContainer {
+    justify-content: start;
+  }
+
+  .consultationContainer .consultation {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    padding: 0.3rem 2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
   .investingContainer {
     width: 55% !important;
   }

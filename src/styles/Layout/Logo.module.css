@@ -1,14 +1,6 @@
 .logo {
-  display: block;
-  margin: 0 auto;
-  background-size: 100% 100%;
-  width: 180px;
-  height: 180;
-}
-
-@media screen and (min-width: 992px) {
-  .logo {
-    width: 180px;
-    height: 180;
-  }
+  display: block !important;
+  margin: 0 auto !important;
+  width: 180px !important;
+  height: auto !important;
 }
