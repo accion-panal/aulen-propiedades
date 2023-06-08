@@ -9,7 +9,7 @@ import styles from '../../styles/Forms/InvestmentForm.module.css';
 import ContactFormServices from '../../services/ContactFormServices';
 import ContactApiFormServices from '../../services/ContactApiFormServices';
 import { realtorData } from '../../constants/consts/realtor';
-import { company } from '../../constants/consts/company';
+import { companyForm } from '../../constants/consts/company';
 
 const InvestmentForm = ({ formData, isForm }) => {
   const [serverErrorMsg, setServerErrorMsg] = useState('');
@@ -18,7 +18,7 @@ const InvestmentForm = ({ formData, isForm }) => {
     phone: '',
     email: '',
     termsAndConditions: true,
-    companyId: company.companyId,
+    companyId: companyForm.id,
     action: 'Contacto desde Unidades en Remate',
     message: '...',
     subject: '...',
@@ -92,7 +92,7 @@ const InvestmentForm = ({ formData, isForm }) => {
       phone: '',
       email: '',
       termsAndConditions: false,
-      companyId: company.companyId,
+      companyId: companyForm.id,
       action: 'Quiero que me contacten (Administración de arriendo)',
       message: '...',
       subject: '...',

@@ -3,7 +3,7 @@ import ToastComponent from '../Toastify/ToastComponent';
 import { Fade } from 'react-awesome-reveal';
 import { icons } from '../Icons';
 import { toast } from 'react-toastify';
-import { company } from '../../constants/consts/company';
+import { company, companyForm } from '../../constants/consts/company';
 import styles from '../../styles/Section/Inicio/Form.module.css';
 import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 
@@ -24,7 +24,7 @@ const OwnerLeaseForm = () => {
     phone: '',
     email: '',
     termsAndConditions: false,
-    companyId: company.companyId,
+    companyId: companyForm.id,
     action: 'Soy Propietario y quiero arrendar',
     message: '...',
     subject: '...',
@@ -116,7 +116,7 @@ const OwnerLeaseForm = () => {
       phone: '',
       email: '',
       termsAndConditions: false,
-      companyId: company.companyId,
+      companyId: companyForm.id,
       action: 'Soy Propietario y quiero arrendar',
       message: '...',
       subject: '...',

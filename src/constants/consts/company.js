@@ -3,6 +3,10 @@ export const company = {
   companyId: 1,
 };
 
+export const companyForm = {
+  id: 19,
+};
+
 export const paginationTopLimit = {
   limit: 20,
   topLimit: 999999999,

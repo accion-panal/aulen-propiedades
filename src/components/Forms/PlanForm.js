@@ -5,7 +5,7 @@ import { icons } from '../Icons';
 import styles from '../../styles/Forms/PlanForm.module.css';
 import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 import stylesModal from '../../styles/Forms/PlanForm.module.css';
-import { company } from '../../constants/consts/company';
+import { company, companyForm } from '../../constants/consts/company';
 
 /** Bootstrap components */
 import Button from 'react-bootstrap/Button';
@@ -24,7 +24,7 @@ const PlanFrom = ({ props }) => {
     phone: '',
     email: '',
     termsAndConditions: false,
-    companyId: company.companyId,
+    companyId: companyForm.id,
     action: 'Quiero que me contacten (Administración de arriendo)',
     message: '...',
     subject: '...',
@@ -114,7 +114,7 @@ const PlanFrom = ({ props }) => {
       phone: '',
       email: '',
       termsAndConditions: false,
-      companyId: company.companyId,
+      companyId: companyForm.id,
       action: 'Quiero que me contacten (Administración de arriendo)',
       message: '...',
       subject: '...',

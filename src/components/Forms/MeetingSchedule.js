@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styles from '../../styles/Forms/MeetingSchedule.module.css';
 import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 import { realtorData } from '../../constants/consts/realtor';
-import { company } from '../../constants/consts/company';
+import { companyForm } from '../../constants/consts/company';
 
 /** Bootstrap components */
 import Row from 'react-bootstrap/Row';
@@ -149,7 +149,7 @@ const MeetingSchedule = () => {
       );
 
       const formDataFormatted = {
-        companyId: company.companyId,
+        companyId: companyForm.id,
         name: formData?.name,
         email: formData?.email,
         phone: formData?.phone,

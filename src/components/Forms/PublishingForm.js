@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 import ContactFormServices from '../../services/ContactFormServices';
 import ContactApiFormServices from '../../services/ContactApiFormServices';
 import { realtorData } from '../../constants/consts/realtor';
-import { company } from '../../constants/consts/company';
+import { company, companyForm } from '../../constants/consts/company';
 
 const PublishingForm = () => {
   const { FaUserAlt, BsTelephoneFill, MdOutlineMailOutline } = icons;
@@ -24,7 +24,7 @@ const PublishingForm = () => {
     phone: '',
     email: '',
     termsAndConditions: false,
-    companyId: company.companyId,
+    companyId: companyForm.id,
     action: 'Soy Propietario y quiero vender',
     message: '...',
     subject: '...',
@@ -116,7 +116,7 @@ const PublishingForm = () => {
       phone: '',
       email: '',
       termsAndConditions: false,
-      companyId: company.companyId,
+      companyId: companyForm.id,
       action: 'Soy Propietario y quiero vender',
       message: '...',
       subject: '...',
@@ -169,7 +169,12 @@ const PublishingForm = () => {
   return (
     <Fragment>
       <Fade delay={200} direction="right" cascade>
-        <Form name="FormSubmit" className={styles.form} onSubmit={handleSubmit} id="planForm">
+        <Form
+          name="FormSubmit"
+          className={styles.form}
+          onSubmit={handleSubmit}
+          id="planForm"
+        >
           <h2 className={styles.pusblishingFormH2}>
             ¡Despreocúpate por tu propiedad de inversión!
           </h2>
