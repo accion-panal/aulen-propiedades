@@ -12,13 +12,13 @@ export const FeaturesData = [
   {
     id: 2,
     h2: 'ESPECIALISTAS',
-    p: 'Te brindamos la mejor atención de la mano de especialistas del corretaje inmobiliario y profesionales del área lega.',
+    p: 'Te brindamos la mejor atención de la mano de especialistas del corretaje inmobiliario y profesionales del área legal.',
     img: <VscPerson className={`${styles.card__img}`} />,
   },
   {
     id: 3,
     h2: 'RAPIDEZ',
-    p: 'Arrendamos tu proipedad en tiempo récord, para que no tengas pérdidas en tu inversión',
+    p: 'Arrendamos tu propiedad en tiempo récord, para que no tengas pérdidas en tu inversión',
     img: <RiTimerFlashLine className={`${styles.card__img}`} />,
   },
 ];

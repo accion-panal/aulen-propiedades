@@ -12,8 +12,7 @@ export const HeaderSection = () => {
           Nuestro modelo de Inversión remate seguro
         </h1>
         <h2 className={`${styles.header__h2}`}>
-          Único en el mercado que genera hasta un 15% de rentabilidad por
-          operación
+          Único en el mercado, que genera hasta un 15% de rentabilidad por operación
         </h2>
         <div
           className={`${styles.customRow} ${styles.investmentModelContainer}`}

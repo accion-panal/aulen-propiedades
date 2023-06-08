@@ -28,9 +28,7 @@ const StepsSection = () => {
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
               <BsCardChecklist className={`${styles.stepIcon}`} />
               <p>
-                Publicamos tu propiedad en los 43 portales inmobiliarios mas
-                importantes del país, con sesión de fotos y videos profesionales
-                para que tu activo tenga el mayor alcance.
+              Publicamos tu propiedad en los 43 portales inmobiliarios más importantes del país con sesión de fotos y vídeos profesionales para que tu activo tenga el mayor alcance.
               </p>
             </div>
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
@@ -43,9 +41,7 @@ const StepsSection = () => {
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
               <RiMoneyDollarCircleLine className={`${styles.stepIcon}`} />
               <p>
-                ¡Conseguimos a tu comprador ideal! y te acompañamos en todo el
-                proceso de postventa junto al respaldo de nuestro equipo legal
-                hasta la entrega de la propiedad y liberación de valores.
+              ¡Conseguimos a tu comprador ideal! Y te acompañamos en todo el proceso de posventa junto al respaldo de nuestro equipo legal hasta la entrega de la propiedad y liberación de valores.
               </p>
             </div>
           </div>

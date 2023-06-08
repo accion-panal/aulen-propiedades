@@ -12,7 +12,7 @@ const StepsToRentDepartment = () => {
   return (
     <Row className={styles.rowContainer}>
       <Col xl={8} className={styles.col}>
-        <HeaderSection titleSection="¡Manten tú depa ocupado y a tí desocupado!" />
+        <HeaderSection titleSection="¡Mantén tú depa ocupado y a ti desocupado!" />
 
         <Row className={styles.rowItems}>
           {stepsToRentDepartmentData &&

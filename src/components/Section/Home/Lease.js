@@ -8,7 +8,7 @@ const Lease = () => {
   return (
     <Fade duration={400} delay={100} direction="top">
       <div className="">
-        <HeaderSection titleSection="¡Nos encargamos de tú arriendo por tí!" />
+        <HeaderSection titleSection="¡Nos encargamos de tu arriendo por ti!" />
 
         <div className={styles.container}>
           {leaseData?.length > 0

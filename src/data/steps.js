@@ -6,17 +6,17 @@ const { MdEngineering, FaTabletAlt, MdOutlineManageAccounts, GiReceiveMoney } =
 export const stepsData = [
   {
     id: 1,
-    title: 'Estratégia',
+    title: 'Estrategia',
     icon: <MdEngineering />,
     description:
-      'Presentamos un estudioestratégico, de acuerdo a tusobjetivos y necesidades',
+      'Presentamos un estudio estratégico, de acuerdo a tus objetivos y necesidades',
   },
   {
     id: 2,
     title: 'Publicamos',
     icon: <FaTabletAlt />,
     description:
-      'Sesiòn de fotos y video profesional y publicamos gratis tu propiedad en43 portales inmobiliarios',
+      'Sesión de fotos y video profesional y publicamos gratis tu propiedad en 43 portales inmobiliarios',
   },
   {
     id: 3,
