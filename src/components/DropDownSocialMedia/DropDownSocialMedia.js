@@ -4,6 +4,8 @@ import styles from '../../styles/DropdownSocialMedia/DropdownSocialMedia.module.
 
 const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
   const { BsTelephoneFill, AiOutlineWhatsApp, BsPlusLg } = icons;
+  const phoneNumber = '56964691800';
+  const whatsappBusinessLink = `https://wa.me/${phoneNumber}`;
 
   return (
     <span className={styles.dropdownIconToggle}>
@@ -18,9 +20,13 @@ const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
           <div className={styles.bgChange}></div>
 
           <li className={`${styles.msLi} ${styles.msLi2} `}>
-            <a href="https://www.whatsapp.com/?lang=es" target="_blank">
+            <a
+              href={whatsappBusinessLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="fa fa-flask">
-                <AiOutlineWhatsApp 
+                <AiOutlineWhatsApp
                   style={{
                     fontSize: '1.8rem',
                     position: 'relative',
@@ -44,14 +50,14 @@ const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
             >
               <span className="fa fa-fort-awesome">
                 <BsTelephoneFill
-                   style={{
+                  style={{
                     fontSize: '1.9rem',
                     position: 'center',
                     top: '.15rem',
                     left: '.10rem',
                     right: '.10rem',
                   }}
-                 />
+                />
               </span>
             </a>
           </li>
