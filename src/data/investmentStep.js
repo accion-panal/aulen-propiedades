@@ -14,7 +14,7 @@ export const investmentStepData = [
   },
   {
     id: 2,
-    h3: 'Buscamos la mejor porpiedad en remate para ti',
+    h3: 'Buscamos la mejor propiedad en remate para ti',
     p: 'Se realiza el remate y se adjudica el inmueble para posteriormente pactar la rentabilidad que genera.',
     img: <BiBuildingHouse className={`${styles.imgStep}`} />,
     style: styles.divContainer2,

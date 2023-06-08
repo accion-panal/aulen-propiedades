@@ -7,7 +7,7 @@ export const benefitsData = [
   {
     id: 2,
     span: 'SIMULA',
-    p: 'Elige el activo inmobiliario que mas te guste y simula tu inversión de manera personalizada para proceder con la reserva de la propiedad',
+    p: 'Elige el activo inmobiliario que más te guste y simula tu inversión de manera personalizada para proceder con la reserva de la propiedad',
   },
   {
     id: 3,

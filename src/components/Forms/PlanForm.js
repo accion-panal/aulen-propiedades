@@ -189,8 +189,8 @@ const PlanFrom = ({ props }) => {
           onSubmit={handleSubmit}
           id="planForm"
         >
-          <h3>¡Despreocúpate por tú propiedad de inversión!</h3>
-          <p>COMPLETA EL FORMULARIO Y ENTÉRATE COMO</p>
+          <h3>¡Despreocúpate por tu propiedad de inversión!</h3>
+          <p>COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO</p>
           <Form.Group className={styles.formGroup} controlId="formBasicName">
             <Form.Label className={styles.label}>
               <FaUserAlt />

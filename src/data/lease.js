@@ -11,8 +11,8 @@ export const leaseData = [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
       'Ofertas formales garantizadas. ',
-      'Cerramos tu arriendo sin necesidad de salir de tu.',
-      'casa.Acta de entrega con respaldo fotográfico.',
+      'Cerramos tu arriendo sin necesidad de salir de tú casa.',
+      'Acta de entrega con respaldo fotográfico.',
     ],
   },
   {
@@ -23,8 +23,8 @@ export const leaseData = [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
       'Ofertas formales garantizadas. ',
-      'Cerramos tu arriendo sin necesidad de salir de tu.',
-      'casa.Acta de entrega con respaldo fotográfico.',
+      'Cerramos tu arriendo sin necesidad de salir de tú casa.',
+      'Acta de entrega con respaldo fotográfico.',
     ],
   },
   {
@@ -35,8 +35,8 @@ export const leaseData = [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
       'Ofertas formales garantizadas. ',
-      'Cerramos tu arriendo sin necesidad de salir de tu.',
-      'casa.Acta de entrega con respaldo fotográfico.',
+      'Cerramos tu arriendo sin necesidad de salir de tú casa.',
+      'Acta de entrega con respaldo fotográfico.',
     ],
   },
 ];

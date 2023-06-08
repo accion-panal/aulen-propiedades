@@ -22,8 +22,8 @@ export const stepsToRentDepartmentData = [
   },
   {
     id: 2,
-    desc: 'Arrendamos tú propiedad',
-    span: 'en tiempo record',
+    desc: 'Arrendamos tu propiedad',
+    span: 'en tiempo récord',
     icon: <BiTimer />,
     extraIcon: {
       set: true,
@@ -33,7 +33,7 @@ export const stepsToRentDepartmentData = [
   {
     id: 3,
     desc: 'Gestionamos las reparaciones',
-    span: 'de tú propiedad',
+    span: 'de tu propiedad',
     icon: <FaTools />,
   },
   {
@@ -48,7 +48,7 @@ export const stepsToRentDepartmentData = [
   },
   {
     id: 5,
-    desc: 'Recibe el pago de tú arriendo',
+    desc: 'Recibe el pago de tu arriendo',
     span: 'los primeros 5 días de cada mes',
     icon: <FaHandHoldingUsd />,
   },

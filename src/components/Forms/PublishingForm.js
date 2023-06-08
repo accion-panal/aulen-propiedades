@@ -174,7 +174,7 @@ const PublishingForm = () => {
             ¡Despreocúpate por tu propiedad de inversión!
           </h2>
           <h3 className={styles.pusblishingFormH3}>
-            COMPLETA EL FORMULARIO Y ENTÉRATE COMO
+            COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO
           </h3>
           <Form.Group className={styles.formGroup} controlId="formBasicName">
             <Form.Label className={styles.label}>
