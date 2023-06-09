@@ -19,7 +19,7 @@ const Principal = () => {
 
       <Row className={styles.rowPlanForm}>
         <Col sm={12} lg={6} className={styles.principalCol}>
-          <Fade delay={200} direction="left" cascade>
+          <Fade cascade>
             <img
               width="100%"
               src={Packaging}
@@ -30,7 +30,7 @@ const Principal = () => {
         </Col>
 
         <Col sm={12} lg={6} className={styles.principalCol}>
-          <Fade delay={200} direction="right" cascade>
+          <Fade cascade>
             <Form
               titleContentForm="Vende o arrienda tu propiedad rápido y sin complicaciones"
               textAlign="center"

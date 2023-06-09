@@ -15,7 +15,7 @@ const Plans = () => {
       <Col md={12} xl={9} className={styles.col}>
         <HeaderSection titleSection="Conoce nuestros planes" />
 
-        <Fade delay={200} direction="left" cascade>
+        <Fade cascade>
           <Row className={styles.rowItems}>
             {plansData &&
               plansData.map((plan) => <PlanCard key={plan?.id} plan={plan} />)}

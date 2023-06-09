@@ -15,7 +15,7 @@ export const OurServices = () => {
               data-aos="fade-up"
               data-aos-delay={`${el.id * 100}`}
             >
-              <Fade delay={100} direction="left" cascade>
+              <Fade cascade>
                 {el.img}
                 <IconNumber elNumber={el.id} />
                 <p>

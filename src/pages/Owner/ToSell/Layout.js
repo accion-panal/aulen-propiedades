@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       'scroll',
       () => {
         const isTop = window.scrollY > 50;
-        const isTop2 = window.scrollY > 50 && window.scrollY > 1350;
+        const isTop2 = window.scrollY > 50 && window.scrollY > 1500;
 
         if (isTop !== isScrolledPast) {
           setScrolledPast(isTop);
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
             : styles.rightCol
         }
       >
-        <Fade delay={200} direction="up" cascade>
+        <Fade cascade>
           <PublishingForm formData={publishingFormData[0]} />
         </Fade>
       </Col>

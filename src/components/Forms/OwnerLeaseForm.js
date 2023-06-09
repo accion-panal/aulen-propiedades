@@ -170,7 +170,7 @@ const OwnerLeaseForm = () => {
 
   return (
     <Fragment>
-      <Fade delay={200} direction="right" cascade>
+      <Fade cascade>
         <Form
           name="FormSubmit"
           className={styles.form}

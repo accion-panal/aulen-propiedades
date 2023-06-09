@@ -3,9 +3,8 @@ import ToastComponent from '../Toastify/ToastComponent';
 import { toast } from 'react-toastify';
 import { icons } from '../Icons';
 import styles from '../../styles/Forms/PlanForm.module.css';
-import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 import stylesModal from '../../styles/Forms/PlanForm.module.css';
-import { company, companyForm } from '../../constants/consts/company';
+import { companyForm } from '../../constants/consts/company';
 
 /** Bootstrap components */
 import Button from 'react-bootstrap/Button';
@@ -173,7 +172,7 @@ const PlanFrom = ({ props }) => {
         {props?.show ? (
           <div
             className={stylesModal.closeModal}
-            onClick={() => props.setIsModalOpen(!props.isModalOpen)}
+            onClick={() => props?.setIsModalOpen(!props.isModalOpen)}
           >
             <span>
               <GrClose />

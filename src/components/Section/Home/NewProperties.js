@@ -14,7 +14,7 @@ const NewProperties = () => {
       <div className={styles.newPropertiesContainer}>
         <Row className={styles.rowNewProperties}>
           <Col sm={12} lg={6} xl={6} className={styles.newPropertiesCol}>
-            <Fade delay={200} direction="left" cascade>
+            <Fade cascade>
               <div className={styles.newPropertiesColAbsolute}>
                 <img
                   src={SoldHome}
@@ -26,7 +26,7 @@ const NewProperties = () => {
           </Col>
 
           <Col sm={12} lg={6} xl={6} className={styles.newPropertiesCol}>
-            <Fade delay={200} direction="right" cascade>
+            <Fade cascade>
               <div className={styles.newPropertiesColContent}>
                 <h2 className={styles.newPropertiesColTitle}>
                   Propiedades nuevas

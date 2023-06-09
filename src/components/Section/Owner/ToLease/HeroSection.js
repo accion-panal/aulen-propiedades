@@ -12,7 +12,7 @@ export const HeroSection = () => {
       </div>
 
       <div className={`${styles.customCol} ${styles.headerContainer}`}>
-        <Fade delay={200} direction="right" cascade>
+        <Fade cascade>
           <h1 className={`${styles.heroH1}`}>
             ¡Disfruta de la tranquilidad de arrendar tu propiedad con Aulen!
           </h1>

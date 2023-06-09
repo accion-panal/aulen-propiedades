@@ -12,7 +12,7 @@ const StepCard = ({ step }) => {
   return (
     <Col sm={6} md={4} className={styles.col}>
       <Card className={styles.card}>
-        <Fade delay={200} direction="left" cascade>
+        <Fade cascade>
           <Card.Body className={styles.cardBody}>
             <div className={styles.cardIconContainer}>
               <span className={styles.icon}>{icon}</span>

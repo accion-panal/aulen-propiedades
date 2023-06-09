@@ -10,9 +10,7 @@ const NavbarPage = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
       {/* LOGO */}
-      <Navbar.Brand href="/">
-        <LogoPage />
-      </Navbar.Brand>
+      <LogoPage />
 
       {/* NAVIGATION */}
       <Navigation />

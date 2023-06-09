@@ -24,7 +24,7 @@ const Steps = () => {
                 xl={3}
                 className={styles.stepCol}
               >
-                <Fade delay={200} direction="top" cascade>
+                <Fade cascade>
                   <Card style={{ width: 'auto' }} className={styles.stepCard}>
                     <Card.Body className={styles.stepCardBody}>
                       <span className={styles.stepsIconContainer}>
@@ -51,7 +51,7 @@ const Steps = () => {
           : null}
 
         <div className={styles.publishForFreeContainer}>
-          <Fade delay={200} direction="top" cascade>
+          <Fade cascade>
             <Link to="/" className={styles.publishForFreeLink}>
               Publica gratis
             </Link>

@@ -6,6 +6,7 @@
   transition: 0.3s all ease-in-out;
   border: 1px solid var(--color-light);
   background-color: var(--color-dark-gray);
+  margin: 4rem !important;
 }
 
 .form h3 {
@@ -125,7 +126,6 @@
 
 @media screen and (min-width: 992px) {
   .form {
-    width: 95%;
     padding: 2rem 2.5rem;
   }
   .rowBtnForm {
@@ -135,7 +135,7 @@
 
 @media screen and (min-width: 1920px) {
   .form {
-    width: 80%;
+    width: 85%;
     padding: 2rem 2.5rem;
   }
 }

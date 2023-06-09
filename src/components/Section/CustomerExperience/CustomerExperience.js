@@ -31,7 +31,7 @@ const CustomerExperience = () => {
       className={styles.customerExperienceContainer}
     >
       <HeaderSection titleSection="Conoce la experiencia de nuestros clientes" />
-      <Fade delay={200} cascade>
+      <Fade cascade>
         <AliceCarousel
           mouseTracking
           responsive={responsive}

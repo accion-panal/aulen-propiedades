@@ -8,11 +8,13 @@ const StepsSection = () => {
     icons;
   return (
     <section className={`${styles.customCol} ${styles.stepSectionContainer}`}>
-      <Fade delay={200} direction="left" cascade>
+      <Fade cascade>
         <main className={`${styles.customCol} ${styles.mainContainer}`}>
-          <header className={`${styles.customCol} ${styles.stepHeader}`}>
-            <h2>Vendemos tu propiedad en cuatro simples pasos</h2>
-            <h3>
+          <header className={`mt-10 text-center`}>
+            <h2 className="text-xl xl:text-3xl">
+              Vendemos tu propiedad en cuatro simples pasos
+            </h2>
+            <h3 className="text-sm text-gray-400">
               Evalúa en cuanto han vendido propiedades similares en tu sector
             </h3>
           </header>
@@ -28,7 +30,9 @@ const StepsSection = () => {
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
               <BsCardChecklist className={`${styles.stepIcon}`} />
               <p>
-              Publicamos tu propiedad en los 43 portales inmobiliarios más importantes del país con sesión de fotos y vídeos profesionales para que tu activo tenga el mayor alcance.
+                Publicamos tu propiedad en los 43 portales inmobiliarios más
+                importantes del país con sesión de fotos y vídeos profesionales
+                para que tu activo tenga el mayor alcance.
               </p>
             </div>
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
@@ -41,7 +45,9 @@ const StepsSection = () => {
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
               <RiMoneyDollarCircleLine className={`${styles.stepIcon}`} />
               <p>
-              ¡Conseguimos a tu comprador ideal! Y te acompañamos en todo el proceso de posventa junto al respaldo de nuestro equipo legal hasta la entrega de la propiedad y liberación de valores.
+                ¡Conseguimos a tu comprador ideal! Y te acompañamos en todo el
+                proceso de posventa junto al respaldo de nuestro equipo legal
+                hasta la entrega de la propiedad y liberación de valores.
               </p>
             </div>
           </div>

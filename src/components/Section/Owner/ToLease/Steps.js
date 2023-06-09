@@ -9,7 +9,7 @@ const Steps = ({ steps }) => {
         ? steps.map((el) => (
             <div
               key={el.id}
-              className={`${styles.customRow} ${styles.stepsDiv}`}
+              className={`${styles.customRow} ${styles.stepsDiv} my-3 bg-gray-50 rounded-lg p-2`}
             >
               <IconNumber elNumber={el.id} />
               <div className={`${styles.customCol}`}>

@@ -3,8 +3,8 @@ import styles from '../../styles/Section/HeaderSection.module.css';
 
 const HeaderSection = ({ titleSection, fontSize }) => {
   return (
-    <div className={styles.containerSection}>
-      <h2 className={fontSize ? styles.h2_3xl : styles.h2}>
+    <div className={`${styles.containerSection} text-xl xl:text-3xl`}>
+      <h2 className={''}>
         {titleSection || ''}
       </h2>
     </div>

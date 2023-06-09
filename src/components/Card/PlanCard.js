@@ -21,7 +21,10 @@ const PlanCard = ({ plan }) => {
 
           <ul className={styles.characteristics}>
             {characteristics.map((characteristic, index) => (
-              <li className={styles.characteristicsItem} key={index}>
+              <li
+                className={`${styles.characteristicsItem} text-md xl:text-lg`}
+                key={index}
+              >
                 {characteristic}
               </li>
             ))}

@@ -48,24 +48,6 @@ const Navigation = () => {
             ))}
         </Nav>
       </Navbar.Offcanvas>
-      {/* {pathname && (
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-          className="justify-content-end"
-          onClick={handleToggle}
-        >
-          <Nav className={styles.nav}>
-            {navigationData &&
-              navigationData.map((navItem) => (
-                <NavigationItem
-                  key={navItem?.id}
-                  navItem={navItem}
-                  navigationData={navigationData}
-                />
-              ))}
-          </Nav>
-        </Navbar.Collapse>
-      )} */}
     </Fragment>
   );
 };

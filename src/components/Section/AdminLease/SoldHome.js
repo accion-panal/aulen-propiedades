@@ -11,7 +11,7 @@ const SoldHome = () => {
   return (
     <Row className={styles.rowContainerSoldHome}>
       <Col xl={8} className={styles.colSoldHome}>
-        <Fade delay={200} direction="left" cascade>
+        <Fade cascade>
           <img src={SoldHomeImg} alt="Sold Home" className={styles.img} />
         </Fade>
       </Col>

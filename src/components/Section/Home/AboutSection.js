@@ -51,54 +51,54 @@ const About = () => {
           </div>
 
           <Col sm={12} lg={6} className={styles.newPropertiesCol}>
-            <Fade delay={200} direction="right" cascade>
-              <div className={styles.rightContent}>
-                <h2 className={styles.title}>Sobre Nosotros</h2>
-                <p>
-                  Somos una empresa dedicada a la asesoría e intermediación de
-                  compra, arriendo y administración de propiedades, tanto para
-                  personas naturales como jurídicas en el territorio chileno
-                </p>
+            {/* <Fade delay={200} direction="right" cascade> */}
+            <div className={styles.rightContent}>
+              <h2 className={styles.title}>Sobre Nosotros</h2>
+              <p>
+                Somos una empresa dedicada a la asesoría e intermediación de
+                compra, arriendo y administración de propiedades, tanto para
+                personas naturales como jurídicas en el territorio chileno
+              </p>
 
-                <p className={styles.followUs}>SÍGUENOS EN:</p>
-                <ul className={styles.socialMediaNavbarNav}>
-                  <li>
-                    <a
-                      href="/"
-                      target="_blank"
-                      data-te-ripple-init
-                      data-te-ripple-color="light"
-                      className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                    >
-                      <TfiFacebook className="text-xl" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      target="_blank"
-                      data-te-ripple-init
-                      data-te-ripple-color="light"
-                      className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                    >
-                      <BsInstagram className="text-xl" />
-                    </a>
-                  </li>
+              <p className={styles.followUs}>SÍGUENOS EN:</p>
+              <ul className={styles.socialMediaNavbarNav}>
+                <li>
+                  <a
+                    href="/"
+                    target="_blank"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                    className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                  >
+                    <TfiFacebook className="text-xl" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    target="_blank"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                    className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                  >
+                    <BsInstagram className="text-xl" />
+                  </a>
+                </li>
 
-                  <li>
-                    <a
-                      href="/"
-                      target="_blank"
-                      data-te-ripple-init
-                      data-te-ripple-color="light"
-                      className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                    >
-                      <AiFillYoutube className="text-xl" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </Fade>
+                <li>
+                  <a
+                    href="/"
+                    target="_blank"
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                    className="mb-2 mx-1 bg-gray-500 hover:bg-gray-600 inline-block rounded-full p-3 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                  >
+                    <AiFillYoutube className="text-xl" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            {/* </Fade> */}
           </Col>
         </Row>
       </div>

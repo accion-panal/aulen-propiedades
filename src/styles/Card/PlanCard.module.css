@@ -1,8 +1,10 @@
-.col,
-.colCard {
-  margin: 0 !important;
-  background-color: var(--color-white);
-  padding: 0.4rem;
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  padding: 0.4rem 0rem;
+  margin: 0 auto !important;
 }
 
 .card {
@@ -13,10 +15,11 @@
   padding: 1rem 0.5rem !important;
   font-size: var(--font-size-sm);
   transition: all 0.3s ease-in-out !important;
+  margin: 0.3rem;
 }
 
 .card:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary) !important;
   scale: 1.1;
   z-index: 999;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
@@ -76,10 +79,12 @@
   width: 85%;
   margin: 0 auto !important;
   padding: 1rem !important;
+  font-size: 1.2rem !important;
+  list-style-type: circle;
 }
 
 .characteristicsItem {
-  line-height: 1.3rem !important;
+  line-height: 1.6rem !important;
 }
 
 .cardFooter {
@@ -105,4 +110,10 @@
   width: 100% !important;
   text-decoration: none;
   white-space: nowrap;
+}
+
+@media screen and (min-width: 1920px) {
+  .card {
+    margin: 0rem;
+  }
 }

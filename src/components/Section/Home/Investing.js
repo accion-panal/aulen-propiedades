@@ -16,7 +16,7 @@ const Investing = () => {
         <HeaderSection titleSection="¡Invierte en inmuebles con nosotros!" />
         <Row className={styles.rowPlanForm}>
           <Col sm={12} lg={12} xl={12} className={styles.investingCol}>
-            <Fade delay={200} direction="left" cascade>
+            <Fade cascade>
               <div className={styles.investingColContent}>
                 <h2 className={styles.investingColTitle}>
                   Propiedades en remates
@@ -44,7 +44,7 @@ const Investing = () => {
           </Col>
 
           <div className={styles.investingColAbsolute}>
-            <Fade delay={200} direction="right" cascade>
+            <Fade cascade>
               <img
                 src={AuctionProperties}
                 alt="Propieda en remate"

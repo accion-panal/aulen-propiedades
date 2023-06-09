@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className={`${styles.customCol} ${styles.sectionContainer}`}>
       <div className={`${styles.customCol} ${styles.componentContainer}`}>
-        <Fade delay={200} cascade>
+        <Fade cascade>
           <div className={`${styles.customCol} ${styles.mainContainer}`}>
             {investmentStepData.length > 0
               ? investmentStepData.map((el) => (

@@ -6,7 +6,7 @@ import { leaseData } from '../../../data/lease';
 
 const Lease = () => {
   return (
-    <Fade duration={400} delay={100} direction="top">
+    <Fade cascade>
       <div className="">
         <HeaderSection titleSection="¡Nos encargamos de tu arriendo por ti!" />
 

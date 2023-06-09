@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <section className={`${styles.customCol} ${styles.sectionContainer}`}>
-        <Fade delay={200} direction="left" cascade>
+        <Fade cascade>
           <header className={`${styles.customCol} ${styles.mainContainer}`}>
             <div className={`${styles.customCol} ${styles.title}`}>
               <h1 className={`${styles.title__h1}`}>

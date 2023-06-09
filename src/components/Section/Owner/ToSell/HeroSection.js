@@ -5,11 +5,15 @@ import styles from '../../../../styles/Section/soy-propietario/quiero-vender/Her
 
 export const HeroSection = () => {
   return (
-    <header className={`${styles.customCol} ${styles.sellPageHeader}`}>
-      <h1>¡Vende tu propiedad rápido y sin complicaciones!</h1>
+    <header
+      className={`${styles.customCol} ${styles.sellPageHeader} text-center mt-[5rem] xl:mt-[7rem]`}
+    >
+      <h1 className="text-xl xl:text-3xl mb-6 xl:mb-10">
+        ¡Vende tu propiedad rápido y sin complicaciones!
+      </h1>
 
       <div className={`${styles.customRow} ${styles.imgAndForm}`}>
-        <Fade delay={200} direction="left" cascade>
+        <Fade cascade>
           <div className={`${styles.customRow} ${styles.imgContainer}`}>
             <img
               className={`${styles.imgHeader}`}

@@ -4,7 +4,7 @@ import styles from '../../../../styles/Section/soy-inversionista/unidades-en-rem
 
 export const InvestmentModel = ({ investment }) => {
   return (
-    <Fade delay={200} cascade>
+    <Fade cascade>
       <div
         className={`${styles.customCol} ${styles.mainContainer}`}
         data-aos="fade-up"
