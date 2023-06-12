@@ -53,8 +53,6 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
     (property) => property?.highlighted === true
   );
 
-  console.log(outstandingProperties);
-
   return (
     <Section>
       <div className="flex relative flex-col w-[100%] lg:w-[90%] xl:w-[80%] mt-[50px] mx-auto">

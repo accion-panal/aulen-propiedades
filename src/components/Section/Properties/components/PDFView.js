@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'start',
+    alignItems: 'start',
     textAlign: 'center',
     margin: '10px 0px',
     fontSize: 10,
@@ -283,7 +283,7 @@ const PDFView = ({ property }) => {
                 </View>
               </View>
 
-              <View style={styles.blockUrlProperty}>
+              {/* <View style={styles.blockUrlProperty}>
                 <Text style={styles}>
                   <Image
                     src="https://res.cloudinary.com/dbrhjc4o5/image/upload/v1683054033/unne-media/icons/globo_uqsbnj.png"
@@ -291,7 +291,7 @@ const PDFView = ({ property }) => {
                   />{' '}
                   {`https://aulenpropiedades.cl/propiedades/${property?.id}/?statusId=${company?.statusId}&companyId=${company?.companyId}`}
                 </Text>
-              </View>
+              </View> */}
             </View>
           </View>
 
@@ -316,6 +316,14 @@ const PDFView = ({ property }) => {
                 {property?.address || 'Ubicación no registrada'},{' '}
                 {property?.commune || 'Comuna no registrada'}
                 {property?.city || 'Ciudad no registrada'}
+              </Text>
+            </View>
+
+            <View style={styles.subContainerInfoDown}>
+              <Text style={styles.lightFontSm}>Propiedad en Linea</Text>
+              <Text style={styles.darkFontSm}>
+                {/* aca */}
+                {`https://aulenpropiedades.cl/propiedades/${property?.id}/?statusId=${company?.statusId}&companyId=${company?.companyId}`}
               </Text>
             </View>
           </View>

@@ -7,8 +7,6 @@ const PropertyCard = ({ data, isList }) => {
   const { id, title, image, address, commune, city, price, types, operation } =
     data;
 
-  console.log(data);
-
   return (
     <div
       className={`${
