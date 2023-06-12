@@ -32,6 +32,7 @@ export const SimpleCard = ({
     limit,
     statusId,
     companyId,
+    codidoUsuarioMaestro,
     operationType,
     typeOfProperty
   ) => {
@@ -70,6 +71,7 @@ export const SimpleCard = ({
             paginationTopLimit.topLimit,
             company.statusId,
             company.companyId,
+            company.codigoUsuarioMaestro,
             operationType,
             typeOfProperty
           );
