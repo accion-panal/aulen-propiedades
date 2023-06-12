@@ -50,8 +50,10 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
   };
 
   const outstandingProperties = propertiesToShow.filter(
-    (property) => property.highlighted === false
+    (property) => property?.highlighted === true
   );
+
+  console.log(outstandingProperties);
 
   return (
     <Section>
@@ -142,7 +144,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                   className="relative border-none focus:outline-none"
                 >
                   {showMore && (
-                    <div className="h-11 w-11 rounded-full bg-white border border-gray-200 text-gray-400 hover:text-white hover:bg-orange-500 cursor-pointer flex items-center justify-center">
+                    <div className="h-11 w-11 rounded-full bg-white border border-gray-200 text-gray-400 hover:text-gray-400 hover:bg-orange-500 cursor-pointer flex items-center justify-center">
                       <RiArrowDownSLine className="text-2xl" />
                     </div>
                   )}

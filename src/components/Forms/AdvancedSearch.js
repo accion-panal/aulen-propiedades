@@ -200,6 +200,13 @@ const AdvancedSearch = ({ setProperties }) => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: pathname === '/propiedades' ? 0 : 850,
+      behavior: 'smooth',
+    });
+  };
+
   const hideSelects = (pathname) => {
     switch (pathname) {
       case '/propiedades':
@@ -372,13 +379,17 @@ const AdvancedSearch = ({ setProperties }) => {
 
       <Button
         type="submit"
+        onClick={scrollToTop()}
         className="block w-full p-2 my-1 uppercase font-semibold text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-white bg-orange-500 hover:bg-orange-600"
       >
         Buscar
       </Button>
 
       <Button
-        onClick={resetForm}
+        onClick={() => {
+          resetForm();
+          scrollToTop();
+        }}
         className="block w-full p-2 my-1 text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-white bg-gray-500 hover:bg-gray-600"
       >
         Limpiar

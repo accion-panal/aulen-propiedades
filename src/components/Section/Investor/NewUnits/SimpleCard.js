@@ -40,6 +40,7 @@ export const SimpleCard = ({
     const { data } = await PropertiesServices.getPropertiesByCard(
       currentPage,
       limit,
+      codidoUsuarioMaestro,
       statusId,
       companyId,
       operationType,

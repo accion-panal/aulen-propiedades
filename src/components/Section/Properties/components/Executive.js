@@ -34,7 +34,7 @@ const Executive = ({ propertyData }) => {
             <BsTelephoneFill className={styles.icon} />
             Teléfono celular:{' '}
             <span>
-              {propertyData?.realtor?.phone || 'Teléfono celular no registrado'}
+              {propertyData?.realtor?.contactPhone || 'Teléfono celular no registrado'}
             </span>
           </p>
 

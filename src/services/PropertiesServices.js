@@ -6,15 +6,16 @@ const PropertiesServices = {
     currentPage,
     limit = paginationTopLimit.limit,
     statusId = company.statusId,
-    companyId = company.companyId
+    companyId = company.companyId,
+    codidoUsuarioMaestro = company.codigoUsuarioMaestro
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}`
+      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}`
     );
 
     // respuesta para unidades nuevas
     const responseNewUnities = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}&operationType=venta`
+      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}&operationType=venta`
     );
 
     return {
@@ -28,10 +29,11 @@ const PropertiesServices = {
     currentPage = paginationTopLimit.limitPage,
     limit = paginationTopLimit.topLimit,
     statusId = company.statusId,
-    companyId = company.companyId
+    companyId = company.companyId,
+    codidoUsuarioMaestro = company.codigoUsuarioMaestro
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}`
+      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}`
     );
     return { data: response.data.data, meta: response.data.meta };
   },
@@ -52,13 +54,14 @@ const PropertiesServices = {
   getPropertiesByCard: async (
     currentPage = paginationTopLimit.limitPage,
     limit = paginationTopLimit.topLimit,
+    codidoUsuarioMaestro = company.codigoUsuarioMaestro,
     statusId = company.statusId,
     companyId = company.companyId,
     operationType,
     typeOfProperty
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
+      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
     );
     return { data: response.data.data, meta: response.data.meta };
   },
