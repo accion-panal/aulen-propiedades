@@ -52,7 +52,7 @@ const PropertyCard = ({ data, isList }) => {
           } ${
             isList
               ? 'w-[50%] mb-2 text-center rounded-full p-1 shadow-sm'
-              : 'absolute px-3 -top-5 z-50 rounded-full shadow-xl'
+              : 'absolute px-1 -top-5 z-50 rounded-full shadow-xl'
           } text-md`}
         >
           {operation}
