@@ -46,6 +46,13 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: pathname === '/propiedades' ? 0 : 850,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <React.Fragment>
       <div className="absolute bottom-0 flex justify-center items-center w-[100%] xl:w-[80%] bg-gray-50 p-3">

@@ -27,6 +27,7 @@ const PropertyComponent = ({ property }) => {
   const lng = Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
+
   /** Render clipboard property modal */
   const renderContent = () => (
     <ClipboardProperty

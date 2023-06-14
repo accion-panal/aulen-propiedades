@@ -15,7 +15,7 @@ const Executive = ({ propertyData }) => {
           <h4>Información del Corredor</h4>
           <p className={styles.realtor}>
             Agente:{' '}
-            <span>
+            <span className="ml-1">
               {propertyData?.realtor?.name || 'Corredor no registrada'}{' '}
               {propertyData?.realtor?.lastName}
             </span>
@@ -24,7 +24,7 @@ const Executive = ({ propertyData }) => {
           <p className={styles.realtor}>
             <MdOutlineMailOutline className={styles.icon} />
             Correo electrónico:{' '}
-            <span>
+            <span className="ml-1">
               {propertyData?.realtor?.mail ||
                 'Correo electrónico no registrado'}
             </span>
@@ -33,8 +33,9 @@ const Executive = ({ propertyData }) => {
           <p className={styles.realtor}>
             <BsTelephoneFill className={styles.icon} />
             Teléfono celular:{' '}
-            <span>
-              {propertyData?.realtor?.contactPhone || 'Teléfono celular no registrado'}
+            <span className="ml-1">
+              {propertyData?.realtor?.contactPhone ||
+                'Teléfono celular no registrado'}
             </span>
           </p>
 
