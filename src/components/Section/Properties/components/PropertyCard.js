@@ -11,28 +11,28 @@ const PropertyCard = ({ data, isList }) => {
     <div
       className={`${
         isList
-          ? 'flex flex-col  items-center bg-white border border-gray-200 shadow md:flex-row'
-          : 'w-full bg-white'
+          ? 'flex flex-col items-center bg-white border border-gray-200 hover:shadow-lg md:flex-row'
+          : 'w-full'
       } border rounded-xl border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out`}
     >
       {image ? (
         <img
           className={`${
             isList
-              ? 'h-[700px] w-[100%] xl:w-[400px] object-cover'
+              ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
               : 'rounded-t-xl'
-          } h-64 xl:h-64 w-[100%] xl:w-[400px]`}
+          } h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover`}
           src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${id}//1.jpg`}
           alt={`top-img-${title}`}
           width="full"
         />
       ) : (
         <img
-          className={
+          className={`${
             isList
-              ? 'h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover'
-              : 'rounded-t-lg'
-          }
+              ? 'h-[700px] w-[100%] xl:w-[400px] object-cover'
+              : 'rounded-t-xl'
+          } h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover`}
           src={
             'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg'
           }
@@ -59,8 +59,8 @@ const PropertyCard = ({ data, isList }) => {
         </div>
 
         <span className="uppercase text-sm text-orange-500">Cod: {id}</span>
-        <h5 className="mb-2 h-14 text-lg xl:text-lg font-normal text-gray-800">
-          {truncateString(title || 'Titulo de propiedad no registrado', 60)}
+        <h5 className="mb-2 h-20 text-md xl:text-md font-normal text-gray-800">
+          {truncateString(title ?? 'Titulo de propiedad no registrado', 70)}
         </h5>
         <p className="mb-2 font-normal h-9 text-sm text-gray-400">
           {truncateString(`${address} ${commune} ${city}`, 60)}

@@ -76,8 +76,8 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             <ul
               className={`${
                 isGrid
-                  ? 'grid grid-cols-1 sm:grid-cols-3 gap-4 p-2'
-                  : 'flex flex-col gap-4 p-2'
+                  ? 'grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 p-2'
+                  : 'flex flex-col gap-3'
               }`}
             >
               {properties.map((character) => (
