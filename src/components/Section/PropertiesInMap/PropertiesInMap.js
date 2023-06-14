@@ -12,6 +12,7 @@ import Section from '../../Section/Section';
 import MarkerIcon from '../../../assets/img/Map/marker.png';
 import { parseToCLPCurrency } from '../../../utils';
 import { company } from '../../../constants/consts/company';
+import { icons } from '../../Icons';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
@@ -19,6 +20,7 @@ const PropertiesInMapComponent = () => {
   const [selectedProperty, setSelectedProperty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [totalItems, setTotalItems] = useState('');
+  const { FaMapMarkerAlt } = icons;
 
   useEffect(() => {
     if (propertiesInMap.length > 0) {
@@ -125,19 +127,17 @@ const PropertiesInMapComponent = () => {
                           >
                             <div className="max-w-sm bg-white">
                               <img
-                                className="rounded-t-lg"
-                                src={property?.image}
+                                src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${property?.id}//1.jpg`}
                                 alt={`small-card-${property?.title}`}
-                                style={{
-                                  height: '30px',
-                                }}
+                                className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
                               />
 
-                              <div>
+                              <div className="mt-3">
                                 <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
                                   {property?.types?.[0] ?? 'Propiedad'}
                                 </span>
-                                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                <p className="mb-3 mt-2 font-normal text-gray-700 flex items-center">
+                                  <FaMapMarkerAlt className="mr-1" />
                                   {property?.address ??
                                     'Dirección no registrada'}{' '}
                                   ,{' '}
@@ -145,7 +145,7 @@ const PropertiesInMapComponent = () => {
                                   , {property?.city ?? 'Ciudad no registrada'}
                                 </p>
 
-                                <div>
+                                <div className="text-gray-600">
                                   <span>Desde:</span>{' '}
                                   <strong>
                                     {parseToCLPCurrency(property?.price || 0) ??
@@ -153,7 +153,7 @@ const PropertiesInMapComponent = () => {
                                   </strong>
                                 </div>
 
-                                <div>
+                                <div className="text-gray-500">
                                   <span>
                                     {`${property?.surface_m2}`} m<sup>2</sup>{' '}
                                     utiles -{property?.bedrooms} dorms.

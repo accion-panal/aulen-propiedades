@@ -86,7 +86,7 @@ const PropertiesTop = ({
           </ul>
         </div>
       </div>
-      <div className="flex flex-row justify-start items-center bg-gray-50 text-gray-500">
+      <div className="flex flex-row flex-wrap justify-start items-center bg-gray-50 text-gray-500">
         <small className="text-sm p-1 rounded">
           Encontradas por página: {properties?.length ?? 0}
         </small>

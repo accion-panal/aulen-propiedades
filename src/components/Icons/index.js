@@ -37,6 +37,8 @@ import {
   MdOutlineManageAccounts,
   MdHomeWork,
   MdSimCardDownload,
+  MdOutlineFilterList,
+  MdOutlineFilterListOff,
 } from 'react-icons/md';
 import {
   RiMoneyDollarCircleLine,
@@ -133,4 +135,6 @@ export const icons = {
   GiHomeGarage,
   BsCheckCircle,
   HiClipboardCheck,
+  MdOutlineFilterList,
+  MdOutlineFilterListOff,
 };

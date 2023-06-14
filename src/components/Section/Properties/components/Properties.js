@@ -12,6 +12,8 @@ import { icons } from '../../../Icons';
 import styles from '../../../../styles/OutstandingProject/OutstandingProject.module.css';
 import { truncateStringSmall } from '../../../../utils';
 import { company } from '../../../../constants/consts/company';
+import { Button } from 'bootstrap';
+import ButtonPrimary from '../../../Button/ButtonPrimary';
 
 const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
   const { contextData } = useContext(PropertiesContext);
@@ -28,8 +30,10 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
     isLoading,
     notFoundMsg,
   } = contextData;
-  const { RiArrowDownSLine } = icons;
+  const { RiArrowDownSLine, MdOutlineFilterList, MdOutlineFilterListOff } =
+    icons;
   const [showMore, setShowMore] = useState(false);
+  const [isOpenForm, setIsOpenForm] = useState(true);
 
   const showMoreProperties = () => {
     const propiedadesActuales = propertiesToShow.length;
@@ -43,6 +47,8 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
       setShowMore(false);
     }
   };
+
+  const handleToggleForm = () => setIsOpenForm(!isOpenForm);
 
   const seeLessProperties = () => {
     setPropertiesToShow(allProperties.slice(0, 10));
@@ -67,11 +73,10 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             properties,
           }}
         />
-        <div className="flex-grow flex flex-col md:flex-row">
-          <div className="w-full md:w-4/5 bg-white mb-48">
+        <div className="flex flex-col-reverse md:flex-row">
+          <div className="w-full md:w-4/5 mb-48 mt-1 xl:mt-0">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
-
             {notFoundMsg && <NotFound message={notFoundMsg} />}
             <ul
               className={`${
@@ -99,40 +104,61 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           </div>
           {/* ADVANCED SEARCH FORM */}
           <div className="w-full md:w-1/5 bg-white border ml-0 xl:ml-2">
-            <AdvancedSearch {...{ setProperties }} />
+            <button
+              onClick={handleToggleForm}
+              className="bg-gray-100 w-full mx-auto p-2 hover:bg-gray-200 border-b"
+            >
+              {isOpenForm ? (
+                <span className="flex items-center justify-center text-sm">
+                  <MdOutlineFilterListOff className="pr-1 text-xl" />
+                  Ocultar filtros
+                </span>
+              ) : (
+                <span className="flex items-center justify-center text-sm">
+                  <MdOutlineFilterList className="pr-1 text-xl" />
+                  Mostrar filtros
+                </span>
+              )}
+            </button>
+            {isOpenForm && <AdvancedSearch {...{ setProperties }} />}
+
             <div className="p-3">
               <h3 className="bg-gray-50 text-sm">Proyectos destacados</h3>
 
               <ul className="flex w-[100%] flex-wrap relative">
-                {outstandingProperties?.map((propiedad) => (
-                  <Link
-                    key={propiedad.id}
-                    to={`/propiedades/${propiedad?.id}?statusId=${company.statusId}&companyId=${company.companyId}`}
-                    className={`${styles.link} relative h-[145px] text-white text-xs w-[45%] sm:w-[45%] lg:w-[45%] xl:w-[45%] m-1`}
-                  >
-                    <img
-                      src={
-                        'https://http2.mlstatic.com/D_NQ_NP_911655-MLC69020961065_042023-O.webp'
-                      }
-                      alt={`imagen-${propiedad?.title}`}
-                      className={styles.outstandingProject__image}
-                      style={{
-                        objectFit: 'cover',
-                        objectPosition: 'center',
-                        height: '100px',
-                        width: '100%',
-                      }}
-                    />
-                    <p className={styles.deptName}>
-                      {truncateStringSmall(
-                        propiedad.title || 'Propiedad sin titulo registrado'
-                      ) || ''}
-                    </p>
-                    <span className="bg-orange-500 mt-[40px] absolute p-[1.5px] px-3 -top-[25px] w-auto rounded-full">
-                      Cod: {propiedad.id}
-                    </span>
-                  </Link>
-                ))}
+                {outstandingProperties.length > 0 ? (
+                  outstandingProperties?.map((propiedad) => (
+                    <Link
+                      key={propiedad.id}
+                      to={`/propiedades/${propiedad?.id}?statusId=${company.statusId}&companyId=${company.companyId}`}
+                      className={`${styles.link} relative h-[145px] text-white text-xs w-[45%] sm:w-[45%] lg:w-[45%] xl:w-[45%] m-1`}
+                    >
+                      <img
+                        src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propiedad?.id}//1.jpg`}
+                        alt={`imagen-${propiedad?.title}`}
+                        className={styles.outstandingProject__image}
+                        style={{
+                          objectFit: 'cover',
+                          objectPosition: 'center',
+                          height: '100px',
+                          width: '100%',
+                        }}
+                      />
+                      <p className={styles.deptName}>
+                        {truncateStringSmall(
+                          propiedad.title || 'Propiedad sin titulo registrado'
+                        ) || ''}
+                      </p>
+                      <span className="bg-orange-500 mt-[40px] absolute p-[1.5px] px-3 -top-[25px] w-auto rounded-full">
+                        Cod: {propiedad.id}
+                      </span>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-sm">
+                    No se han encontrado proyectos destacados...
+                  </p>
+                )}
               </ul>
 
               <div className="flex items-center bg-white">

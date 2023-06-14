@@ -1,27 +1,29 @@
 import React from 'react';
 import { parseToCLPCurrency } from '../../utils';
+import { icons } from '../Icons';
 
 const CardMap = ({ propertyData }) => {
+  const { FaMapMarkerAlt } = icons;
   return (
     <div className="max-w-sm bg-white">
       <a href="#">
         <img
-          className="rounded-t-lg"
           src={
-            propertyData?.images[0] ?? propertyData?.images[1] ?? propertyData?.images[2]
+            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//1.jpg` ??
+            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//2.jpg` ??
+            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//3.jpg`
           }
           alt={`small-card-${propertyData?.title}`}
-          style={{
-            height: '30px',
-          }}
+          className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
         />
       </a>
 
       <div>
-        <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
+        <span className="bg-orange-500 text-white px-2 py-.5 rounded-full">
           {propertyData?.types?.[0] ?? 'Propiedad'}
         </span>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 flex items-center mt-2 font-normal text-gray-700 dark:text-gray-400">
+          <FaMapMarkerAlt className="pr-1" />
           {propertyData?.address ?? 'Dirección no registrada'} ,{' '}
           {propertyData?.commune ?? 'Comuna no registrada'} ,{' '}
           {propertyData?.city ?? 'Ciudad no registrada'}

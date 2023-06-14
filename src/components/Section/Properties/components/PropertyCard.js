@@ -2,10 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { truncateString, parseToCLPCurrency } from '../../../../utils';
 import { company } from '../../../../constants/consts/company';
+import { icons } from '../../../Icons';
 
 const PropertyCard = ({ data, isList }) => {
   const { id, title, image, address, commune, city, price, types, operation } =
     data;
+
+  const { FaMapMarkerAlt } = icons;
 
   return (
     <div
@@ -20,8 +23,8 @@ const PropertyCard = ({ data, isList }) => {
           className={`${
             isList
               ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
-              : 'rounded-t-xl'
-          } h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover`}
+              : 'rounded-t-xl w-[100%]'
+          } h-64 xl:h-64 w-[100%] object-cover`}
           src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${id}//1.jpg`}
           alt={`top-img-${title}`}
           width="full"
@@ -32,7 +35,7 @@ const PropertyCard = ({ data, isList }) => {
             isList
               ? 'h-[700px] w-[100%] xl:w-[400px] object-cover'
               : 'rounded-t-xl'
-          } h-64 xl:h-64 w-[100%] xl:w-[400px] object-cover`}
+          } h-64 xl:h-64 w-[100%] object-cover`}
           src={
             'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg'
           }
@@ -60,9 +63,10 @@ const PropertyCard = ({ data, isList }) => {
 
         <span className="uppercase text-sm text-orange-500">Cod: {id}</span>
         <h5 className="mb-2 h-20 text-md xl:text-md font-normal text-gray-800">
-          {truncateString(title ?? 'Titulo de propiedad no registrado', 70)}
+          {truncateString(title, 50)}
         </h5>
-        <p className="mb-2 font-normal h-9 text-sm text-gray-400">
+        <p className="flex items-center justify-start mb-2 font-normal h-9 text-sm text-gray-400">
+          <FaMapMarkerAlt className="pr-1" />
           {truncateString(`${address} ${commune} ${city}`, 60)}
         </p>
         <p className="mb-3 font-bold text-orange-500 text-sm text-end border-t border-gray-200 pt-2 ">
