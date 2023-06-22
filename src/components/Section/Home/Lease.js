@@ -3,6 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 import HeaderSection from '../../Section/HeaderSection';
 import styles from '../../../styles/Section/Inicio/CardLease.module.css';
 import { leaseData } from '../../../data/lease';
+import { Link } from 'react-router-dom';
 
 const Lease = () => {
   return (
@@ -13,23 +14,28 @@ const Lease = () => {
         <div className={styles.container}>
           {leaseData?.length > 0
             ? leaseData.map((item) => (
-                <div key={item.id} className={styles.card}>
-                  <div className={styles.cardImage}>
-                    <img className={styles.img} src={item.src} alt="" />
-                  </div>
-                  <div className={styles.cardDescription}>
-                    <p className={styles.textTitle}>{item.title}</p>
-                    <div className={styles.textBody}>
-                      <ul className={styles.leaseUl}>
-                        {item?.itemsList?.length > 0
-                          ? item?.itemsList?.map((item, index) => (
-                              <li key={index}>{item}</li>
-                            ))
-                          : null}
-                      </ul>
+                <Link to={item.href}>
+                  <div
+                    key={item.id}
+                    className={`${styles.card} cursor-pointer`}
+                  >
+                    <div className={styles.cardImage}>
+                      <img className={styles.img} src={item.src} alt="" />
+                    </div>
+                    <div className={styles.cardDescription}>
+                      <p className={styles.textTitle}>{item.title}</p>
+                      <div className={styles.textBody}>
+                        <ul className={styles.leaseUl}>
+                          {item?.itemsList?.length > 0
+                            ? item?.itemsList?.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))
+                            : null}
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))
             : null}
         </div>

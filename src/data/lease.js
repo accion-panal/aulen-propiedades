@@ -7,6 +7,7 @@ export const leaseData = [
     id: 1,
     title: 'Corretaje tradicional',
     src: CorretajeTradicional,
+    href: '/administracion-de-arriendo',
     itemsList: [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
@@ -19,6 +20,7 @@ export const leaseData = [
     id: 2,
     title: 'Administración inteligente',
     src: AdministraciónInteligente,
+    href: '/administracion-de-arriendo',
     itemsList: [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
@@ -31,6 +33,7 @@ export const leaseData = [
     id: 3,
     title: 'Administración con garantía',
     src: AdministraciónConGarantia,
+    href: '/administracion-de-arriendo',
     itemsList: [
       'Estudio y Evaluación comercial. ',
       'Fotos y videos profesionales.',
