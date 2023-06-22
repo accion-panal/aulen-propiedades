@@ -13,7 +13,7 @@ const SocialMedia = () => {
       <ul className={styles.socialMediaNavbarNav}>
         <li>
           <a
-            href="/"
+            href="https://www.facebook.com/aulenpropiedades/?locale=es_LA"
             target="_blank"
             data-te-ripple-init
             data-te-ripple-color="light"
@@ -24,7 +24,7 @@ const SocialMedia = () => {
         </li>
         <li>
           <a
-            href="/"
+            href="https://www.instagram.com/aulen_prop/?hl=es"
             target="_blank"
             data-te-ripple-init
             data-te-ripple-color="light"
@@ -36,7 +36,7 @@ const SocialMedia = () => {
 
         <li>
           <a
-            href="/"
+            href="https://www.youtube.com/@aulenpropiedades3552"
             target="_blank"
             data-te-ripple-init
             data-te-ripple-color="light"
