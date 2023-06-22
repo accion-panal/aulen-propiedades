@@ -182,6 +182,7 @@ const MeetingSchedule = () => {
     } catch (error) {
       setServerErrorMsg(error.response);
       showToastWarningMsg('Ocurrio un error al enviar el formulario');
+      setIsLoading(false);
     }
   };
 

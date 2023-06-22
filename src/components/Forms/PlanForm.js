@@ -162,7 +162,7 @@ const PlanFrom = ({ props }) => {
       }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
-      console.log('error', error);
+      setLoading(false);
     }
   };
 

@@ -5,7 +5,7 @@ export const company = {
 };
 
 export const companyForm = {
-  id: 15,
+  id: 15, // si es 15: server status 500
 };
 
 export const paginationTopLimit = {

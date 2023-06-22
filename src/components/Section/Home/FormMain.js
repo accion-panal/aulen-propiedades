@@ -185,6 +185,7 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
       }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
+      setIsLoading(false);
     }
   };
 

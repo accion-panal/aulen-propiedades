@@ -122,9 +122,9 @@ const InvestmentForm = ({ formData, isForm }) => {
         realtorData?.email
       );
 
-      const apiResponse = await ContactApiFormServices.addContactForm(data);
+      const { status } = await ContactApiFormServices.addContactForm(data);
 
-      if (response.success === 'true' && apiResponse.status === 'ok') {
+      if (response.success === 'true' && status === 'ok') {
         setLoading(false);
         setErrorMsg({
           allFieldRequierd: '',
@@ -140,7 +140,7 @@ const InvestmentForm = ({ formData, isForm }) => {
       }
     } catch (error) {
       showToastErrorMsg('Ha ocurrido un error al enviar el formulario');
-      console.log('error', error);
+      setLoading(false);
     }
   };
   return (

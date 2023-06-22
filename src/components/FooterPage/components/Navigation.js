@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from '../../../styles/Layout/Footer.module.css';
 
 const Navigation = () => {
+  const phoneNumber = '56948636470';
+  const whatsappBusinessLink = `https://wa.me/${phoneNumber}`;
+
   return (
     <div className={styles.navigationFooterContainer}>
       <div className={styles.navigationFooterInfoSection}>
@@ -23,16 +26,21 @@ const Navigation = () => {
       </div>
       <div className={styles.navigationFooterInfoSection}>
         <Link
-          to="/soy-inversionista/quiero-invertir"
+          to="/soy-inversionista/unidades-en-remate#ur-contacto"
           className={styles.navLinkFooter}
         >
           Quiero invertir
         </Link>
       </div>
       <div className={styles.navigationFooterInfoSection}>
-        <Link to="/contacto" className={styles.navLinkFooter}>
+        <a
+          href={whatsappBusinessLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.navLinkFooter}
+        >
           Contáctanos
-        </Link>
+        </a>
       </div>
     </div>
   );

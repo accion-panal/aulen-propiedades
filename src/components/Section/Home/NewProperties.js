@@ -40,7 +40,8 @@ const NewProperties = () => {
                 </p>
                 <div className={styles.consultationContainer}>
                   <Link
-                    to="/soy-inversionista/unidades-nuevas#un-contacto"
+                    // to="/soy-inversionista/unidades-nuevas#un-contacto"
+                    to="/soy-inversionista/unidades-en-remate#ur-contacto"
                     className={styles.consultation}
                   >
                     Quiero una asesoría

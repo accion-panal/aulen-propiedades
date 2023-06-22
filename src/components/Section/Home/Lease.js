@@ -14,7 +14,7 @@ const Lease = () => {
         <div className={styles.container}>
           {leaseData?.length > 0
             ? leaseData.map((item) => (
-                <Link to={item.href}>
+                <Link to={item.href} key={item.id}>
                   <div
                     key={item.id}
                     className={`${styles.card} cursor-pointer`}

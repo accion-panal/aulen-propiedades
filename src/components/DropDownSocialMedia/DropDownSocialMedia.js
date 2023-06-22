@@ -4,7 +4,7 @@ import styles from '../../styles/DropdownSocialMedia/DropdownSocialMedia.module.
 
 const DropDownSocialMedia = ({ isModalOpen, setIsModalOpen }) => {
   const { BsTelephoneFill, AiOutlineWhatsApp, BsPlusLg } = icons;
-  const phoneNumber = '56964691800';
+  const phoneNumber = '56948636470';
   const whatsappBusinessLink = `https://wa.me/${phoneNumber}`;
 
   return (

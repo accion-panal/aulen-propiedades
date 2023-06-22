@@ -125,7 +125,7 @@ const ContactFormServices = {
         Nombre: name,
         Correo: userEmail,
         Telefono: phone,
-        Mensaje: 'Es propietario y quiere vender',
+        Mensaje: 'Es propietario o Inversionista',
       },
       {
         headers: {

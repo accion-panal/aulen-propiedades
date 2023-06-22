@@ -11,10 +11,15 @@ const AuctionUnitsComponent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/soy-inversionista/unidades-en-remate') {
+    if (`${location.pathname}` === '/soy-inversionista/unidades-en-remate')
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [location.pathname]);
+
+    if (
+      `${location.pathname}${location.hash}` ===
+      '/soy-inversionista/unidades-en-remate#ur-contacto'
+    )
+      window.scrollTo({ top: 1100, behavior: 'smooth' });
+  }, [location.pathname, location.hash]);
 
   return (
     <Fragment>
@@ -22,12 +27,7 @@ const AuctionUnitsComponent = () => {
         <HeaderSection />
         <HeroSection />
 
-        <div
-          id="ur-contacto"
-          style={{
-            margin: '10rem 0',
-          }}
-        >
+        <div id="ur-contacto">
           {investmentFormData?.length > 0
             ? investmentFormData?.map((el, index) => (
                 <InvestmentForm key={index} formData={el} isForm />
