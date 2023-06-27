@@ -169,6 +169,15 @@ const FormMain = ({ titleContentForm, textAlign, subtitle, ...props }) => {
         formDataFormatted
       );
 
+      if (response?.success === 'false') {
+        showToastErrorMsg(
+          'Se necesita activacion de email del administrador/a'
+        );
+        setIsLoading(false);
+        resetForm();
+        return;
+      }
+
       if (response.success === 'true' && apiResponse.status === 'ok') {
         setIsLoading(false);
         setErrorMsg({
