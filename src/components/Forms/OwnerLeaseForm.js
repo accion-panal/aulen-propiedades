@@ -150,7 +150,7 @@ const OwnerLeaseForm = () => {
 
       if (response?.success === 'false') {
         showToastErrorMsg(
-          'Se necesita activacion de email del administrador/a'
+          'Se necesita activación de email del administrador/a'
         );
         setIsLoading(false);
         resetForm();

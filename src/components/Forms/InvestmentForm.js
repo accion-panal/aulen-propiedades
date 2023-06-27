@@ -124,6 +124,15 @@ const InvestmentForm = ({ formData, isForm }) => {
 
       const { status } = await ContactApiFormServices.addContactForm(data);
 
+      if (response?.success === 'false') {
+        showToastErrorMsg(
+          'Se necesita activación de email del administrador/a'
+        );
+        setIsLoading(false);
+        resetForm();
+        return;
+      }
+
       if (response.success === 'true' && status === 'ok') {
         setLoading(false);
         setErrorMsg({
