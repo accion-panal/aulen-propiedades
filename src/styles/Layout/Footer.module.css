@@ -10,6 +10,19 @@
   z-index: 1;
 }
 
+.textContainer {
+  color: white;
+  text-align: center;
+}
+.textContainer a {
+  color: rgb(216, 140, 0);
+  text-align: center;
+}
+.textContainer a:hover {
+  color: orange;
+  text-align: center;
+}
+
 @media screen and (min-width: 992px) {
   .footerContainer {
     padding: 3rem 6rem;

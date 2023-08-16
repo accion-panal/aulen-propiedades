@@ -26,6 +26,10 @@ const About = () => {
                   <p>+56 2 6469 1800</p>
                 </li>
                 <li className="relative">
+                  <span>WhatsApp :</span>
+                  <p>+56 9 3291 0591</p>
+                </li>
+                <li className="relative">
                   <span>Correo: </span>
                   <p>info@aulenpropiedades.cl</p>
                 </li>

@@ -15,6 +15,10 @@ const Address = () => {
         <p className={styles.addressFooterParagraph}>+56 2 6469 1800</p>
       </div>
       <div className={styles.addressFooterInfoSection}>
+        <h3 className={styles.addressFooterTitle}>WhatsApp:</h3>
+        <p className={styles.addressFooterParagraph}>+56 9 3291 0591</p>
+      </div>
+      <div className={styles.addressFooterInfoSection}>
         <h3 className={styles.addressFooterTitle}>Correo</h3>
         <p className={styles.addressFooterParagraph}>
           info@aulenpropiedades.cl

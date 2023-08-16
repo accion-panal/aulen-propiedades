@@ -26,6 +26,10 @@ const FooterPage = () => {
           <SocialMediaFooter />
         </Col>
       </Row>
+      <hr style={{color:'white'}}/>
+      <p className={styles.textContainer}>
+        Diseño y desarrollo por<a href='https://accionpanal.cl/' target='_blank'> accionpanal.cl</a>
+      </p>
     </footer>
   );
 };

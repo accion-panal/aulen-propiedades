@@ -131,7 +131,7 @@
 /* Hover states */
 .card:hover .cardDescription {
   transform: translateY(0);
-  height: 60%;
+  height: 75%;
 }
 
 .card:hover {
