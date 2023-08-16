@@ -14,9 +14,9 @@ const StepsSection = () => {
             <h2 className="text-xl xl:text-3xl">
               Vendemos tu propiedad en cuatro simples pasos
             </h2>
-            <h3 className="text-sm text-gray-400">
+            {/* <h3 className="text-sm text-gray-400">
               Evalúa en cuanto han vendido propiedades similares en tu sector
-            </h3>
+            </h3> */}
           </header>
           <div className={`${styles.customCol} ${styles.iconDivsContainer}`}>
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
@@ -30,9 +30,9 @@ const StepsSection = () => {
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
               <BsCardChecklist className={`${styles.stepIcon}`} />
               <p>
-                Publicamos tu propiedad en los 43 portales inmobiliarios más
+                Publicamos tu propiedad en los 30 portales inmobiliarios más
                 importantes del país con sesión de fotos y vídeos profesionales
-                para que tu activo tenga el mayor alcance.
+                para que tu activo tenga mayor alcance.
               </p>
             </div>
             <div className={`${styles.customRow} ${styles.stepsContainer}`}>
@@ -46,7 +46,7 @@ const StepsSection = () => {
               <RiMoneyDollarCircleLine className={`${styles.stepIcon}`} />
               <p>
                 ¡Conseguimos a tu comprador ideal! Y te acompañamos en todo el
-                proceso de posventa junto al respaldo de nuestro equipo legal
+                proceso de pos venta junto al respaldo de nuestro equipo legal
                 hasta la entrega de la propiedad y liberación de valores.
               </p>
             </div>

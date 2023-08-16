@@ -17,7 +17,7 @@ export const HeroSection = () => {
           <div className={`${styles.customRow} ${styles.imgContainer}`}>
             <img
               className={`${styles.imgHeader}`}
-              src={keyImg}
+              src={'https://res.cloudinary.com/dvdb33uyj/image/upload/v1692217740/Projects/aulen/soy%20propietario/QUIERO_VENDER__VENDE_TU_PROPIEDAD_RAPIDO_Y_SIN_COMPLICACIONES_ztvjtq.webp'}
               alt="imagen-header"
             />
           </div>

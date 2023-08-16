@@ -16,7 +16,7 @@ export const HeroSection = () => {
           <h1 className={`${styles.heroH1}`}>
             ¡Disfruta de la tranquilidad de arrendar tu propiedad con Aulen!
           </h1>
-          <img src={sofa} alt="imagen-hero" className={`${styles.heroImage}`} />
+          <img src={'https://res.cloudinary.com/dvdb33uyj/image/upload/v1692217740/Projects/aulen/soy%20propietario/QUIERO_ARRENDAR_1_aigtrf.webp'} alt="imagen-hero" className={`${styles.heroImage}`} />
         </Fade>
       </div>
     </section>

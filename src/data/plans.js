@@ -5,7 +5,7 @@ export const plansData = [
     supply: '1,6%',
     brokersInfo: 'Máximo 2 corredores',
     characteristics: [
-      'Publicación en 43 portales inmobiliarios',
+      'Publicación en 30 portales inmobiliarios',
       'Ofertas formales con garantía',
       'Evaluación comercial mensual',
       'Asesoría legal',
@@ -21,7 +21,7 @@ export const plansData = [
     supply: '1,2%',
     brokersInfo: 'Exclusiva con Aulén Propiedades',
     characteristics: [
-      'Publicación en 43 portales inmobiliarios',
+      'Publicación en 30 portales inmobiliarios',
       'Ofertas formales con garantía',
       'Evaluación comercial mensual',
       'Asesoría legal',
@@ -37,7 +37,7 @@ export const plansData = [
     supply: '2%',
     brokersInfo: 'Más de 2 corredores',
     characteristics: [
-      'Publicación en 43 portales inmobiliarios',
+      'Publicación en 30 portales inmobiliarios',
       'Ofertas formales con garantía',
       'Evaluación comercial mensual',
       'Asesoría legal',
