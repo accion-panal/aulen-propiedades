@@ -6,7 +6,7 @@ export const FeaturesData = [
   {
     id: 1,
     h2: 'VISIBILIDAD',
-    p: 'Publicamos tu propiedad en 43 portales inmobiliarios y compramos servicios de destacados.',
+    p: 'Publicamos tu propiedad en 30 portales inmobiliarios y compramos servicios de destacados.',
     img: <CgSearchFound className={`${styles.card__img}`} />,
   },
   {
@@ -18,7 +18,7 @@ export const FeaturesData = [
   {
     id: 3,
     h2: 'RAPIDEZ',
-    p: 'Arrendamos tu propiedad en tiempo récord, para que no tengas pérdidas en tu inversión',
+    p: 'Arrendamos tu propiedad en tiempo récord, para que no tengas pérdidas por tu inversión',
     img: <RiTimerFlashLine className={`${styles.card__img}`} />,
   },
 ];
