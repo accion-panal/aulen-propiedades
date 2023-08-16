@@ -2,7 +2,6 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import HeaderSection from '../../Section/HeaderSection';
-import AuctionProperties from '../../../assets/img/Inicio/Principal/propiedades-en-remate.jpg';
 import styles from '../../../styles/Section/Inicio/Investing.module.css';
 
 /** Bootstrap components */
@@ -10,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Investing = () => {
+  const AuctionProperties = 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1692217819/Projects/aulen/inicio/INICIO__PROPIEDADES_EN_REMATE_qmnzus.webp';
   return (
     <Fade delay={300}>
       <div className={styles.investingContainer}>
@@ -19,7 +19,7 @@ const Investing = () => {
             <Fade cascade>
               <div className={styles.investingColContent}>
                 <h2 className={styles.investingColTitle}>
-                  Propiedades en remates
+                  Propiedades en remate
                 </h2>
                 <p>
                   Un modelo de inversión único en el mercado que genera hasta un

@@ -52,7 +52,7 @@ const Steps = () => {
 
         <div className={styles.publishForFreeContainer}>
           <Fade cascade>
-            <Link to="/" className={styles.publishForFreeLink}>
+            <Link to="/soy-propietario/quiero-vender" className={styles.publishForFreeLink}>
               Publica gratis
             </Link>
           </Fade>
