@@ -2,7 +2,19 @@ export const navigationData = [
   {
     id: 1,
     name: 'Inicio',
-    url: '/',
+
+    submenu: [
+      {
+        id: 1,
+        name: 'Aulen',
+        url: '/',
+      },
+      {
+        id: 2,
+        name: 'Nosotros',
+        url: '/nosotros',
+      }
+    ]
   },
   {
     id: 2,
