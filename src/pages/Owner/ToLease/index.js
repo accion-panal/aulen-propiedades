@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Head from '../../../components/Head/Head';
 import LayoutSection from '../../../components/Section/LayoutSection';
 import HeroSection from '../../../components/Section/Owner/ToLease/HeroSection';
+import OurServices from '../../../components/Section/Owner/ToLease/OurServices';
 import WhyLease from '../../../components/Section/Owner/ToLease/WhyLease';
 import CustomerExperience from '../../../components/Section/CustomerExperience/CustomerExperience';
 
@@ -21,6 +22,7 @@ const ToLeaseComponent = () => {
 
       <LayoutSection>
         <HeroSection />
+        <OurServices />
         <WhyLease />
       </LayoutSection>
 

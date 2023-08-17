@@ -4,9 +4,11 @@ import IconNumber from './IconNumber';
 import { OurServicesData } from '../../../../data/ourServices';
 import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/OurServices/OurServices.module.css';
 
+
 export const OurServices = () => {
   return (
     <Fragment>
+      <section className='block px-36 lg:flex xl:flex justify-between lg:my-16 lg:mt-56 lg:mb-36 lg:px-40 lg:gap-2'>
       {OurServicesData.length > 0
         ? OurServicesData?.map((el) => (
             <div
@@ -18,7 +20,7 @@ export const OurServices = () => {
               <Fade cascade>
                 {el.img}
                 <IconNumber elNumber={el.id} />
-                <p>
+                <p className=' px-0 lg:px-3 text-center'>
                   <span className={`${styles.boldP}`}>{el.span}</span>
                   {el.p}
                 </p>
@@ -26,6 +28,8 @@ export const OurServices = () => {
             </div>
           ))
         : null}
+      </section>
+      
     </Fragment>
   );
 };

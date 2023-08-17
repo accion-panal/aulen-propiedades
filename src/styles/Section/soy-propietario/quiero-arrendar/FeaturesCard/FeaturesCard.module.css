@@ -6,8 +6,7 @@
 }
 
 .customRow {
-  display: flex;
-  justify-content: space-between;
+
   gap: 0.5em;
 }
 
@@ -15,13 +14,14 @@
   border-radius: var(--border-radius-5xl, 4rem);
   background: var(--color-pale-gray, #f4f3f1);
   /* border: 1px solid black; */
-  /* width: calc(100% / 3.5); */
   min-height: 380px;
   gap: 0;
+  width: 100%;
   overflow: hidden;
   user-select: none;
   transition: transform 250ms linear;
 }
+
 .cardContainer:is(:hover, :focus) {
   transform: scale(1.1);
 }

@@ -13,14 +13,14 @@ import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/W
 export const WhyLease = () => {
   return (
     <main
-      className={`${styles.customRow} ${styles.mainWhyContainer} w-[95%] lg:w-[85%] mx-auto`}
+      className={`${styles.customRow} ${styles.mainWhyContainer} w-[95%] lg:w-[100%] mx-auto mb-8`}
     >
-      <div className={`${styles.customCol} ${styles.whyContainer}`}>
+      <div className="block w-full h-full mt-5 p-5">
         <Fade cascade>
-          <h2 className={`${styles.whyH2}`}>
+          <h2 className="flex justify-center text-center font-bold text-5xl ">
             ¿Por qué arrendar tu propiedad con nosotros?
           </h2>
-          <div className={`${styles.customRow}  flex flex-col md:flex-row`}>
+          <div className={`${styles.customRow} block lg:grid-cols-3 lg:px-80 md:flex-row mb-5 mt-4`}>
             <FeaturesCard features={FeaturesData} />
           </div>
         </Fade>
@@ -42,7 +42,7 @@ export const WhyLease = () => {
           </Fade>
         </div>
       </div>
-      <OwnerLeaseForm formData={publishingFormData[0]} />
+      {/* <OwnerLeaseForm formData={publishingFormData[0]} /> */}
     </main>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
-import sofa from '../../../../assets/img/SoyPropietario/sofa.jpg';
 import OurServices from './OurServices';
 import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/HeroSection/HeroSection.module.css';
 
@@ -8,7 +7,7 @@ export const HeroSection = () => {
   return (
     <section className={`${styles.customRow} ${styles.sectionHeroContainer}`}>
       <div className={`${styles.customRow} ${styles.servicesContainer}`}>
-        <OurServices />
+        {/* <OurServices /> */}
       </div>
 
       <div className={`${styles.customCol} ${styles.headerContainer}`}>
