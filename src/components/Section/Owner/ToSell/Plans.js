@@ -11,12 +11,11 @@ import Col from 'react-bootstrap/Col';
 
 const Plans = () => {
   return (
-    <Row className={styles.rowContainer}>
+    <Row className={`${styles.rowContainer} justify-content-center `}>
       <Col md={12} xl={9} className={styles.col}>
         <HeaderSection titleSection="Conoce nuestros planes" />
-
         <Fade cascade>
-          <Row className={styles.rowItems}>
+          <Row className={styles.rowItems} style={{gap:'1rem 0'}}>
             {plansData &&
               plansData.map((plan) => <PlanCard key={plan?.id} plan={plan} />)}
           </Row>

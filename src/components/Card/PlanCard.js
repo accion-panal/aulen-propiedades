@@ -9,7 +9,7 @@ const PlanCard = ({ plan }) => {
   const { id, name, supply, brokersInfo, characteristics } = plan;
   return (
     <Col xs={12} md={4} key={id} plan={plan} className={styles.colCard}>
-      <Card className={styles.card}>
+      <Card className={styles.card} style={{height:'100%'}}>
         <Card.Body className={styles.cardBody}>
           <Card.Title className={styles.cardTitle}>{name}</Card.Title>
           <div className={styles.supplyContainer}>

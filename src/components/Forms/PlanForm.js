@@ -177,7 +177,7 @@ const PlanFrom = ({ props }) => {
 
   return (
     <Fragment>
-      <div>
+      <div style={{width:'100%',height:'100%'}}>
         {props?.show ? (
           <div
             className={stylesModal.closeModal}

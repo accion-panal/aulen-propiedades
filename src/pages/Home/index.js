@@ -7,6 +7,7 @@ import Steps from '../../components/Section/Home/Steps';
 import Investing from '../../components/Section/Home/Investing';
 import NewProperties from '../../components/Section/Home/NewProperties';
 import AboutSection from '../../components/Section/Home/AboutSection';
+import Contact from '../../components/Section/Home/ContactSection';
 
 const HomeComponent = () => {
   return (
@@ -22,7 +23,7 @@ const HomeComponent = () => {
         <Steps />
         <Investing />
         <NewProperties />
-        <AboutSection />
+        <Contact/>
       </LayoutSection>
     </Fragment>
   );

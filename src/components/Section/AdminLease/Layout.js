@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
         }
       >
         <Fade cascade>
-          <PlanForm />
+          {/* <PlanForm /> */}
         </Fade>
       </Col>
     </Row>

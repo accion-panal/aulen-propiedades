@@ -10,9 +10,8 @@ import Row from 'react-bootstrap/Row';
 
 const StepsToRentDepartment = () => {
   return (
-    <Row className={styles.rowContainer}>
+    <Row className={`${styles.rowContainer} justify-content-center`}>
       <Col xl={8} className={styles.col}>
-        <HeaderSection titleSection="¡Mantén tú depa ocupado y a ti desocupado!" />
 
         <Row className={styles.rowItems}>
           {stepsToRentDepartmentData &&
