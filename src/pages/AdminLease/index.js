@@ -21,15 +21,13 @@ const InvestorAdminComponent = () => {
     <Fragment>
       <Head title="Administración de arriendo" />
 
-      <Layout>
-        <LayoutSection>
-          <SoldHome />
-          <StepsToRentDepartment />
-          <Plans />
-        </LayoutSection>
-      </Layout>
 
-      <CustomerExperience />
+      <LayoutSection>
+        <SoldHome />
+        <StepsToRentDepartment />
+        <Plans />
+        <CustomerExperience />
+      </LayoutSection>
     </Fragment>
   );
 };

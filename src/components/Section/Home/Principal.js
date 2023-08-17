@@ -12,37 +12,25 @@ const Principal = () => {
   const Packaging = 'https://res.cloudinary.com/dvdb33uyj/image/upload/v1692217818/Projects/aulen/inicio/INICIO__AULEN_CONTIGO_EN_CADA_PASO_alq4pe.webp';
   return (
     <div className={styles.principalContainer}>
-      <HeaderSection
-        titleSection="¡Aulén, contigo en cada paso!"
-        fontSize="3xl"
-      />
-
       <Row className={styles.rowPlanForm}>
-        <Col sm={12} lg={6} className={styles.principalCol}>
-          <Fade cascade>
+        <Col sm={12} lg={12} className={styles.principalCol}>
+
             <img
               width="100%"
               src={Packaging}
               alt="house"
               className={styles.principalImage}
             />
-          </Fade>
-        </Col>
-
-        <Col sm={12} lg={6} className={styles.principalCol}>
-          <Fade cascade>
-            <Form
-              titleContentForm="Vende o arrienda tu propiedad rápido y sin complicaciones"
-              textAlign="center"
-              subtitle=""
-              haveAction1={{
-                text: 'QUIERO VENDER',
-              }}
-              haveAction2={{
-                text: 'QUIERO ARRENDAR',
-              }}
-            />
-          </Fade>
+            <div className={styles.Container}>
+              <div className={styles.textContainer}>
+                <h2>
+                  ¡AULÉN, CONTIGO EN CADA PASO!
+                </h2>
+                <p>
+                  Estamos felices de anunciarte que nos renovamos y tú serás parte de la evolución del corretaje inmobiliario.
+                </p>
+              </div>
+            </div>
         </Col>
       </Row>
     </div>
