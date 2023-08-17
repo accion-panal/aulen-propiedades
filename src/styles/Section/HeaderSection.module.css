@@ -12,8 +12,8 @@
 
 .containerSection h2{
   color: #31254c !important;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
 }
 
 .h2 {
