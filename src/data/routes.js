@@ -7,6 +7,7 @@ import AuctionUnits from '../pages/Investor/AuctionUnits';
 import NewUnits from '../pages/Investor/NewUnits';
 import LeaseAdmin from '../pages/AdminLease';
 import PropertiesInMap from '../pages/PropertiesInMap';
+import About from '../pages/About';
 
 export const navigationRoutes = [
   {
@@ -17,48 +18,54 @@ export const navigationRoutes = [
   },
   {
     id: 2,
+    name: 'Nosotros',
+    path: '/nosotros',
+    element: <About />,
+  },
+  {
+    id: 3,
     name: 'Propiedades',
     path: '/propiedades',
     element: <Properties />,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Propiedad',
     path: '/propiedades/:id',
     element: <Property />,
   },
   {
-    id: 4,
+    id: 5,
     name: 'Quiero Vender',
     path: '/soy-propietario/quiero-vender',
     element: <ToSell />,
   },
   {
-    id: 5,
+    id: 6,
     name: 'Quiero Arrendar',
     path: '/soy-propietario/quiero-arrendar',
     element: <ToLease />,
   },
   {
-    id: 6,
+    id: 7,
     name: 'Unidades en Remate',
     path: '/soy-inversionista/unidades-en-remate',
     element: <AuctionUnits />,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Unidades Nuevas',
     path: '/soy-inversionista/unidades-nuevas',
     element: <NewUnits />,
   },
   {
-    id: 8,
+    id: 9,
     name: 'Administracion de Arriendo',
     path: '/administracion-de-arriendo',
     element: <LeaseAdmin />,
   },
   {
-    id: 9,
+    id: 10,
     name: 'Propiedades en mapa',
     path: '/propiedades/propiedades-en-mapa',
     element: <PropertiesInMap />,
