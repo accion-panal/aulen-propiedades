@@ -2,11 +2,8 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import FeaturesCard from './FeaturesCard';
 import Steps from './Steps';
-import PublishingForm from '../../../Forms/PublishingForm';
-import OwnerLeaseForm from '../../../Forms/OwnerLeaseForm';
 import { FeaturesData } from '../../../../data/featuresCard';
 import { StepsData } from '../../../../data/stepsLease';
-import { publishingFormData } from '../../../../data/publishingForm';
 
 import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/WhyLease/WhyLease.module.css';
 
@@ -17,10 +14,10 @@ export const WhyLease = () => {
     >
       <div className="block w-full h-full mt-5 p-5">
         <Fade cascade>
-          <h2 className="flex justify-center text-center font-extrabold text-[#31254c] text-3xl md:text-5xl  lg:max-w-[29ch] mx-auto ">
+          <h2 className="flex justify-center text-center font-extrabold text-[#31254c] text-3xl md:text-xl  lg:max-w-[29ch] lg:text-5xl mx-auto ">
             ¿Por qué arrendar tu propiedad con nosotros?
           </h2>
-          <div className={`${styles.customRow}grid grid-cols-1 sm:mx-36 md:mx-56 lg:mx-0 lg:flex lg:justify-center md:grid-cols-3 mb-5 mt-4 `}>
+          <div className={`${styles.customRow}grid grid-cols-1  sm:mx-36 md:mx-56 lg:mx-0 lg:flex lg:justify-center md:grid-cols-3 mb-5 mt-4 `}>
             <FeaturesCard features={FeaturesData} />
           </div>
         </Fade>
@@ -42,7 +39,7 @@ export const WhyLease = () => {
           </Fade>
         </div>
       </div>
-      {/* <OwnerLeaseForm formData={publishingFormData[0]} /> */}
+
     </main>
   );
 };

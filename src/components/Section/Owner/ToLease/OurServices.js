@@ -8,7 +8,7 @@ import styles from '../../../../styles/Section/soy-propietario/quiero-arrendar/O
 export const OurServices = () => {
   return (
     <Fragment>
-      <section className='block px-36 lg:flex xl:flex justify-between lg:my-16 lg:mt-56 lg:mb-36 lg:px-40 lg:gap-2'>
+      <section className='block px-36 lg:flex xl:flex justify-between lg:my-1 lg:mt-20 lg:mb-36 lg:px-40 lg:gap-2'>
       {OurServicesData.length > 0
         ? OurServicesData?.map((el) => (
             <div

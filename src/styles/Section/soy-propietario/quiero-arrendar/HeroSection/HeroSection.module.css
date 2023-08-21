@@ -19,8 +19,7 @@
   font-weight: var(--font-weight-bold, 700);
 }
 .heroImage {
-  border-radius: var(--border-radius-5xl, 4rem);
-  width: 90%;
+  border-radius: 60px 0px 60px 0px;
   object-fit: cover;
 }
 .servicesContainer {
