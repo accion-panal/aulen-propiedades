@@ -12,7 +12,7 @@ export const WhyLease = () => {
     <main
       className={`${styles.customRow} ${styles.mainWhyContainer} w-[95%] lg:w-[100%] mx-auto mb-8`}
     >
-      <div className="block w-full h-full mt-5 p-5">
+      <div className="block w-full h-full  p-5">
         <Fade cascade>
           <h2 className="flex justify-center text-center font-extrabold text-[#31254c] text-3xl md:text-xl  lg:max-w-[29ch] lg:text-5xl mx-auto ">
             ¿Por qué arrendar tu propiedad con nosotros?

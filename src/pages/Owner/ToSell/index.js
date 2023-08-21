@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Head from '../../../components/Head/Head';
-import Layout from './Layout';
+// import Layout from './Layout';
 import LayoutSection from '../../../components/Section/LayoutSection';
 import HeroSection from '../../../components/Section/Owner/ToSell/HeroSection';
 import StepsSection from '../../../components/Section/Owner/ToSell/StepsSection';
@@ -20,15 +20,11 @@ const ToSellComponent = () => {
   return (
     <Fragment>
       <Head title="Quiero vender" />
-
-      <Layout>
         <LayoutSection>
           <HeroSection />
           <StepsSection />
           <Plans />
         </LayoutSection>
-      </Layout>
-
       <CustomerExperience />
     </Fragment>
   );

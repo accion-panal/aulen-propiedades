@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
         }
       >
         <Fade cascade>
-          <PublishingForm formData={publishingFormData[0]} />
+          {/* <PublishingForm formData={publishingFormData[0]} /> */}
         </Fade>
       </Col>
     </Row>
