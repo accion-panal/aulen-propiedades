@@ -6,22 +6,38 @@
 }
 
 .customRow {
-  display: flex;
-  justify-content: space-between;
+  
   gap: 0.5em;
 }
 
-.cardContainer {
+/* .cardContainer {
   border-radius: var(--border-radius-5xl, 4rem);
   background: var(--color-pale-gray, #f4f3f1);
-  /* border: 1px solid black; */
-  /* width: calc(100% / 3.5); */
+  border: 1px solid black;
   min-height: 380px;
   gap: 0;
+  width: 55%;
   overflow: hidden;
   user-select: none;
   transition: transform 250ms linear;
-}
+  margin: 0 1.5em ;
+  margin-bottom: 0.5em;
+} */
+
+/* @media only screen and (min-width:1367px){
+  .cardContainer {
+    width: 85%;
+    margin: 0 0.2em ;
+
+  }
+} */
+
+/* @media only screen and (min-width:370px){
+  .cardContainer {
+    width: 85%;
+  }
+} */
+
 .cardContainer:is(:hover, :focus) {
   transform: scale(1.1);
 }
