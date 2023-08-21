@@ -3,7 +3,7 @@ import ToastComponent from '../Toastify/ToastComponent';
 import { Fade } from 'react-awesome-reveal';
 import { icons } from '../Icons';
 import { toast } from 'react-toastify';
-import styles from '../../styles/Section/Inicio/Form.module.css';
+import styles from '../../styles/Section/Inicio/FormSell.module.css';
 import stylesToast from '../../styles/Toastify/toastContainer.module.css';
 
 /** Bootstrap components */

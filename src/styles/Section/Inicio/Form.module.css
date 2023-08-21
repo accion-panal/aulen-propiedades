@@ -3,17 +3,12 @@
   height: auto;
   /* background-color: var(--color-pale-gray); */
   padding: 3rem 2.5rem !important;
-  border-radius: var(--border-radius-5xl) 0;
+  border-radius:0 var(--border-radius-5xl);
   transition: 0.3s all ease-in-out;
   border: 1px solid var(--color-light);
   background-color: var(--color-dark-gray);
 }
 
-.form h2 {
-  /* color: var(--color-dark) !important;
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold); */
-}
 
 .form h3,
 .pusblishingFormH2 {
@@ -154,7 +149,7 @@
 
 @media screen and (min-width: 992px) {
   .form {
-    width: 95%;
+    width: 98%;
     padding: 2rem 2.5rem;
   }
   .rowBtnForm {

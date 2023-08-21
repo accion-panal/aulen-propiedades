@@ -1,6 +1,6 @@
 .rowContainer {
   width: 100%;
-  margin: 3rem auto !important;
+  margin: 2rem auto !important;
 }
 
 .rowItems {
@@ -22,11 +22,11 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 0 5%;
+    margin: 0 2%;
   }
 
   .rowContainer {
     width: 100%;
-    margin: 8.5rem auto !important;
+    margin: .5rem auto !important;
   }
 }
