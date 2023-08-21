@@ -8,7 +8,8 @@ export const FeatureCard = ({ features }) => {
         ? features?.map((el) => (
             <div
               key={el.id}
-              className={`${styles.customCol} ${styles.cardContainer}`}
+              className={`${styles.customCol} ${styles.cardContainer} shadow-2xl w-[300px] sm:w-[500] md:w-[600] transition-all duration-500 border-spacing-1 mb-3 rounded-[60px] overflow-hidden lg:mx-10 `}
+              // className={`${styles.customCol} ${styles.cardContainer}`}
             >
               <div className={`${styles.customCol} ${styles.cardImgContainer}`}>
                 {el.img}
