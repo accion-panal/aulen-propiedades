@@ -17,10 +17,10 @@ export const WhyLease = () => {
     >
       <div className="block w-full h-full mt-5 p-5">
         <Fade cascade>
-          <h2 className="flex justify-center text-center font-bold text-5xl ">
+          <h2 className="flex justify-center text-center font-black text-5xl max-w-[29ch] mx-auto ">
             ¿Por qué arrendar tu propiedad con nosotros?
           </h2>
-          <div className={`${styles.customRow} block lg:grid-cols-3 lg:px-80 md:flex-row mb-5 mt-4`}>
+          <div className={`${styles.customRow}grid grid-cols-1  sm:mx-36 md:mx-56 lg:mx-0 lg:flex lg:justify-center  md:grid-cols-3 mb-5 mt-4 `}>
             <FeaturesCard features={FeaturesData} />
           </div>
         </Fade>
@@ -28,8 +28,8 @@ export const WhyLease = () => {
         <div>
           <div className="flex items-center">
             <div className="flex-1 border-b border-gray-200"></div>
-            <div className="mx-3 text-gray-800 font-bold text-2xl text-center">
-              <h3>Arrienda en 3 simples pasos</h3>
+            <div className="mx-3 text-gray-800 font-black text-6xl text-center">
+              <h1>Arrienda en 3 simples pasos</h1>
             </div>
             <div className="flex-1 border-b border-gray-200"></div>
           </div>
