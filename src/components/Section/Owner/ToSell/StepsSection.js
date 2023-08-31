@@ -15,9 +15,7 @@ const StepsSection = () => {
             Vendemos tu propiedad en cuatro simples pasos
           </h1>
           <br></br>
-          <h3 className="text-lg  text-gray-400">
-            Evalúa en cuanto han vendido propiedades similares en tu sector
-          </h3>
+    
         </header>
         <div className={`${styles.customCol} ${styles.iconDivsContainer}`}>
           <div className={`${styles.customRow} ${styles.stepsContainer}`}>
@@ -39,7 +37,7 @@ const StepsSection = () => {
           <div className={`${styles.customRow} ${styles.stepsContainer}`}>
             <BsFillGearFill className={`${styles.stepIcon}`} />
             <p>
-              Realizamos vistas con potenciales clientes a tu propiedad, para
+              Realizamos visitas con potenciales clientes a tu propiedad, para
               que recibas ofertas garantizadas.
             </p>
           </div>
@@ -47,7 +45,7 @@ const StepsSection = () => {
             <RiMoneyDollarCircleLine className={`${styles.stepIcon}`} />
             <p>
               ¡Conseguimos a tu comprador ideal! Y te acompañamos en todo el
-              proceso de pos venta junto al respaldo de nuestro equipo legal
+              proceso de post venta junto al respaldo de nuestro equipo legal
               hasta la entrega de la propiedad y liberación de valores.
             </p>
           </div>

@@ -62,6 +62,6 @@ export const navigationData = [
   {
     id: 7,
     name: 'Intranet',
-    url: 'http://190.114.255.247:195/',
+    url: 'http://www.kiteprop.com',
   },
 ];

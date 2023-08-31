@@ -40,7 +40,7 @@ const NewProperties = () => {
                     to="/soy-inversionista/unidades-nuevas"
                     className={styles.consultation}
                   >
-                    Quiero una asesoría
+                    Quiero cotizar
                   </Link>
                 </div>
               </div>

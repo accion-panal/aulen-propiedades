@@ -185,7 +185,7 @@ const PublishingForm = () => {
           id="planForm"
         >
           <h2 className={styles.pusblishingFormH2}>
-            ¡Despreocúpate por tu propiedad de inversión!
+            Pública tu propiedad gratis
           </h2>
           <h3 className={styles.pusblishingFormH3}>
             COMPLETA EL FORMULARIO Y ENTÉRATE CÓMO

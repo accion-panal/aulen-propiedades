@@ -34,6 +34,7 @@
   font-weight: var(--font-weight-bold, 700);
 }
 
+
 .chooseInvest__h2 {
   font-weight: var(--font-weight-bold, 700);
   text-align: center;
@@ -50,7 +51,7 @@
 }
 
 .componentContainer > p {
-  font-size: var(--font-size-sm, 0.8rem);
+  font-size: 0.9rem;
 }
 
 .containerBenefits {

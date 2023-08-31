@@ -27,7 +27,7 @@ const Principal = () => {
                   ¡AULÉN, CONTIGO EN CADA PASO!
                 </h2>
                 <p>
-                  Estamos felices de anunciarte que nos renovamos y tú serás parte de la evolución del corretaje inmobiliario.
+                  Vende o arrienda tu propiedad rápido y sin complicaciones
                 </p>
               </div>
             </div>

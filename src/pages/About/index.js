@@ -57,7 +57,7 @@ const About = () => {
                   </div>
                   <div>
                     <h3>Dirección</h3>
-                    <p>De Lunes a viernes de 08:30 a 18:00 hrs.</p>
+                    <p>Asturias 171, las Condes.</p>
                   </div>
                   <div>
                     <h3>Teléfono</h3>
