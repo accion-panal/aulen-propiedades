@@ -83,7 +83,7 @@
   }
 
   .card__p {
-    font-size: var(--font-size-xs, 0.6rem);
+    font-size: var(--font-size-sm, 0.6rem);
   }
   .cardTextContainer {
     padding: 1em 1em;

@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Head from '../../components/Head/Head';
-import Layout from '../../components/Section/AdminLease/Layout';
+// import Layout from '../../components/Section/AdminLease/Layout';
 import LayoutSection from '../../components/Section/LayoutSection';
 import SoldHome from '../../components/Section/AdminLease/SoldHome';
 import StepsToRentDepartment from '../../components/Section/AdminLease/StepsToRentDepartment';
-import Plans from '../../components/Section/Owner/ToSell/Plans';
+import PlansAdmin from '../../components/Section/AdminLease/plansAdmin';
 import CustomerExperience from '../../components/Section/CustomerExperience/CustomerExperience';
 
 const InvestorAdminComponent = () => {
@@ -25,7 +25,7 @@ const InvestorAdminComponent = () => {
       <LayoutSection>
         <SoldHome />
         <StepsToRentDepartment />
-        <Plans />
+        <PlansAdmin />
         <CustomerExperience />
       </LayoutSection>
     </Fragment>

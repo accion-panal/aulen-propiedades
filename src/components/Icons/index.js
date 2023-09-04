@@ -50,7 +50,7 @@ import {
   RiPencilRulerLine,
 } from 'react-icons/ri';
 import { TbChecklist, TbHandClick, TbTarget } from 'react-icons/tb';
-import { BiTimer, BiMap, BiBuildingHouse, BiErrorCircle } from 'react-icons/bi';
+import { BiTimer, BiMap, BiBuildingHouse, BiErrorCircle, BiMedal } from 'react-icons/bi';
 import { CgSearchFound } from 'react-icons/cg';
 import { VscPerson } from 'react-icons/vsc';
 import { AiOutlineWhatsApp, AiFillYoutube } from 'react-icons/ai';
@@ -137,4 +137,5 @@ export const icons = {
   HiClipboardCheck,
   MdOutlineFilterList,
   MdOutlineFilterListOff,
+  BiMedal
 };

@@ -7,6 +7,7 @@ const {
   MdOutlineTimer,
   RiUserHeartLine,
   TbHandClick,
+  BiMedal
 } = icons;
 
 export const OurServicesData = [
@@ -32,7 +33,7 @@ export const OurServicesData = [
     id: 4,
     span: 'Cuentas con la asesoría de expertos',
     p: ' que gestionarán todo el proceso.',
-    img: <BsPerson className={`${styles.img}`} />,
+    img: <BiMedal className={`${styles.img}`} />,
   },
   {
     id: 5,
