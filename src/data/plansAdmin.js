@@ -24,6 +24,7 @@ export const plansDataAdmin = [
         brokersInfo: 'Por comisión de corretaje',
         characteristics: [
           '0% en segunda colocación (la propiedad debe ser exclusiva de Aulen)',
+          '5% del valor de arriendo por administración mensual.',
           'Estudio de mercado',
           'Fotos profesionales',
           'Publicación en 30 portales inmobiliarios.',

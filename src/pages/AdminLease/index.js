@@ -20,8 +20,6 @@ const InvestorAdminComponent = () => {
   return (
     <Fragment>
       <Head title="Administración de arriendo" />
-
-
       <LayoutSection>
         <SoldHome />
         <StepsToRentDepartment />

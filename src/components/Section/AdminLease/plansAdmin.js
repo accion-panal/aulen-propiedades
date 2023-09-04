@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 import HeaderSection from '../../../components/Section/HeaderSection';
 import PlanCard from '../../../components/Card/PlanCard';
 import { plansDataAdmin } from '../../../data/plansAdmin';
-import styles from '../../../../src/styles/Card/PlanCard.module.css';
+import styles from '../../../../src/styles/Section/Plans/Plans.module.css';
 
 /** Bootstrap components */
 import Row from 'react-bootstrap/Row';
