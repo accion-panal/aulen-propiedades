@@ -5,10 +5,10 @@ const GalleryCarousel = ({ items }) => {
   const getImages = () =>
     items?.images
       ? items?.images?.map((_, idx) => ({
-          original: `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${
+          original: `https://accion.panal.house//Imagenes//${
             items?.id
           }//${idx + 1}.jpg`,
-          thumbnail: `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${
+          thumbnail: `https://accion.panal.house//Imagenes//${
             items?.id
           }//${idx + 1}.jpg`,
         }))
