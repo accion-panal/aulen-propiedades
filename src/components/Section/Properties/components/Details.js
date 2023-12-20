@@ -43,7 +43,7 @@ const Details = ({ propertyData }) => {
             <p className={styles.publishedBy}>
               Publicado por:{' '}
               <span>
-                {propertyData?.company?.name || 'Empresa no registrada'}{' '}
+                {propertyData?.company || 'Empresa no registrada'}{' '}
               </span>
             </p>
             <div className={styles.pricesContainer}>
