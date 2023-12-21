@@ -1,14 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { truncateString, parseToCLPCurrency } from '../../../../utils';
+import { truncateString, parseToCLPCurrency , ufToClp, clpToUf2, parseToDecimal} from '../../../../utils';
 import { company } from '../../../../constants/consts/company';
 import { icons } from '../../../Icons';
 
-const PropertyCard = ({ data, isList }) => {
+const PropertyCard = ({ data, isList , valueUf}) => {
   const { id, title, image, address, commune, city, price, types, operation } =
     data;
 
   const { FaMapMarkerAlt } = icons;
+
+  console.log(types)
+
+
+  const _renderItem = (name,code,price) => {
+    let ufValue = price;
+    let clpValue = price;
+
+    if(valueUf.Valor != null){
+      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.');
+      if (name === 'UF' && code === 'UF'){
+        clpValue = ufToClp(price,valueIntUF);
+      }
+      if (name === 'Peso Chileno' && code === 'CLP'){
+        ufValue = clpToUf2(price,valueIntUF);
+      }
+    }
+    else {
+      clpValue = 0;
+      ufValue ;
+
+    }
+
+    return (
+      <div className= {`${isList ? 'grid grid-cols-1' : ""}flex justify-between`}>
+        <p className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
+          <span className="mr-1">UF: </span>{' '}
+          {parseToDecimal(ufValue)}
+        </p>
+        <p className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
+          <span className="mr-1">CLP: </span>{' '}
+          {parseToCLPCurrency(clpValue)}
+        </p>
+      </div>
+    )
+  };
 
   return (
     <div
@@ -58,7 +94,7 @@ const PropertyCard = ({ data, isList }) => {
               : 'absolute -top-5 z-50 rounded-sm px-3 shadow-xl'
           } text-md`}
         >
-          {operation}
+          {operation} / {types}
         </div>
 
         <span className="uppercase text-sm text-orange-500">Cod: {id}</span>
@@ -69,8 +105,8 @@ const PropertyCard = ({ data, isList }) => {
           <FaMapMarkerAlt className="pr-1" />
           {truncateString(`${address} ${commune} ${city}`, 60)}
         </p>
-        <p className="mb-3 font-bold text-orange-500 text-sm text-end border-t border-gray-200 pt-2 ">
-          {types?.[0]}: {parseToCLPCurrency(price)}
+        <p className="border-t border-gray-200 ">
+          {_renderItem(data?.currency?.name, data?.currency?.isoCode, data.price)}
         </p>
         <div className="w-100 flex justify-end">
           <Link

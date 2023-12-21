@@ -13,9 +13,16 @@ export const parseToCLPCurrency = (number) => {
   }).format(number);
 };
 
+/** Parse UF to CLP */
+export const ufToClp = (priceUF, ufValue) => priceUF * ufValue;
+export const parseToDecimal = (number) =>
+  number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 /** Parse CLP to UF */
 export const clpToUf = (clpValue, ufValue) => {
   return (Math.round((clpValue / ufValue) * 100) / 100000).toFixed(2);
+};
+export const clpToUf2 = (clpValue, ufValue) => {
+  return (clpValue / ufValue).toFixed(2);
 };
 
 // Replace white spaces to string
