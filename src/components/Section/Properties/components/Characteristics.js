@@ -13,6 +13,10 @@ const Characteristics = ({ propertyData }) => {
 
   const toggleCollapse = () => setIsOpen(!isOpen);
 
+  const lineas = description.split('\n');
+  const lineasIniciales = 5;
+  const lineasVisibles = isOpen ? lineas.length : lineasIniciales;
+
   return (
     <div className={styles.characteristicsContainer}>
       <h2>Características del inmueble</h2>
@@ -20,11 +24,13 @@ const Characteristics = ({ propertyData }) => {
         <Col lg={7}>
           <h6>Descripción</h6>
           <div className={styles.containerDescription}>
-            <p className={styles.description}>
-              {isOpen
-                ? description
-                : `${propertyData?.description?.slice(0, 450)}...`}
-            </p>
+            {lineas.slice(0, lineasVisibles).map((linea, index) => (
+              <p key={index} className={styles.description2}>{linea}</p>
+            ))}
+            {!isOpen && lineas.length > lineasIniciales && (
+              <p>...</p>
+            )}
+
             <Button onClick={toggleCollapse} className={styles.buttonCollapse}>
               {isOpen ? 'Cerrar' : 'Leer más'}
             </Button>

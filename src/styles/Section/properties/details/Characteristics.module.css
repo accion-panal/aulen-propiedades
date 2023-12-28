@@ -54,6 +54,11 @@
   border-radius: 20rem !important;
 }
 
+.description2 {
+  line-height: 27px !important;
+  border-radius: 20rem !important;
+}
+
 .tableDetailsContainer {
   padding: 2rem 0rem;
 }

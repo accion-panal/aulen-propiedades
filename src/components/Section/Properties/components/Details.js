@@ -46,6 +46,14 @@ const Details = ({ propertyData }) => {
                 {propertyData?.company || 'Empresa no registrada'}{' '}
               </span>
             </p>
+
+            <p className={styles.publishedBy}>
+              REF:{' '}
+              <span>
+                {propertyData?.id || 'id no registrada'}{' '}
+              </span>
+            </p>
+
             <div className={styles.pricesContainer}>
               <span>Desde</span>
               <p className={styles.ufPrice}>
