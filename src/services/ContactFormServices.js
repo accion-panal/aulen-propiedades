@@ -10,7 +10,7 @@ const ContactFormServices = {
         Telefono: phone,
         Correo: userEmail,
         Codigo: uniqueCode,
-        '_subject': 'De: Aulenpropiedades',
+        '_subject': 'De: Aulenpropiedades.',
       },
       {
         headers: {
@@ -51,6 +51,7 @@ const ContactFormServices = {
         Estacionamientos: parkingLots,
         Incluye_bodega: haveWarehouse,
         Direccion: address,
+        '_subject': 'De: Aulen propiedades.'
       },
       {
         headers: {
@@ -78,6 +79,8 @@ const ContactFormServices = {
         Correo: userEmail,
         Telefono: phone,
         Razon: action,
+        '_subject': 'De: Contacto Aulen propiedades.'
+
       },
       {
         headers: {
@@ -106,6 +109,7 @@ const ContactFormServices = {
         Telefono: phone,
         Fecha_y_Hora_Reunion: parseRealtorDate(meetingDateTime ?? new Date()),
         Correo: email,
+        '_subject': 'De: Meeting contacto.'
       },
       {
         headers: {
@@ -127,6 +131,7 @@ const ContactFormServices = {
         Correo: userEmail,
         Telefono: phone,
         Mensaje: 'Es propietario o Inversionista',
+        '_subject': 'De: Soy propietario/Quiero vender.',
       },
       {
         headers: {
@@ -147,6 +152,7 @@ const ContactFormServices = {
         Correo: userEmail,
         Telefono: phone,
         Mensaje: 'Es propietario y quiere arrendar',
+        '_subject': 'De: Soy propietario/Quiero arrendar.'
       },
       {
         headers: {
@@ -167,6 +173,7 @@ const ContactFormServices = {
         Correo: userEmail,
         Telefono: phone,
         Mensaje: 'Es propietario y quiere obtener información',
+        '_subject': 'De: Soy propietario/Quiero información.'
       },
       {
         headers: {
@@ -188,6 +195,8 @@ const ContactFormServices = {
         Telefono: phone,
         Mensaje:
           'Es inversionista y quiere más información en las unidades de remate',
+        '_subject': 'De: Soy inversionista/ quiero información.'
+
       },
       {
         headers: {
@@ -244,6 +253,7 @@ const ContactFormServices = {
         Correo: userEmail,
         Soy: reason,
         Mensaje: message,
+        '_subject': 'De: Contacto.'
       },
       {
         headers: {

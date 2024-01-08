@@ -84,7 +84,7 @@ const MeetingSchedule = () => {
   const showToastSuccessMsg = (msg) => {
     toast.success(msg, {
       position: 'top-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -97,7 +97,7 @@ const MeetingSchedule = () => {
   const showToastErrorMsg = (msg) => {
     toast.error(msg, {
       position: 'top-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -110,7 +110,7 @@ const MeetingSchedule = () => {
   const showToastWarningMsg = (msg) => {
     toast.warn(msg, {
       position: 'top-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -166,7 +166,7 @@ const MeetingSchedule = () => {
       );
 
       if (response?.success === 'false') {
-        showToastErrorMsg(
+         showToastWarningMsg(
           'Se necesita activación de email del administrador/a'
         );
         setIsLoading(false);
@@ -190,7 +190,7 @@ const MeetingSchedule = () => {
       }
     } catch (error) {
       setServerErrorMsg(error.response);
-      showToastWarningMsg('Ocurrio un error al enviar el formulario');
+      showToastErrorMsg('Ocurrio un error al enviar el formulario');
       setIsLoading(false);
     }
   };

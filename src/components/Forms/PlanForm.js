@@ -71,7 +71,7 @@ const PlanFrom = ({ props }) => {
   const showToastSuccessMsg = (msg) => {
     toast.success(msg, {
       position: 'bottom-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -84,7 +84,7 @@ const PlanFrom = ({ props }) => {
   const showToastErrorMsg = (msg) => {
     toast.error(msg, {
       position: 'bottom-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -97,7 +97,7 @@ const PlanFrom = ({ props }) => {
   const showToastWarningMsg = (msg) => {
     toast.warn(msg, {
       position: 'bottom-center',
-      autoClose: 1000,
+      autoClose: 1500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -147,7 +147,7 @@ const PlanFrom = ({ props }) => {
       const apiResponse = await ContactApiFormServices.addContactForm(formData);
 
       if (response?.success === 'false') {
-        showToastErrorMsg(
+        showToastWarningMsg(
           'Se necesita activación de email del administrador/a'
         );
         setIsLoading(false);
