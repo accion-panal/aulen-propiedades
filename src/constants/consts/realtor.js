@@ -1,3 +1,3 @@
 export const realtorData = {
-  email: 'contacto@aulenpropiedades.cl',
+  email: 'info@aulenpropiedades.cl',
 };
