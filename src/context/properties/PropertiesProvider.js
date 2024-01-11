@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { PropertiesContext } from './PropertiesContext';
 import PropertiesServices from '../../services/PropertiesServices';
 import ExchangeRateServices from '../../services/ExchangeRateServices';
-import { paginationTopLimit } from '../../constants/consts/company';
+import { company, paginationTopLimit } from '../../constants/consts/company';
 
 const PropertiesProvider = ({ children }) => {
   const [properties, setProperties] = useState([]);
@@ -13,11 +13,13 @@ const PropertiesProvider = ({ children }) => {
   const [propertyId, setPropertyId] = useState('');
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [totalItems, setTotalItems] = useState('');
+  const [totalItems, setTotalItems] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [notFoundMsg, setNotFoundMsg] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const { pathname } = useLocation();
+
+  const [filterProps, setFilterProps] = useState('');
 
   const [valueUf, setValueUf] = useState('');
 
@@ -45,27 +47,31 @@ const PropertiesProvider = ({ children }) => {
     getValueUF();
   }, []);
 
+
+
   const getProperties = async (
     currentPage,
-    limit = paginationTopLimit.limit
+    limit = paginationTopLimit.limit, 
+    filters = filterProps,
   ) => {
     try {
       setNotFoundMsg('');
       setIsLoading(true);
-      const { data, newUnitiesData, meta } =
-        await PropertiesServices.getProperties(currentPage, limit);
+      const { data, meta } =
+        await PropertiesServices.getProperties(currentPage, limit, filters);
       setProperties(
-        pathname === '/soy-inversionista/unidades-nuevas'
-          ? newUnitiesData
-          : pathname === '/propiedades'
-          ? data
-          : data
+        // pathname === '/soy-inversionista/unidades-nuevas'
+        //   ? newUnitiesData
+        //   : pathname === '/propiedades'
+        //   ? data
+        //   : data
+        pathname === '/propiedades' ? data : data
       );
       setTotalItems(meta.totalItems);
       setTotalPages(Math.ceil(meta.totalItems / limit)); // + 0.5
       setNotFoundMsg(
         data.length === 0
-          ? 'Lo sentimos, tu busqueda no coincide con nuestros registros'
+          ? 'Lo sentimos, tu búsqueda no coincide con nuestros registros'
           : ''
       );
       setIsLoading(false);
@@ -123,7 +129,10 @@ const PropertiesProvider = ({ children }) => {
           handleSortChange,
           sortOrder,
           setSortOrder,
-          valueUf
+          valueUf,
+          setFilterProps,
+          getProperties,
+          setPage
         },
       }}
     >

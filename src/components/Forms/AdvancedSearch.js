@@ -11,10 +11,10 @@ import {
 import { company, paginationTopLimit } from '../../constants/consts/company';
 import Button from '../Button/Button';
 
-const AdvancedSearch = ({ setProperties }) => {
+const AdvancedSearch = ({ setProperties, page }) => {
   const { contextData } = useContext(PropertiesContext);
   const { contextDataSelects } = useContext(SelectsContext);
-  const { isLoading, setIsLoading, setNotFoundMsg } = contextData;
+  const { isLoading, setIsLoading, setNotFoundMsg, getProperties ,setFilterProps, setPage  } = contextData;
   const {
     regions,
     communes,
@@ -131,6 +131,7 @@ const AdvancedSearch = ({ setProperties }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     scrollToTop();
+
     const createUrl = {
       operationType:
         selectedSelects.operationType?.length > 0
@@ -178,24 +179,33 @@ const AdvancedSearch = ({ setProperties }) => {
           : '',
     };
 
-    const url = `properties?page=${1}&limit=${
-      paginationTopLimit.topLimit
-    }&statusId=${company.statusId}&companyId=${company.companyId}${
-      createUrl.operationType
-    }${createUrl.typeOfProperty}${createUrl.installmentType}${
-      createUrl.region
-    }${createUrl.commune}${createUrl.surfaceM2}${createUrl.minPrice}${
-      createUrl.maxPrice
-    }${createUrl.bedrooms}${createUrl.bathrooms}${
-      createUrl.coveredParkingLots
+    // const url = `properties?page=${1}&limit=${
+    //   paginationTopLimit.topLimit
+    // }&statusId=${company.statusId}&companyId=${company.companyId}${
+    //   createUrl.operationType
+    // }${createUrl.typeOfProperty}${createUrl.installmentType}${
+    //   createUrl.region
+    // }${createUrl.commune}${createUrl.surfaceM2}${createUrl.minPrice}${
+    //   createUrl.maxPrice
+    // }${createUrl.bedrooms}${createUrl.bathrooms}${
+    //   createUrl.coveredParkingLots
+    // }`;
+
+    const url = `${createUrl.operationType
+    }${createUrl.typeOfProperty}${createUrl.installmentType}${createUrl.region
+    }${createUrl.commune}${createUrl.surfaceM2}${createUrl.minPrice}${createUrl.maxPrice
+    }${createUrl.bedrooms}${createUrl.bathrooms}${createUrl.coveredParkingLots
     }`;
 
     try {
       setNotFoundMsg('');
-      setProperties([]);
+      // setProperties([]);
       setIsLoading(true);
-      const response = await api.get(url);
-      setProperties(response.data.data);
+      // const response = await api.get(url);
+      // setProperties(response.data.data);
+      setFilterProps(url);
+      setPage(1)
+      getProperties(1, paginationTopLimit.limit, url)
 
       setIsLoading(false);
       setNotFoundMsg(

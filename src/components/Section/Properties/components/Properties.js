@@ -11,7 +11,7 @@ import NotFound from '../../../Message/NotFound';
 import { icons } from '../../../Icons';
 import styles from '../../../../styles/OutstandingProject/OutstandingProject.module.css';
 import { truncateStringSmall } from '../../../../utils';
-import { company } from '../../../../constants/consts/company';
+import { company , paginationTopLimit} from '../../../../constants/consts/company';
 import { Button } from 'bootstrap';
 import ButtonPrimary from '../../../Button/ButtonPrimary';
 
@@ -29,7 +29,8 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
     handlePageChange,
     isLoading,
     notFoundMsg,
-    valueUf
+    valueUf, 
+    setFilterProps, setPage, getProperties
   } = contextData;
   const { RiArrowDownSLine, MdOutlineFilterList, MdOutlineFilterListOff } =
     icons;
@@ -56,6 +57,12 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
     setShowMore(true);
   };
 
+  const resetSearch = () => {
+    setFilterProps('');
+    setPage(1);
+    getProperties(1, paginationTopLimit.limit, '')
+  };
+
   const outstandingProperties = propertiesToShow.filter(
     (property) => property?.highlighted === true
   );
@@ -78,7 +85,15 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           <div className="w-full md:w-4/5 mb-48 mt-1 xl:mt-0">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
-            {notFoundMsg && <NotFound message={notFoundMsg} />}
+          
+            {notFoundMsg ? (
+              <div className="container-message flex flex-col justify-center items-center text-center h-1/2">
+                <span className="flex items-center">{notFoundMsg}</span>
+                <button onClick={resetSearch} className="relative border-2 border-transparent outline-none focus:outline-none h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  text-blue-500 hover:text-blue-600 " type="button">
+                  Restablecer búsqueda
+                </button>
+              </div>
+            ) : ('')}
             <ul
               className={`${
                 isGrid
@@ -122,7 +137,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                 </span>
               )}
             </button>
-            {isOpenForm && <AdvancedSearch {...{ setProperties }} />}
+            {isOpenForm && <AdvancedSearch {...{ setProperties, page }} />}
 
             <div className="p-3">
               <h3 className="bg-gray-50 text-sm">Proyectos destacados</h3>

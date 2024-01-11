@@ -1,13 +1,20 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Properties from './components/Properties';
+import SelectsProvider from './../../../context/selects/SelectsProvider';
+import PropertiesProvider from './../../../context/properties/PropertiesProvider';
 
 const PropertiesComponent = () => {
   const [isGrid, setIsGrid] = useState(true);
   const [isList, setIsList] = useState(false);
   return (
-    <Fragment>
-      <Properties {...{ isGrid, isList, setIsGrid, setIsList }} />
-    </Fragment>
+    <div>
+      <SelectsProvider>
+        <PropertiesProvider>
+            <Properties {...{ isGrid, isList, setIsGrid, setIsList }} />
+        </PropertiesProvider>
+      </SelectsProvider>
+    </div>
+
   );
 };
 

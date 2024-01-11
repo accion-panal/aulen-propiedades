@@ -5,17 +5,15 @@ const PropertiesServices = {
   getProperties: async (
     currentPage,
     limit = paginationTopLimit.limit,
-    statusId = company.statusId,
-    companyId = company.companyId,
-    codidoUsuarioMaestro = company.codigoUsuarioMaestro
+    filters = ''
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}`
+      `properties?page=${currentPage}&limit=${limit}&statusId=${company.statusId}&companyId=${company.companyId}${filters}`
     );
 
     // respuesta para unidades nuevas
     const responseNewUnities = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}&operationType=venta`
+      `properties?page=${currentPage}&limit=${limit}&statusId=${company.statusId}&companyId=${company.companyId}&operationType=venta`
     );
 
     return {
@@ -30,10 +28,10 @@ const PropertiesServices = {
     limit = paginationTopLimit.topLimit,
     statusId = company.statusId,
     companyId = company.companyId,
-    codidoUsuarioMaestro = company.codigoUsuarioMaestro
+    // codidoUsuarioMaestro = company.codigoUsuarioMaestro
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}`
+      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}`
     );
     return { data: response.data.data, meta: response.data.meta };
   },
@@ -54,14 +52,14 @@ const PropertiesServices = {
   getPropertiesByCard: async (
     currentPage = paginationTopLimit.limitPage,
     limit = paginationTopLimit.topLimit,
-    codidoUsuarioMaestro = company.codigoUsuarioMaestro,
+    // codidoUsuarioMaestro = company.codigoUsuarioMaestro,
     statusId = company.statusId,
     companyId = company.companyId,
     operationType,
     typeOfProperty
   ) => {
     const response = await api.get(
-      `properties?page=${currentPage}&limit=${limit}&CodigoUsuarioMaestro=${codidoUsuarioMaestro}&statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
+      `properties?page=${currentPage}&limit=${limit}&statusId=${statusId}&companyId=${companyId}&operationType=${operationType}&typeOfProperty=${typeOfProperty}`
     );
     return { data: response.data.data, meta: response.data.meta };
   },
