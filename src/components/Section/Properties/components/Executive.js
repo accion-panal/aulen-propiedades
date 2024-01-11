@@ -23,7 +23,7 @@ const Executive = ({ propertyData }) => {
 
           <p className={styles.realtor}>
             <MdOutlineMailOutline className={styles.icon} />
-            Correo electrónico:{' '}
+            Correo: {' '}
             <span className="ml-1">
               {propertyData?.realtor?.mail ||
                 'Correo electrónico no registrado'}

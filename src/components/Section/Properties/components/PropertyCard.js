@@ -10,7 +10,7 @@ const PropertyCard = ({ data, isList , valueUf}) => {
 
   const { FaMapMarkerAlt } = icons;
 
-  console.log(types)
+  // console.log(types)
 
 
   const _renderItem = (name,code,price) => {
