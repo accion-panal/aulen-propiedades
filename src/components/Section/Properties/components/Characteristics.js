@@ -13,7 +13,7 @@ const Characteristics = ({ propertyData }) => {
 
   const toggleCollapse = () => setIsOpen(!isOpen);
 
-  const lineas = description.split('\n');
+  const lineas = description.split('\n') || ["No cuenta con descripción"];
   const lineasIniciales = 5;
   const lineasVisibles = isOpen ? lineas.length : lineasIniciales;
 
