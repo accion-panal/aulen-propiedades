@@ -37,8 +37,8 @@ const Details = ({ propertyData , valueUf}) => {
     let ufValue = price;
     let clpValue = price;
 
-    if(valueUf.Valor !== null){
-      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.');
+    if(valueUf.Valor != null){
+      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.') ||[""];
       if (name === 'UF' && code === 'UF'){
         clpValue = ufToClp(price,valueIntUF);
       }
