@@ -16,7 +16,7 @@ const Executive = ({ propertyData }) => {
           <p className={styles.realtor}>
             Agente:{' '}
             <span className="ml-1">
-              {propertyData?.realtor?.name || 'Corredor no registrada'}{' '}
+              {propertyData?.realtor?.name || 'Corredor no registrado'}{' '}
               {propertyData?.realtor?.lastName}
             </span>
           </p>

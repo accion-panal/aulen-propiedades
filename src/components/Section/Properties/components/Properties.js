@@ -63,6 +63,8 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
     getProperties(1, paginationTopLimit.limit, '')
   };
 
+  
+
   const outstandingProperties = propertiesToShow.filter(
     (property) => property?.highlighted === true
   );
@@ -151,7 +153,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                       className={`${styles.link} relative h-[145px] text-white text-xs w-[45%] sm:w-[45%] lg:w-[45%] xl:w-[45%] m-1`}
                     >
                       <img
-                        src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propiedad?.id}//1.jpg`}
+                        src={`https://pages-api.panal.house/properties/images//${propiedad?.id}//1.jpg`}
                         alt={`imagen-${propiedad?.title}`}
                         className={styles.outstandingProject__image}
                         style={{
@@ -163,7 +165,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                       />
                       <p className={styles.deptName}>
                         {truncateStringSmall(
-                          propiedad.title || 'Propiedad sin titulo registrado'
+                          propiedad?.title || 'Propiedad sin titulo registrado'
                         ) || ''}
                       </p>
                       <span className="bg-orange-500 mt-[40px] absolute p-[1.5px] px-3 -top-[25px] w-auto rounded-full">

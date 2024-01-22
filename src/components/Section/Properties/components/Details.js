@@ -36,7 +36,7 @@ const Details = ({ propertyData }) => {
       {Object.keys(propertyData).length > 0 ? (
         <section key={propertyData.id} className={styles.detailContainer}>
           <div className={styles.detailsCard}>
-            <h2>{propertyData?.types ?? 'Dirección no registrada'}</h2>
+            <h2>{propertyData?.operation || "Operación no encontrada"} / {propertyData?.types ?? 'Inmueble no encontrada'}</h2>
             <p className={styles.title}>
               {propertyData?.title ?? 'Titulo no registrado'}
             </p>

@@ -16,11 +16,13 @@ import { icons } from '../../Icons';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
-  const { propertiesInMap } = contextData;
+  const { propertiesInMap, data} = contextData;
   const [selectedProperty, setSelectedProperty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [totalItems, setTotalItems] = useState('');
   const { FaMapMarkerAlt } = icons;
+
+
 
   useEffect(() => {
     if (propertiesInMap.length > 0) {
@@ -75,7 +77,34 @@ const PropertiesInMapComponent = () => {
                 Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ?? null;
               let latitude =
                 Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) ?? null;
+                      
 
+        const image = property?.image;
+        // Validador de extension .jpg / .png/ .jpeg  para las imgs
+        const validaImage = (image) => {
+          if (image) {
+            const validExtensions = ['.jpg', '.jpeg', '.png'];
+        
+            if (validExtensions.some(ext => image.toLowerCase().endsWith(ext))) {
+              return (
+                <img
+                src={image}
+                alt={`small-card-${property?.title}`}
+                className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+              />
+              );
+            }
+          }
+          return (
+            <img
+            src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
+            alt={`small-card-${property?.title}`}
+            className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+          />
+          );
+        };
+
+              
               return (
                 <Marker
                   key={property?.id}
@@ -126,11 +155,12 @@ const PropertiesInMapComponent = () => {
                             to={`/propiedades/${property?.id}?statusId=${company.statusId}&companyId=${company.companyId}`}
                           >
                             <div className="max-w-sm bg-white">
-                              <img
+                              {/* <img
                                 src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${property?.id}//1.jpg`}
                                 alt={`small-card-${property?.title}`}
                                 className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
-                              />
+                              /> */}
+                              {validaImage(image)}
 
                               <div className="mt-3">
                                 <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">

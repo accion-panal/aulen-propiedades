@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+// import { useHistory } from 'react-router-dom';
 import Section from '../../../Section/Section';
 import { PDFViewer } from '@react-pdf/renderer';
 import GalleryCarousel from '../../../GalleryCarousel/GalleryCarousel';
@@ -27,6 +28,9 @@ const PropertyComponent = ({ property }) => {
   const lng = Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
 
+
+
+  console.log(property)
 
   /** Render clipboard property modal */
   const renderContent = () => (

@@ -12,6 +12,40 @@ const PropertyCard = ({ data, isList , valueUf}) => {
 
   // console.log(types)
 
+      // Validador de extension .jpg / .png/ .jpeg  para las imgs
+      const validaImage = (image) => {
+        if (image) {
+          const validExtensions = ['.jpg', '.jpeg', '.png'];
+      
+          if (validExtensions.some(ext => image.toLowerCase().endsWith(ext))) {
+            return (
+              <img
+              className={`${
+                isList
+                  ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
+                  : 'rounded-t-xl w-[100%]'
+              } h-64 xl:h-64 w-[100%] object-cover`}
+                src={image}
+                alt={`top-img-${title}`}
+                width="full"
+              />
+            );
+          }
+        }
+        return (
+          <img
+            className={`${
+            isList
+              ? 'h-[700px] w-[100%] xl:w-[400px] object-cover'
+              : 'rounded-t-xl'
+          } h-64 xl:h-64 w-[100%] object-cover`}
+            src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
+            alt={`top-img-${title}`}
+            width="full"
+          />
+        );
+      };
+
 
   const _renderItem = (name,code,price) => {
     let ufValue = price;
@@ -54,7 +88,7 @@ const PropertyCard = ({ data, isList , valueUf}) => {
           : 'w-full'
       } border rounded-xl border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out`}
     >
-      {image ? (
+      {/* {image ? (
         <img
           className={`${
             isList
@@ -78,8 +112,10 @@ const PropertyCard = ({ data, isList , valueUf}) => {
           alt={`top-img-${title}`}
           width="full"
         />
-      )}
-
+      )} */}
+      {/* Declaramos la validación de imagen */}
+      {validaImage(image)}
+      
       <div className="p-3 relative">
         <div
           className={`${
@@ -94,7 +130,7 @@ const PropertyCard = ({ data, isList , valueUf}) => {
               : 'absolute -top-5 z-50 rounded-sm px-3 shadow-xl'
           } text-md`}
         >
-          {operation} / {types}
+          {operation ? operation : "No registra operación"} / {types ? types : "No registra inmueble" }
         </div>
 
         <span className="uppercase text-sm text-orange-500">Cod: {id}</span>
@@ -112,6 +148,7 @@ const PropertyCard = ({ data, isList , valueUf}) => {
           <Link
             to={`/propiedades/${id}?statusId=${company.statusId}&companyId=${company.companyId}`}
             className="inline-flex rounded-full items-center px-3 py-2 text-sm font-medium text-center text-white hover:shadow-lg bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300"
+            target='_blank'
           >
             Ver detalles
             <svg
