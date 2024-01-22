@@ -1,5 +1,4 @@
-import React, { useState, useEffect} from 'react';
-// import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect, useContext} from 'react';
 import Section from '../../../Section/Section';
 import { PDFViewer } from '@react-pdf/renderer';
 import GalleryCarousel from '../../../GalleryCarousel/GalleryCarousel';
@@ -17,8 +16,12 @@ import Button from 'react-bootstrap/Button';
 import InformationOnTheArea from './InformationOnTheArea';
 import MeetingSchedule from '../../../Forms/MeetingSchedule';
 import ModalCustom from '../../../ModalCustom/ModalCustom';
+import { PropertiesContext } from '../../../../context/properties/PropertiesContext';
+
 
 const PropertyComponent = ({ property }) => {
+  const { contextData } = useContext(PropertiesContext);
+  const {valueUf}= contextData;
   const [loadingOnStart, setLoadingOnStart] = useState(true);
   const [showModalShare, setShowModalShare] = useState(false);
   const [showModalDetail, setShowModalDetail] = useState(false);
@@ -27,10 +30,6 @@ const PropertyComponent = ({ property }) => {
 
   const lng = Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827;
   const lat = Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694;
-
-
-
-  console.log(property)
 
   /** Render clipboard property modal */
   const renderContent = () => (
@@ -97,7 +96,7 @@ const PropertyComponent = ({ property }) => {
                 </Button>
               </div>
 
-              <Details propertyData={property} />
+              <Details propertyData={property} valueUf={valueUf} />
             </Col>
           </Row>
 

@@ -68,14 +68,14 @@ const PropertyCard = ({ data, isList , valueUf}) => {
 
     return (
       <div className= {`${isList ? 'grid grid-cols-1' : ""}flex justify-between`}>
-        <p className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
+        <div className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
           <span className="mr-1">UF: </span>{' '}
           {parseToDecimal(ufValue)}
-        </p>
-        <p className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
+        </div>
+        <div className="mb-3 font-bold text-orange-500 text-sm text-end  pt-2 ">
           <span className="mr-1">CLP: </span>{' '}
           {parseToCLPCurrency(clpValue)}
-        </p>
+        </div>
       </div>
     )
   };
@@ -88,32 +88,7 @@ const PropertyCard = ({ data, isList , valueUf}) => {
           : 'w-full'
       } border rounded-xl border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out`}
     >
-      {/* {image ? (
-        <img
-          className={`${
-            isList
-              ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
-              : 'rounded-t-xl w-[100%]'
-          } h-64 xl:h-64 w-[100%] object-cover`}
-          src={`https://accion.panal.house//Imagenes//${id}//1.jpg`}
-          alt={`top-img-${title}`}
-          width="full"
-        />
-      ) : (
-        <img
-          className={`${
-            isList
-              ? 'h-[700px] w-[100%] xl:w-[400px] object-cover'
-              : 'rounded-t-xl'
-          } h-64 xl:h-64 w-[100%] object-cover`}
-          src={
-            'https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg'
-          }
-          alt={`top-img-${title}`}
-          width="full"
-        />
-      )} */}
-      {/* Declaramos la validación de imagen */}
+
       {validaImage(image)}
       
       <div className="p-3 relative">

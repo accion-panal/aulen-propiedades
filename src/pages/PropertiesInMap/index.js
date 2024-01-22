@@ -15,7 +15,6 @@ const PropertiesInMap = () => {
   return (
     <Fragment>
       <Head title="Propiedades en mapa" />
-
       <PropertiesInMapComponent />
     </Fragment>
   );

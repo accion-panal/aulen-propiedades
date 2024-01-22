@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Executive from './Executive';
-import { parseToCLPCurrency, clpToUf } from '../../../../utils';
+import { parseToCLPCurrency, clpToUf ,truncateString, ufToClp, clpToUf2, parseToDecimal} from '../../../../utils';
 import { icons } from '../../../../components/Icons';
 import styles from '../../../../styles/Section/properties/details/Details.module.css';
 
@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 /** Api services */
 import ExchangeRateServices from '../../../../services/ExchangeRateServices';
 
-const Details = ({ propertyData }) => {
+const Details = ({ propertyData , valueUf}) => {
   const [ufCurrentValue, setUfCurrentValue] = useState(0);
   const { BiBuildingHouse, IoBedOutline, FaBath } = icons;
 
@@ -30,6 +30,40 @@ const Details = ({ propertyData }) => {
   useEffect(() => {
     getExchangeRateUF();
   }, [ufCurrentValue]);
+
+
+  
+  const _renderItem = (name,code,price) => {
+    let ufValue = price;
+    let clpValue = price;
+
+    if(valueUf.Valor !== null){
+      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.');
+      if (name === 'UF' && code === 'UF'){
+        clpValue = ufToClp(price,valueIntUF);
+      }
+      if (name === 'Peso Chileno' && code === 'CLP'){
+        ufValue = clpToUf2(price,valueIntUF);
+      }
+    }
+    else {
+      clpValue = 0;
+      ufValue ;
+
+    }
+
+    return (
+      <div className={styles.pricesContainer}>
+      <span>Desde</span>
+      <p className={styles.ufPrice}>
+        UF: {parseToDecimal(ufValue)}
+      </p>
+      <p className={styles.clpPrice}>
+        CLP:{parseToCLPCurrency(clpValue)}
+      </p>
+    </div>
+    )
+  };
 
   return (
     <Fragment>
@@ -54,15 +88,9 @@ const Details = ({ propertyData }) => {
               </span>
             </p>
 
-            <div className={styles.pricesContainer}>
-              <span>Desde</span>
-              <p className={styles.ufPrice}>
-                UF {clpToUf(propertyData?.price, ufCurrentValue)}
-              </p>
-              <p className={styles.clpPrice}>
-                {parseToCLPCurrency(propertyData.price || 0)}
-              </p>
-            </div>
+    
+          {_renderItem(propertyData?.currency?.name, propertyData?.currency?.isoCode, propertyData.price)}
+
 
             <div className={styles.deptoPropsContainer}>
               <span className={styles.propertyCharacteristics}>

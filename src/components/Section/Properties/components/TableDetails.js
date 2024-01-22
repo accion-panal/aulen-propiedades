@@ -5,7 +5,7 @@ import styles from '../../../../styles/Section/properties/details/TableDetails.m
 import Table from 'react-bootstrap/Table';
 
 const TableDetails = ({ propertyData }) => {
-  const { surface_m2, bedrooms, bathrooms } = propertyData;
+  const { surface_m2, bedrooms, bathrooms , highlighted, status} = propertyData;
 
   return (
     <Table striped bordered className={styles.tableDetails}>
@@ -25,13 +25,13 @@ const TableDetails = ({ propertyData }) => {
           <td>{bathrooms === null ? 'sin registro' : bathrooms}</td>
         </tr>
         <tr>
-          <th>Fecha de entrega</th>
-          <td>sin registro</td>
+          <th>Destacada</th>
+          <td>{highlighted === false ? 'no destacada': highlighted}</td>
           {/* <td>{deliveryDate || ''}</td> */}
         </tr>
         <tr>
           <th>Estado del Proyecto</th>
-          <td>sin registro</td>
+          <td>{status !== null ? status : "sin registro"}</td>
           {/* <td>{projectStatus || ''}</td> */}
         </tr>
       </tbody>

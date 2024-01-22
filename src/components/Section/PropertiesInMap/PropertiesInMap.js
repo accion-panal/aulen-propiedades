@@ -10,18 +10,17 @@ import Map, {
 import { PropertiesContext } from '../../../context/properties/PropertiesContext';
 import Section from '../../Section/Section';
 import MarkerIcon from '../../../assets/img/Map/marker.png';
-import { parseToCLPCurrency } from '../../../utils';
+import {truncateString, parseToCLPCurrency, ufToClp, clpToUf2, parseToDecimal } from '../../../utils';
 import { company } from '../../../constants/consts/company';
 import { icons } from '../../Icons';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
-  const { propertiesInMap, data} = contextData;
+  const { propertiesInMap, data, valueUf} = contextData;
   const [selectedProperty, setSelectedProperty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [totalItems, setTotalItems] = useState('');
   const { FaMapMarkerAlt } = icons;
-
 
 
   useEffect(() => {
@@ -29,6 +28,45 @@ const PropertiesInMapComponent = () => {
       setIsLoading(false);
     }
   }, [propertiesInMap, isLoading]);
+
+
+  const _renderItem = (name,code,price) => {
+    let ufValue = price;
+    let clpValue = price;
+
+    if(valueUf.Valor != null){
+      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.');
+      if (name === 'UF' && code === 'UF'){
+        clpValue = ufToClp(price,valueIntUF);
+      }
+      if (name === 'Peso Chileno' && code === 'CLP'){
+        ufValue = clpToUf2(price,valueIntUF);
+      }
+    }
+    else {
+      clpValue = 0;
+      ufValue ;
+
+    }
+
+    
+    return (
+      <div>
+        <p>
+          <span className="mr-1">UF: </span>{' '}
+          <strong>
+            {parseToDecimal(ufValue)}
+          </strong>
+        </p>
+        <p>
+          <span className="mr-1">CLP: </span>{' '}
+          <strong>
+            {parseToCLPCurrency(clpValue)}
+          </strong>
+        </p>
+      </div>
+    )
+  }
 
   return (
     <Section>
@@ -72,7 +110,7 @@ const PropertiesInMapComponent = () => {
               borderRadius: '15px',
             }}
           >
-            {propertiesInMap?.map((property) => {
+      {propertiesInMap?.map((property) => {
               let longitude =
                 Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ?? null;
               let latitude =
@@ -164,7 +202,7 @@ const PropertiesInMapComponent = () => {
 
                               <div className="mt-3">
                                 <span className="bg-orange-500 text-white px-2 py-.5 mt-1 rounded-full">
-                                  {property?.types?.[0] ?? 'Propiedad'}
+                                  {property?.operation || ""} / {property?.types?.[0] ?? 'Propiedad'}
                                 </span>
                                 <p className="mb-3 mt-2 font-normal text-gray-700 flex items-center">
                                   <FaMapMarkerAlt className="mr-1" />
@@ -175,11 +213,15 @@ const PropertiesInMapComponent = () => {
                                   , {property?.city ?? 'Ciudad no registrada'}
                                 </p>
 
+                                
+
                                 <div className="text-gray-600">
                                   <span>Desde:</span>{' '}
                                   <strong>
-                                    {parseToCLPCurrency(property?.price || 0) ??
-                                      ''}
+                                    {/* {parseToCLPCurrency(property?.price || 0) ??
+                                      ''} */}
+                                    {_renderItem(property?.currency?.name, property?.currency?.isoCode, property.price)}
+
                                   </strong>
                                 </div>
 
