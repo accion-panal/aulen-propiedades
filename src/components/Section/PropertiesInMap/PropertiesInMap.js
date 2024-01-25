@@ -71,19 +71,27 @@ const PropertiesInMapComponent = () => {
   return (
     <Section>
       <div className="container mt-[90px] xl:mt-[130px]">
-        <div className="mb-10">
-          <h1 className="text-xl">Localización de Propiedades </h1>{' '}
-          <p
-            style={{
-              fontSize: '1rem',
-              fontWeight: '300',
-              color: '#616161',
-            }}
-          >
-            Descubre propiedades es una forma fácil y eficiente de encontrar y
-            explorar propiedades en una ubicación específica
-          </p>
-          <p className="text-orange-500 text-sm">Propiedades activas en mapa</p>
+        <div className="grid xl:flex xl:justify-between mb-10">
+          <div className=''>
+            <h1 className="text-xl">Localización de Propiedades </h1>{' '}
+            <p
+              style={{
+                fontSize: '1rem',
+                fontWeight: '300',
+                color: '#616161',
+              }}
+            >
+              Descubre propiedades es una forma fácil y eficiente de encontrar y
+              explorar propiedades en una ubicación específica
+            </p>
+            <p className="text-orange-500 text-sm">Propiedades activas en mapa</p>
+          </div>
+          <div className='mt-10'>
+            <button className='bg-orange-500 hover:bg-orange-500/90 w-28 h-9 lg:w-65 lg:h-9 px-3 rounded-md'>
+              <Link to="/propiedades" className='text-gray-50 hover:text-gray-50'>Volver</Link>
+            </button>
+          </div>
+
         </div>
 
         <div>

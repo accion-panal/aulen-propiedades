@@ -100,7 +100,7 @@ const PropertyComponent = ({ property }) => {
             </Col>
           </Row>
 
-          <InformationOnTheArea propertyData={property} />
+          <InformationOnTheArea propertyData={property} valueUf={valueUf} />
 
           <div id="cotizar-contacto">
             <MeetingSchedule />

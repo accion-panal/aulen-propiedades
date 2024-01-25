@@ -10,13 +10,13 @@ import Map, {
 import CardMap from './CardMap';
 import { icons } from '../Icons';
 
-const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
+const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props, valueUf}) => {
   const [showPopup, setShowPopup] = useState(false);
   const { FaMapMarkerAlt } = icons;
 
   const [viewport, setViewport] = useState({
     width: '100%',
-    height: '240px',
+    height: '100%',
     latitude: latitudeProp,
     longitude: longitudeProp,
   });
@@ -63,9 +63,9 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
           {propertyData?.city || 'Ciudad no registrada'}
         </h4>
 
-        <Link to="/" className="ml-2 xl:ml-5 text-blue-500 text-sm">
+        {/* <Link to="/" className="ml-2 xl:ml-5 text-blue-500 text-sm">
           Ver información de la zona
-        </Link>
+        </Link> */}
       </div>
 
       <Map
@@ -76,16 +76,22 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
           pitch: 85,
           width: 400,
           height: 900,
-          attributionControl: true,
+          attributionControl: false,
+          zoom:10,
+          style: {
+            width: 'auto',
+            height: '80vh',
+            borderRadius: '15px',
+          },
         }}
         {...viewport}
         onViewportChange={handleViewportChange}
         interactive={true}
-        dragPan={true}
-        dragRotate={false}
-        scrollZoom={true}
-        touchZoom={true}
-        doubleClickZoom={true}
+        // dragPan={true}
+        // dragRotate={true}
+        // scrollZoom={true}
+        // touchZoom={true}
+        // doubleClickZoom={true}
         mapStyle={'mapbox://styles/mapbox/streets-v12'}
         style={{
           margin: '1.5rem 0rem',
@@ -96,9 +102,17 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
         <Marker
           latitude={latitudeProp}
           longitude={longitudeProp}
-          draggable={false}
+          draggable={true}
           onDragEnd={handleMarkerDrag}
           onClick={() => setShowPopup(!showPopup)}
+          offsetLeft={-20}
+          offsetTop={-10}
+          style={{
+            cursor: 'pointer',
+            zIndex: 0,
+            margin: '0',
+            padding: '0',
+          }}
         >
           {showPopup && (
             <Popup
@@ -118,7 +132,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
                 cursor: 'pointer',
               }}
             >
-              <CardMap propertyData={propertyData} />
+              <CardMap propertyData={propertyData} valueUf={valueUf}/>
             </Popup>
           )}
         </Marker>

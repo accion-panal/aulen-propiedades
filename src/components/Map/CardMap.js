@@ -1,8 +1,8 @@
 import React from 'react';
-import { parseToCLPCurrency } from '../../utils';
+import { parseToCLPCurrency, ufToClp, clpToUf2, parseToDecimal } from '../../utils';
 import { icons } from '../Icons';
 
-const CardMap = ({ propertyData }) => {
+const CardMap = ({ propertyData , valueUf}) => {
   const { FaMapMarkerAlt } = icons;
 
   const image =  propertyData.image;
@@ -30,24 +30,46 @@ const CardMap = ({ propertyData }) => {
     );
   };
 
+  const _renderItem = (name,code,price) => {
+    let ufValue = price;
+    let clpValue = price;
+
+    if(valueUf.Valor != null){
+      let valueIntUF = valueUf.Valor.replace(/\./g, '').replace(',', '.') ||[""];
+      if (name === 'UF' && code === 'UF'){
+        clpValue = ufToClp(price,valueIntUF);
+      }
+      if (name === 'Peso Chileno' && code === 'CLP'){
+        ufValue = clpToUf2(price,valueIntUF);
+      }
+    }
+    else {
+      clpValue = 0;
+      ufValue ;
+
+    }
+
+    return (
+      <div>
+      <span>Desde:</span>{' '}
+          <strong>UF: {parseToDecimal(ufValue)}</strong>
+      <span></span>{' '}
+        <strong >
+        CLP: {parseToCLPCurrency(clpValue)}
+      </strong>
+    </div>
+    )
+  };
+
   return (
     <div className="max-w-sm bg-white">
       <a href="#">
         {validaImage(image)}
-        {/* <img
-          src={
-            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//1.jpg` ??
-            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//2.jpg` ??
-            `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//3.jpg`
-          }
-          alt={`small-card-${propertyData?.title}`}
-          className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
-        /> */}
       </a>
 
       <div>
         <span className="bg-orange-500 text-white px-2 py-.5 rounded-full">
-          {propertyData?.types?.[0] ?? 'Propiedad'}
+          {propertyData?.operation || ""} / {propertyData?.types?.[0] ?? 'Propiedad'}
         </span>
         <p className="mb-3 flex items-center mt-2 font-normal text-gray-700 dark:text-gray-400">
           <FaMapMarkerAlt className="pr-1" />
@@ -57,8 +79,9 @@ const CardMap = ({ propertyData }) => {
         </p>
 
         <div>
-          <span>Desde:</span>{' '}
-          <strong>{parseToCLPCurrency(propertyData?.price || 0) ?? ''}</strong>
+          {/* <span>Desde:</span>{' '}
+          <strong>{parseToCLPCurrency(propertyData?.price || 0) ?? ''}</strong> */}
+           {_renderItem(propertyData?.currency?.name, propertyData?.currency?.isoCode, propertyData.price)}
         </div>
 
         <div>
