@@ -16,7 +16,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
 
   const [viewport, setViewport] = useState({
     width: '100%',
-    height: '100%',
+    height: '240px',
     latitude: latitudeProp,
     longitude: longitudeProp,
   });
@@ -73,7 +73,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
           'pk.eyJ1Ijoic2VyZ2lvdmVyYWhlcm5hbmRlemJpZGF0YSIsImEiOiJjbDMwZHc4cmswMDdqM2NydmIzYWF0cGl4In0.hsYQFPebleAB4j6mRckMzQ'
         }
         initialViewState={{
-          pitch: 45,
+          pitch: 85,
           width: 400,
           height: 900,
           attributionControl: true,
@@ -96,7 +96,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props }) => {
         <Marker
           latitude={latitudeProp}
           longitude={longitudeProp}
-          draggable={true}
+          draggable={false}
           onDragEnd={handleMarkerDrag}
           onClick={() => setShowPopup(!showPopup)}
         >

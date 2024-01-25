@@ -4,10 +4,37 @@ import { icons } from '../Icons';
 
 const CardMap = ({ propertyData }) => {
   const { FaMapMarkerAlt } = icons;
+
+  const image =  propertyData.image;
+  
+  const validaImage = (image) => {
+    if (image) {
+      const validExtensions = ['.jpg', '.jpeg', '.png'];
+  
+      if (validExtensions.some(ext => image.toLowerCase().endsWith(ext))) {
+        return (
+          <img
+          src={image}
+          alt={`small-card-${propertyData?.title}`}
+          className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+        />
+        );
+      }
+    }
+    return (
+      <img
+      src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
+      alt={`small-card-${propertyData?.title}`}
+      className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+    />
+    );
+  };
+
   return (
     <div className="max-w-sm bg-white">
       <a href="#">
-        <img
+        {validaImage(image)}
+        {/* <img
           src={
             `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//1.jpg` ??
             `https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${propertyData?.id}//2.jpg` ??
@@ -15,7 +42,7 @@ const CardMap = ({ propertyData }) => {
           }
           alt={`small-card-${propertyData?.title}`}
           className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
-        />
+        /> */}
       </a>
 
       <div>

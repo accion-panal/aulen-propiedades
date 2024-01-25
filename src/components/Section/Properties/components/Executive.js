@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 
 const Executive = ({ propertyData }) => {
   const { MdOutlineMailOutline, BsTelephoneFill } = icons;
+  const phoneNumber = propertyData?.realtor?.contactPhone || "9 3291 0591"  ;
+  const whatsappBusinessLink = `https://wa.me/${phoneNumber}`;
   return (
     <div className={styles.executiveContainer}>
       <Row className={styles.row}>
@@ -40,8 +42,10 @@ const Executive = ({ propertyData }) => {
           </p>
 
           <div className={styles.realtorContact}>
-            <a href="/">Contactar</a>
-          </div>
+            <a href={whatsappBusinessLink} target='_blank'
+                rel="noopener noreferrer"
+              >Contáctar</a>  
+          </div>    
         </Col>
       </Row>
     </div>
