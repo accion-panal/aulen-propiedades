@@ -28,6 +28,8 @@ const PropertyCard = ({ data, isList , valueUf}) => {
                 src={image}
                 alt={`top-img-${title}`}
                 width="full"
+                loading='lazy'
+
               />
             );
           }
@@ -42,6 +44,8 @@ const PropertyCard = ({ data, isList , valueUf}) => {
             src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
             alt={`top-img-${title}`}
             width="full"
+            loading='lazy'
+
           />
         );
       };

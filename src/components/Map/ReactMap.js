@@ -119,7 +119,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, propertyData, props, valueUf}) 
               longitude={longitudeProp}
               latitude={latitudeProp}
               onClose={() => setShowPopup(false)}
-              anchor="bottom"
+              anchor="left"
               closeButton={false}
               closeOnClick={false}
               dynamicPosition={true}

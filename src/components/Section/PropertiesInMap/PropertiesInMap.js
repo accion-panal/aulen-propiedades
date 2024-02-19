@@ -49,7 +49,6 @@ const PropertiesInMapComponent = () => {
 
     }
 
-    
     return (
       <div>
         <p>
@@ -118,11 +117,28 @@ const PropertiesInMapComponent = () => {
               borderRadius: '15px',
             }}
           >
+
+        
       {propertiesInMap?.map((property) => {
-              let longitude =
-                Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ?? null;
-              let latitude =
-                Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) ?? null;
+            let longitude = -70.64827;
+            let latitude = -33.45694;
+
+              if( property && property.LngLat){
+                const lngMatch = property.LngLat.match(/Lng: ([-\d.]+)/);
+                const latMatch = property.LngLat.match(/Lat: ([-\d.]+)/);
+
+                if(lngMatch && lngMatch[1]){
+                  longitude = Number(lngMatch[1]);
+                }
+
+                if(latMatch && latMatch[1]){
+                  latitude = Number(latMatch[1]);
+                }
+              }
+              // let longitude =
+              //   Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ?? null;
+              // let latitude =
+              //   Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) ?? null;
                       
 
         const image = property?.image;
@@ -137,6 +153,7 @@ const PropertiesInMapComponent = () => {
                 src={image}
                 alt={`small-card-${property?.title}`}
                 className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+                loading='lazy'
               />
               );
             }
@@ -146,6 +163,8 @@ const PropertiesInMapComponent = () => {
             src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
             alt={`small-card-${property?.title}`}
             className="h-[200px] w-[100%] object-cover rounded-t-xl xl:rounded-none"
+            loading='lazy'
+
           />
           );
         };
