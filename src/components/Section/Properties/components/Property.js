@@ -28,8 +28,22 @@ const PropertyComponent = ({ property }) => {
   const [copied, setCopied] = useState(false);
   const { FaShare, MdSimCardDownload } = icons;
 
-  // const lng = (Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827) || (Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[0]) || -70.64827);
-  // const lat = (Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694) || (Number(property?.LngLat?.match(/Lat: ([-\d.]+)/)[0]) || -33.45694);
+  // let lng =  -70.64827;
+  // let lat = -33.45694;
+
+  // if(property && property?.LngLat){
+
+  //   const lngMatch = property?.LngLat.match(/Lng: ([-\d.]+)/);
+  //   const latMatch = property?.LngLat.match(/Lat: ([-\d.]+)/);
+
+  //   if(latMatch && latMatch[1]){
+  //     lat = Number(latMatch[1]);
+  //   }
+  //   if(lngMatch && lngMatch[1]){
+  //     lng = Number(lngMatch[1]);
+  //   }
+
+  // }
 
   /** Render clipboard property modal */
   const renderContent = () => (

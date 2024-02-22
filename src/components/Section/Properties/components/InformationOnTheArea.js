@@ -11,13 +11,13 @@ const InformationOnTheArea = ({ propertyData, valueUf }) => {
   // const lng = (Number(LngLat?.match(/Lng: ([-\d.]+)/)[1]) || -70.64827) || (Number(LngLat?.match(/Lng: ([-\d.]+)/)[0]) || -70.64827)  ;
   // const lat = (Number(LngLat?.match(/Lat: ([-\d.]+)/)[1]) || -33.45694) || (Number(LngLat?.match(/Lat: ([-\d.]+)/)[0]) || -33.45694);
 
-  const lng =  -70.64827;
-  const lat = -33.45694;
+  let lng =  -70.64827;
+  let lat = -33.45694;
 
-  if(propertyData && propertyData.LngLat){
+  if(propertyData && LngLat){
 
-    const lngMatch = propertyData.LngLat.match(/Lng: ([-\d.]+)/);
-    const latMatch = propertyData.LngLat.match(/Lat: ([-\d.]+)/);
+    const lngMatch = LngLat.match(/Lng: ([-\d.]+)/);
+    const latMatch = LngLat.match(/Lat: ([-\d.]+)/);
 
     if(latMatch && latMatch[1]){
       lat = Number(latMatch[1]);
