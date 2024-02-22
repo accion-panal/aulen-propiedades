@@ -7,6 +7,7 @@ const Head = ({ title, description, keywords }) => {
       <title>Aulen Propiedades {title && `| ${title}`}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <img src="https://tracker.metricool.com/c3po.jpg?hash=ef50e5a23a96bdeccb02d5fdca651c5"/>
     </Helmet>
   );
 };
